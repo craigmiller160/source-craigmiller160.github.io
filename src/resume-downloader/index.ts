@@ -2,7 +2,7 @@ import path from 'path';
 import { google } from 'googleapis';
 import fs from 'fs/promises';
 import { z } from 'zod';
-import type {Resume} from '../resume/resume';
+import type { Resume } from '../resume/resume';
 
 const KEYFILE_PATH = path.join(
 	process.cwd(),
@@ -10,11 +10,7 @@ const KEYFILE_PATH = path.join(
 );
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
 const FILE_ID = '1KNIsz3VBRhLTX9wLp8NhaeVzc1z4VMIQMDzvTK2MuNA';
-const OUTPUT_DIR = path.join(
-	import.meta.dirname,
-	'..',
-	'resume'
-);
+const OUTPUT_DIR = path.join(import.meta.dirname, '..', 'resume');
 const RAW_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.txt');
 const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
 
@@ -35,7 +31,9 @@ const downloadResume = async () => {
 		fileId: FILE_ID,
 		mimeType: 'text/plain'
 	});
-	const resumeText = resumeResponseSchema.parse(response.data);
+	const resumeText = resumeResponseSchema
+		.parse(response.data)
+		.replace('\r\n', '\n');
 	await fs.writeFile(RAW_OUTPUT_FILE, resumeText);
 
 	const parsed = parseResume(resumeText);
@@ -43,6 +41,7 @@ const downloadResume = async () => {
 };
 
 const parseResume = (resumeText: string): Resume => {
+	// const lines = resumeText.split('\n');
 	throw new Error();
 };
 

@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@craigmiller160/js-config':
-    specifier: ^1.0.17
-    version: 1.0.17(@types/node@20.12.7)(cross-env@7.0.3)
+    specifier: ^1.0.18
+    version: 1.0.18(@types/node@20.12.7)(cross-env@7.0.3)
   '@types/node':
     specifier: ^20.12.7
     version: 20.12.7
@@ -89,8 +89,8 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
-  /@craigmiller160/js-config@1.0.17(@types/node@20.12.7)(cross-env@7.0.3):
-    resolution: {integrity: sha512-h8Ecp72/pF1X4/4u5AEbX12mixv/ZjPt4DIB08+4ixYD01V1MrnSQxqjmFlxtr63i84j1EBE8cxpdBanSn6QmA==}
+  /@craigmiller160/js-config@1.0.18(@types/node@20.12.7)(cross-env@7.0.3):
+    resolution: {integrity: sha512-R1ZSE5/RNZc1r5hLtH+pF3dCAcqzqcDoFCNynrlZ12D+kqggfKcz4GqyqvNd7jR9IlOPIUa/kqg5+L99mIUIgg==}
     hasBin: true
     peerDependencies:
       '@relmify/jest-fp-ts': ^2.1.1
