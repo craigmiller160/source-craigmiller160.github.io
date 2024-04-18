@@ -1,0 +1,15 @@
+{
+  "name": "source-craigmiller160.github.io",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@craigmiller160/js-config": "^1.0.15",
+    "cross-env": "^7.0.3"
+  }
+}
