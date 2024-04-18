@@ -1,0 +1,67 @@
+{
+  "name": "craigmiller.software.engineer@gmail.com",
+  "contact": {
+    "email": "Riverview, FL 33578"
+  },
+  "education": "",
+  "certifications": [],
+  "experience": [
+    {
+      "achievements": [
+        "Architected and implemented a new Point of Care solution, seamlessly integrating the company’s services into a common Electronic Medical Records (EMR) provider, and further boosting the company’s competitive advantage.",
+        "Led multiple platform modernization efforts, including:",
+        "Improved application stability and reduced the prevalence of bugs by spearheading the adoption of TypeScript in frontend applications.",
+        "Boosted the speed and predictability of releases by pioneering the use of a micro-frontend architecture at the company, allowing for more narrowly focused releases of frontend applications.",
+        "Significantly accelerated page load times, improving the user experience, by overhauling the frontend build system to reduce application size by 50%.",
+        "Eliminated the use of an expensive and unreliable platform by developing an in-house ETL solution to handle communication between external vendors and mainframe programs.",
+        "Grew the skillset of the broader team by running multiple sessions of an in-house React course so that traditionally backend developers could learn to contribute to the full stack.",
+        "Reduced production bugs and workflow chaos by streamlining the software release process through documenting and standardizing the process, properly allocating resources each sprint for release tasks, and getting the business to commit to respecting the release schedule.",
+        "Boosted the company’s appeal to potential candidates by being a mentor for the corporate summer internship program, with several intern direct reports ultimately becoming full time employees of the company.",
+        "Improved predictability to business partners by increasing sprint completion rate from ~40% to ~75% by boosting communication of capacity constraints from developer team."
+      ],
+      "company": "Cigna ",
+      "dates": "2018-Present",
+      "positions": [
+        {
+          "title": "Software Engineer ",
+          "dates": "2018-2021"
+        },
+        {
+          "title": "Senior Software Engineer ",
+          "dates": "2021-Present"
+        }
+      ]
+    },
+    {
+      "achievements": [
+        "Revolutionized software upgrade experience by designing an automated regression testing system to pre-emptively identify and report changes in behavior when moving to a newer version of the software.",
+        "Ensured the competitiveness of a legacy medical forms company in the digital space by designing and implementing an all-in-one electronic form integration solution, complete with security protections and a customer-facing web UI.",
+        "Boosted company’s competitive advantage by designing system to allow clients to easily configure mappings of inbound legacy data feeds to modern REST API calls."
+      ],
+      "company": "PilotFish Technology ",
+      "dates": "2015-2018",
+      "positions": [
+        {
+          "title": "Java Developer ",
+          "dates": "2015-2016"
+        },
+        {
+          "title": "Solutions Architect ",
+          "dates": "2016-2018"
+        }
+      ]
+    }
+  ],
+  "honorsAndAchievements": [],
+  "intro": {
+    "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
+    "title": "Staff/Principal/Senior Full Stack Engineer"
+  },
+  "skills": {
+    "agileExperience": [],
+    "cloudDeployment": [],
+    "databases": [],
+    "frameworksAndTools": [],
+    "languages": []
+  }
+}
