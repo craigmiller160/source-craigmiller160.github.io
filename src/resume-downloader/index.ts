@@ -14,6 +14,28 @@ const OUTPUT_DIR = path.join(import.meta.dirname, '..', 'resume');
 const RAW_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.txt');
 const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
 
+const BASE_RESUME: Resume = {
+	name: '',
+	contact: {
+		email: ''
+	},
+	education: '',
+	certifications: [],
+	experience: [],
+	honorsAndAchievements: [],
+	intro: {
+		body: '',
+		title: ''
+	},
+	skills: {
+		agileExperience: [],
+		cloudDeployment: [],
+		databases: [],
+		frameworksAndTools: [],
+		languages: []
+	}
+};
+
 const resumeResponseSchema = z.string();
 
 const auth = new google.auth.GoogleAuth({
@@ -40,30 +62,22 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
+type ResumeSection = 'contact' | 'intro' | 'experience';
+type ResumeParsingContext = Readonly<{
+	resume: Resume;
+	section: ResumeSection;
+}>;
+
 const parseResume = (resumeText: string): Resume => {
 	const lines = resumeText.split('\n');
-	const name = lines[0];
-	return {
-		name,
-		contact: {
-			email: ''
-		},
-		education: '',
-		certifications: [],
-		experience: [],
-		honorsAndAchievements: [],
-		intro: {
-			body: '',
-			title: ''
-		},
-		skills: {
-			agileExperience: [],
-			cloudDeployment: [],
-			databases: [],
-			frameworksAndTools: [],
-			languages: []
-		}
+	const startingContext: ResumeParsingContext = {
+		resume: BASE_RESUME,
+		section: 'contact'
 	};
+
+	return lines.reduce((context, line) => {
+		return context;
+	}, startingContext).resume;
 };
 
-downloadResume();
+void downloadResume();
