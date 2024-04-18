@@ -15,6 +15,16 @@ const FILE_ID = '1KNIsz3VBRhLTX9wLp8NhaeVzc1z4VMIQMDzvTK2MuNA';
 const OUTPUT_DIR = path.join(import.meta.dirname, '..', 'resume');
 const RAW_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.txt');
 const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
+const STARTS_WITH_WHITESPACE_REGEX = /^\s+/;
+const STARTS_WITH_ASTERISK_REGEX = /^\*/;
+const EXPERIENCE_COMPANY_LINE_REGEX = /^(?<company>.+)\((?<dates>.+)\)$/;
+
+const experienceCompanyLineSchema = z
+	.object({
+		company: z.string(),
+		dates: z.string()
+	})
+	.readonly();
 
 const BASE_RESUME: Resume = {
 	name: '',
@@ -68,13 +78,15 @@ type ResumeSection = 'contact' | 'intro' | 'experience';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
+	experienceIndex: number;
 }>;
 
 const parseResume = (resumeText: string): Resume => {
 	const lines = resumeText.split('\n');
 	const startingContext: ResumeParsingContext = {
 		resume: BASE_RESUME,
-		section: 'contact'
+		section: 'contact',
+		experienceIndex: 0
 	};
 
 	return (
@@ -104,12 +116,32 @@ const parseExperienceLine = (
 		return context;
 	}
 
-	if (/^\s+/.test(line)) {
-		// TODO handle this
-		return context;
+	const hasExperience = context.resume.experience.length > 0;
+	const currentExperienceHasAchievements =
+		context.resume.experience[context.experienceIndex]?.achievements
+			?.length > 0;
+	const isOpeningExperienceLine = STARTS_WITH_WHITESPACE_REGEX.test(line);
+	if (
+		isOpeningExperienceLine &&
+		(currentExperienceHasAchievements || !hasExperience)
+	) {
+		const newExperienceIndex = currentExperienceHasAchievements
+			? context.experienceIndex + 1
+			: context.experienceIndex;
+		const groups = EXPERIENCE_COMPANY_LINE_REGEX.exec(line.trim())?.groups;
+		const experienceCompanyLine = experienceCompanyLineSchema.parse(groups);
+		return produce(context, (draft) => {
+			draft.experienceIndex = newExperienceIndex;
+			draft.resume.experience[newExperienceIndex] = {
+				achievements: [],
+				company: experienceCompanyLine.company,
+				dates: experienceCompanyLine.dates,
+				positions: []
+			};
+		});
 	}
 
-	if (/^\*/.test(line)) {
+	if (STARTS_WITH_ASTERISK_REGEX.test(line)) {
 		// TODO handle this
 		return context;
 	}
@@ -137,7 +169,7 @@ const parseContactLine = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {
-	if (/^\s+/.test(line)) {
+	if (STARTS_WITH_WHITESPACE_REGEX.test(line)) {
 		return context;
 	}
 
