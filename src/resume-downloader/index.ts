@@ -37,4 +37,8 @@ const downloadResume = async () => {
 	await fs.writeFile(OUTPUT_PATH, resumeText);
 };
 
+const parseResume = (resumeText: string) => {
+
+};
+
 downloadResume();
