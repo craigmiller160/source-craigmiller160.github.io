@@ -41,8 +41,29 @@ const downloadResume = async () => {
 };
 
 const parseResume = (resumeText: string): Resume => {
-	// const lines = resumeText.split('\n');
-	throw new Error();
+	const lines = resumeText.split('\n');
+	const name = lines[0];
+	return {
+		name,
+		contact: {
+			email: ''
+		},
+		education: '',
+		certifications: [],
+		experience: [],
+		honorsAndAchievements: [],
+		intro: {
+			body: '',
+			title: ''
+		},
+		skills: {
+			agileExperience: [],
+			cloudDeployment: [],
+			databases: [],
+			frameworksAndTools: [],
+			languages: []
+		}
+	};
 };
 
 downloadResume();
