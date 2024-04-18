@@ -3,6 +3,8 @@ import { google } from 'googleapis';
 import fs from 'fs/promises';
 import { z } from 'zod';
 import type { Resume } from '../resume/resume';
+import { match } from 'ts-pattern';
+import { produce } from 'immer';
 
 const KEYFILE_PATH = path.join(
 	process.cwd(),
@@ -62,7 +64,7 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
-type ResumeSection = 'contact' | 'intro' | 'experience';
+type ResumeSection = 'contact';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
@@ -75,9 +77,32 @@ const parseResume = (resumeText: string): Resume => {
 		section: 'contact'
 	};
 
-	return lines.reduce((context, line) => {
+	return lines.reduce(
+		(context, line) =>
+			match(context.section)
+				.with('contact', () => parseContactLine(context, line))
+				.exhaustive(),
+		startingContext
+	).resume;
+};
+
+const parseContactLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if (/\s+/.test(line)) {
 		return context;
-	}, startingContext).resume;
+	}
+
+	if (context.resume.name.length > 0) {
+		return produce(context, (draft) => {
+			draft.resume.contact.email = line.trim();
+		});
+	}
+
+	return produce(context, (draft) => {
+		draft.resume.name = line.trim();
+	});
 };
 
 void downloadResume();

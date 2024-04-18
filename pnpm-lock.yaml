@@ -8,6 +8,9 @@ dependencies:
   googleapis:
     specifier: ^134.0.0
     version: 134.0.0
+  immer:
+    specifier: ^10.0.4
+    version: 10.0.4
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -20,6 +23,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.22.3
     version: 6.22.3(react-dom@18.2.0)(react@18.2.0)
+  ts-pattern:
+    specifier: ^5.1.1
+    version: 5.1.1
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -27,7 +33,7 @@ dependencies:
 devDependencies:
   '@craigmiller160/js-config':
     specifier: ^1.0.18
-    version: 1.0.18(@types/node@20.12.7)(cross-env@7.0.3)
+    version: 1.0.18(@types/node@20.12.7)(cross-env@7.0.3)(ts-pattern@5.1.1)
   '@types/node':
     specifier: ^20.12.7
     version: 20.12.7
@@ -89,13 +95,14 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
-  /@craigmiller160/js-config@1.0.18(@types/node@20.12.7)(cross-env@7.0.3):
+  /@craigmiller160/js-config@1.0.18(@types/node@20.12.7)(cross-env@7.0.3)(ts-pattern@5.1.1):
     resolution: {integrity: sha512-R1ZSE5/RNZc1r5hLtH+pF3dCAcqzqcDoFCNynrlZ12D+kqggfKcz4GqyqvNd7jR9IlOPIUa/kqg5+L99mIUIgg==}
     hasBin: true
     peerDependencies:
       '@relmify/jest-fp-ts': ^2.1.1
       cross-env: ^7.0.3
       cypress: '>=13.0.0'
+      ts-pattern: ^5.0.5
     peerDependenciesMeta:
       '@relmify/jest-fp-ts':
         optional: true
@@ -2997,6 +3004,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immer@10.0.4:
+    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
+    dev: false
+
   /immutable@4.3.5:
     resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
     dev: true
@@ -4819,7 +4830,6 @@ packages:
 
   /ts-pattern@5.1.1:
     resolution: {integrity: sha512-i+owkHr5RYdQxj8olUgRrqpiWH9x27PuWVfXwDmJ/n/CoF/SAa7WW1i2oUpPDMQpJ4U+bGRUcZkVq7i1m3zFCg==}
-    dev: true
 
   /tsconfig-paths@3.15.0:
     resolution: {integrity: sha512-2Ac2RgzDe/cn48GvOe3M+o82pEFewD3UPbyoUHHdKasHwJKjds4fLXWf/Ux5kATBKN20oaFGu+jbElp1pos0mg==}
