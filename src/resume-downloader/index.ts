@@ -130,6 +130,7 @@ const parseExperienceLine = (
 	const isOpeningExperienceLine =
 		STARTS_WITH_WHITESPACE_REGEX.test(line) &&
 		!STARTS_WITH_ASTERISK_REGEX.test(line.trim());
+
 	if (
 		isOpeningExperienceLine &&
 		(currentExperienceHasAchievements || !hasExperience)
@@ -169,8 +170,11 @@ const parseExperienceLine = (
 	}
 
 	if (STARTS_WITH_ASTERISK_REGEX.test(line)) {
-		// TODO handle this
-		return context;
+		return produce(context, (draft) => {
+			draft.resume.experience[draft.experienceIndex].achievements.push(
+				line.replace(STARTS_WITH_ASTERISK_REGEX, '').trim()
+			);
+		});
 	}
 
 	return context;
