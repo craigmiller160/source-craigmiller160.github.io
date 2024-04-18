@@ -74,7 +74,12 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
-type ResumeSection = 'contact' | 'intro' | 'experience' | 'skills';
+type ResumeSection =
+	| 'contact'
+	| 'intro'
+	| 'experience'
+	| 'skills'
+	| 'certifications';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
@@ -107,6 +112,7 @@ const parseLine = (
 		.with('intro', () => parseIntroLine(context, line))
 		.with('experience', () => parseExperienceLine(context, line))
 		.with('skills', () => parseSkillLine(context, line))
+		.with('certifications', () => context)
 		.exhaustive();
 
 const isNotEmpty = (array: ReadonlyArray<string>): boolean => array.length > 0;
@@ -163,6 +169,7 @@ const parseSkillLine = (
 			)
 			.otherwise(() => {
 				draft.resume.skills.agileExperience = skills;
+				draft.section = 'certifications';
 			});
 	});
 };

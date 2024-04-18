@@ -58,10 +58,20 @@
     "title": "Staff/Principal/Senior Full Stack Engineer"
   },
   "skills": {
-    "agileExperience": [],
-    "cloudDeployment": [],
-    "databases": [],
-    "frameworksAndTools": [],
-    "languages": []
+    "agileExperience": [
+      "Agile Experience"
+    ],
+    "cloudDeployment": [
+      "Cloud Deployment"
+    ],
+    "databases": [
+      "Databases"
+    ],
+    "frameworksAndTools": [
+      "Frameworks/Tools"
+    ],
+    "languages": [
+      "Languages"
+    ]
   }
 }
