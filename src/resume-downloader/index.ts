@@ -2,7 +2,7 @@ import path from 'path';
 import { google } from 'googleapis';
 import fs from 'fs/promises';
 import { z } from 'zod';
-import type { Resume } from '../resume/resume';
+import type { Position, Resume } from '../resume/resume';
 import { match } from 'ts-pattern';
 import { produce } from 'immer';
 
@@ -17,11 +17,11 @@ const RAW_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.txt');
 const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
 const STARTS_WITH_WHITESPACE_REGEX = /^\s+/;
 const STARTS_WITH_ASTERISK_REGEX = /^\*/;
-const EXPERIENCE_COMPANY_LINE_REGEX = /^(?<company>.+)\((?<dates>.+)\)$/;
+const ITEM_AND_DATES_REGEX = /^(?<item>.+)\((?<dates>.+)\)$/;
 
-const experienceCompanyLineSchema = z
+const itemAndDatesSchema = z
 	.object({
-		company: z.string(),
+		item: z.string(),
 		dates: z.string()
 	})
 	.readonly();
@@ -128,16 +128,34 @@ const parseExperienceLine = (
 		const newExperienceIndex = currentExperienceHasAchievements
 			? context.experienceIndex + 1
 			: context.experienceIndex;
-		const groups = EXPERIENCE_COMPANY_LINE_REGEX.exec(line.trim())?.groups;
-		const experienceCompanyLine = experienceCompanyLineSchema.parse(groups);
+		const groups = ITEM_AND_DATES_REGEX.exec(line.trim())?.groups;
+		const experienceCompanyLine = itemAndDatesSchema.parse(groups);
 		return produce(context, (draft) => {
 			draft.experienceIndex = newExperienceIndex;
 			draft.resume.experience[newExperienceIndex] = {
 				achievements: [],
-				company: experienceCompanyLine.company,
+				company: experienceCompanyLine.item,
 				dates: experienceCompanyLine.dates,
 				positions: []
 			};
+		});
+	}
+
+	if (isOpeningExperienceLine) {
+		const positions = line
+			.trim()
+			.split(',')
+			.map((text) => ITEM_AND_DATES_REGEX.exec(text.trim())?.groups)
+			.map((text) => itemAndDatesSchema.parse(text))
+			.map(
+				({ item, dates }): Position => ({
+					title: item,
+					dates
+				})
+			);
+		return produce(context, (draft) => {
+			draft.resume.experience[draft.experienceIndex].positions =
+				positions;
 		});
 	}
 
