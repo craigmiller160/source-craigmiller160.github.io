@@ -74,7 +74,7 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
-type ResumeSection = 'contact' | 'intro' | 'experience';
+type ResumeSection = 'contact' | 'intro' | 'experience' | 'skills';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
@@ -106,6 +106,7 @@ const parseLine = (
 		.with('contact', () => parseContactLine(context, line))
 		.with('intro', () => parseIntroLine(context, line))
 		.with('experience', () => parseExperienceLine(context, line))
+		.with('skills', () => context)
 		.exhaustive();
 
 const parseExperienceLine = (
@@ -116,11 +117,19 @@ const parseExperienceLine = (
 		return context;
 	}
 
+	if ('Technical Knowledge' === line.trim()) {
+		return produce(context, (draft) => {
+			draft.section = 'skills';
+		});
+	}
+
 	const hasExperience = context.resume.experience.length > 0;
 	const currentExperienceHasAchievements =
 		context.resume.experience[context.experienceIndex]?.achievements
 			?.length > 0;
-	const isOpeningExperienceLine = STARTS_WITH_WHITESPACE_REGEX.test(line);
+	const isOpeningExperienceLine =
+		STARTS_WITH_WHITESPACE_REGEX.test(line) &&
+		!STARTS_WITH_ASTERISK_REGEX.test(line.trim());
 	if (
 		isOpeningExperienceLine &&
 		(currentExperienceHasAchievements || !hasExperience)
@@ -146,7 +155,7 @@ const parseExperienceLine = (
 			.trim()
 			.split(',')
 			.map((text) => ITEM_AND_DATES_REGEX.exec(text.trim())?.groups)
-			.map((text) => itemAndDatesSchema.parse(text))
+			.map((groups) => itemAndDatesSchema.parse(groups))
 			.map(
 				({ item, dates }): Position => ({
 					title: item,
