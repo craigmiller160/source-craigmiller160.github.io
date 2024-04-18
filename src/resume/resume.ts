@@ -1,42 +1,65 @@
-export type ContactInfo = Readonly<{
-    phone: string;
-    email: string;
-    address1: string;
-    address2: string;
-}>;
+import { z } from 'zod';
 
-export type Introduction = Readonly<{
-    title: string;
-    body: string;
-}>;
+export const contactInfoSchema = z
+	.object({
+		email: z.string().email()
+	})
+	.readonly();
 
-export type Position = Readonly<{
-    title: string;
-    dates: string;
-}>;
+export type ContactInfo = z.TypeOf<typeof contactInfoSchema>;
 
-export type Job = Readonly<{
-    company: string;
-    dates: string;
-    positions: ReadonlyArray<Position>;
-    achievements: ReadonlyArray<string>;
-}>;
+export const introductionSchema = z
+	.object({
+		title: z.string(),
+		body: z.string()
+	})
+	.readonly();
 
-export type Skills = Readonly<{
-    languages: ReadonlyArray<String>;
-    frameworksAndTools: ReadonlyArray<string>;
-    databases: Readonly<string>;
-    cloudDeployment: ReadonlyArray<string>;
-    agileExperience: ReadonlyArray<string>;
-}>;
+export type Introduction = z.TypeOf<typeof introductionSchema>;
 
-export type Resume = Readonly<{
-    name: string;
-    contact: ContactInfo;
-    intro: Introduction;
-    experience: ReadonlyArray<Job>;
-    skills: Skills;
-    certifications: ReadonlyArray<string>;
-    education: string;
-    honorsAndAchievements: ReadonlyArray<string>;
-}>;
+export const positionSchema = z
+	.object({
+		title: z.string(),
+		dates: z.string()
+	})
+	.readonly();
+
+export type Position = z.TypeOf<typeof positionSchema>;
+
+export const jobSchema = z
+	.object({
+		company: z.string(),
+		dates: z.string(),
+		positions: z.array(positionSchema).readonly(),
+		achievements: z.array(z.string()).readonly()
+	})
+	.readonly();
+
+export type Job = z.TypeOf<typeof jobSchema>;
+
+export const skillsSchema = z
+	.object({
+		languages: z.array(z.string()).readonly(),
+		frameworksAndTools: z.array(z.string()).readonly(),
+		databases: z.array(z.string()).readonly(),
+		cloudDeployment: z.array(z.string()).readonly(),
+		agileExperience: z.array(z.string()).readonly()
+	})
+	.readonly();
+
+export type Skills = z.TypeOf<typeof skillsSchema>;
+
+export const resumeSchema = z
+	.object({
+		name: z.string(),
+		contact: contactInfoSchema,
+		intro: introductionSchema,
+		experience: z.array(jobSchema).readonly(),
+		skills: skillsSchema,
+		certifications: z.array(z.string()).readonly(),
+		education: z.string(),
+		honorsAndAchievements: z.array(z.string()).readonly()
+	})
+	.readonly();
+
+export type Resume = z.TypeOf<typeof resumeSchema>;
