@@ -129,6 +129,7 @@ const parseIntroLine = (
 
 	return produce(context, (draft) => {
 		draft.resume.intro.body = line.trim();
+		draft.section = 'experience';
 	});
 };
 
