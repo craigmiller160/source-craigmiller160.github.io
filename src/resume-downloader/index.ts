@@ -64,7 +64,7 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
-type ResumeSection = 'contact';
+type ResumeSection = 'contact' | 'intro' | 'experience';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
@@ -77,13 +77,49 @@ const parseResume = (resumeText: string): Resume => {
 		section: 'contact'
 	};
 
-	return lines.reduce(
-		(context, line) =>
-			match(context.section)
-				.with('contact', () => parseContactLine(context, line))
-				.exhaustive(),
-		startingContext
-	).resume;
+	return (
+		lines
+			.filter((line) => !!line.trim())
+			// The use of this reducer plus the immutable design patterns does result in an O(n^2) algorithm
+			// Given the small size of the dataset, plus the infrequency of its execution, this is an acceptable tradeoff for the clean algorithm
+			.reduce(parseLine, startingContext).resume
+	);
+};
+
+const parseLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext =>
+	match(context.section)
+		.with('contact', () => parseContactLine(context, line))
+		.with('intro', () => parseIntroLine(context, line))
+		.with('experience', () => parseExperienceLine(context, line))
+		.exhaustive();
+
+const parseExperienceLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if ('Industry Experience' === line.trim()) {
+		return context;
+	}
+
+	return context;
+};
+
+const parseIntroLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if (!context.resume.intro.title) {
+		return produce(context, (draft) => {
+			draft.resume.intro.title = line.trim();
+		});
+	}
+
+	return produce(context, (draft) => {
+		draft.resume.intro.body = line.trim();
+	});
 };
 
 const parseContactLine = (
@@ -97,6 +133,7 @@ const parseContactLine = (
 	if (context.resume.name.length > 0) {
 		return produce(context, (draft) => {
 			draft.resume.contact.email = line.trim();
+			draft.section = 'intro';
 		});
 	}
 
