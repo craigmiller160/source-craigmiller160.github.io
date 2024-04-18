@@ -3,7 +3,7 @@ import { google } from 'googleapis';
 import fs from 'fs/promises';
 import { z } from 'zod';
 import type { Position, Resume } from '../resume/resume';
-import { match } from 'ts-pattern';
+import { match, P } from 'ts-pattern';
 import { produce } from 'immer';
 
 const KEYFILE_PATH = path.join(
@@ -106,8 +106,66 @@ const parseLine = (
 		.with('contact', () => parseContactLine(context, line))
 		.with('intro', () => parseIntroLine(context, line))
 		.with('experience', () => parseExperienceLine(context, line))
-		.with('skills', () => context)
+		.with('skills', () => parseSkillLine(context, line))
 		.exhaustive();
+
+const isNotEmpty = (array: ReadonlyArray<string>): boolean => array.length > 0;
+const isEmpty = (array: ReadonlyArray<string>): boolean => array.length === 0;
+
+const parseSkillLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if (
+		[
+			'Languages',
+			'Frameworks/Tools',
+			'Databases',
+			'Cloud Deployment',
+			'Agile Experience'
+		].includes(line)
+	) {
+		return context;
+	}
+
+	const skills = line.split(',').map((item) => item.trim());
+	return produce(context, (draft) => {
+		match(draft.resume.skills)
+			.with({ languages: P.when(isEmpty) }, () => {
+				draft.resume.skills.languages = skills;
+			})
+			.with(
+				{
+					frameworksAndTools: P.when(isEmpty),
+					languages: P.when(isNotEmpty)
+				},
+				() => {
+					draft.resume.skills.frameworksAndTools = skills;
+				}
+			)
+			.with(
+				{
+					frameworksAndTools: P.when(isNotEmpty),
+					databases: P.when(isEmpty)
+				},
+				() => {
+					draft.resume.skills.databases = skills;
+				}
+			)
+			.with(
+				{
+					databases: P.when(isNotEmpty),
+					cloudDeployment: P.when(isEmpty)
+				},
+				() => {
+					draft.resume.skills.cloudDeployment = skills;
+				}
+			)
+			.otherwise(() => {
+				draft.resume.skills.agileExperience = skills;
+			});
+	});
+};
 
 const parseExperienceLine = (
 	context: ResumeParsingContext,
