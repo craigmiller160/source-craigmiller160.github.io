@@ -104,6 +104,16 @@ const parseExperienceLine = (
 		return context;
 	}
 
+	if (/^\s+/.test(line)) {
+		// TODO handle this
+		return context;
+	}
+
+	if (/^\*/.test(line)) {
+		// TODO handle this
+		return context;
+	}
+
 	return context;
 };
 
@@ -126,7 +136,7 @@ const parseContactLine = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {
-	if (/\s+/.test(line)) {
+	if (/^\s+/.test(line)) {
 		return context;
 	}
 
