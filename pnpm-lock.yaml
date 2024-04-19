@@ -17,6 +17,9 @@ dependencies:
   immer:
     specifier: ^10.0.4
     version: 10.0.4
+  rc-menu:
+    specifier: ^9.13.0
+    version: 9.13.0(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -32,6 +35,9 @@ dependencies:
   ts-pattern:
     specifier: ^5.1.1
     version: 5.1.1
+  use-immer:
+    specifier: ^0.9.0
+    version: 0.9.0(immer@10.0.4)(react@18.2.0)
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -6126,6 +6132,16 @@ packages:
 
   /url-template@2.0.8:
     resolution: {integrity: sha512-XdVKMF4SJ0nP/O7XIPB0JwAEuT9lDIYnNsK8yGVe43y0AWoKeJNdv3ZNWh7ksJ6KqQFjOO6ox/VEitLnaVNufw==}
+    dev: false
+
+  /use-immer@0.9.0(immer@10.0.4)(react@18.2.0):
+    resolution: {integrity: sha512-/L+enLi0nvuZ6j4WlyK0US9/ECUtV5v9RUbtxnn5+WbtaXYUaOBoKHDNL9I5AETdurQ4rIFIj/s+Z5X80ATyKw==}
+    peerDependencies:
+      immer: '>=2.0.0'
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      immer: 10.0.4
+      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:
