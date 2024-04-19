@@ -3,6 +3,7 @@
 
 .navbar {
   background-color: $color-100;
+  padding: 0;
 
   .menu {
     @include responsive-width;
