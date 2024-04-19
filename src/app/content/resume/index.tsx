@@ -1,7 +1,7 @@
 import { resumeSchema } from '../../../resume/resume';
 import myResume from '../../../resume/my-resume.json';
 import { Typography } from 'antd';
-import classes from './Result.module.scss';
+import classes from './Resume.module.scss';
 
 const resume = resumeSchema.parse(myResume);
 
