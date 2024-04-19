@@ -1,5 +1,10 @@
 @import "../../styles/theme";
 
 .navbar {
-  background-color: $color-200;
+  padding: 0 5rem;
+  background-color: transparent;
+
+  .menu {
+    margin: 0;
+  }
 }
