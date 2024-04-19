@@ -1,10 +1,17 @@
-import type { PropsWithChildren } from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Layout } from 'antd';
+import { theme } from '../theme';
 
-export const Navbar = (props: PropsWithChildren) => {
+export const Navbar = () => {
 	return (
-		<Flex as="nav" height="100px" width="100px" bg={['primary.500']}>
-			{props.children}
-		</Flex>
+		<Layout>
+			<Layout.Header
+				style={{
+					backgroundColor: theme.token?.colorPrimary,
+					color: 'white'
+				}}
+			>
+				Header
+			</Layout.Header>
+		</Layout>
 	);
 };

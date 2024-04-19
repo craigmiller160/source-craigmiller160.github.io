@@ -1,9 +1,10 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import { Navbar } from './navbar';
+import { ConfigProvider } from 'antd';
+import './app.scss';
 import { theme } from './theme';
 
 export const App = () => (
-	<ChakraProvider theme={theme}>
+	<ConfigProvider theme={theme}>
 		<Navbar />
-	</ChakraProvider>
+	</ConfigProvider>
 );
