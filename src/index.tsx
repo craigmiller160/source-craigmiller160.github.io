@@ -1,4 +1,6 @@
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { App } from './app';
 
 const rootElement = document.querySelector('#root');
 if (!rootElement) {
@@ -6,4 +8,8 @@ if (!rootElement) {
 }
 
 const root = createRoot(rootElement);
-root.render(<h1>Hello World</h1>);
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
