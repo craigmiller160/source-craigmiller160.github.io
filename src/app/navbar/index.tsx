@@ -32,17 +32,15 @@ export const Navbar = () => {
 	};
 
 	return (
-		<Layout>
-			<Layout.Header className={classes.navbar}>
-				<Menu
-					className={classes.menu}
-					theme="light"
-					mode="horizontal"
-					items={items}
-					selectedKeys={[menuKey]}
-					onClick={onMenuClick}
-				/>
-			</Layout.Header>
-		</Layout>
+		<Layout.Header className={classes.navbar}>
+			<Menu
+				className={classes.menu}
+				theme="light"
+				mode="horizontal"
+				items={items}
+				selectedKeys={[menuKey]}
+				onClick={onMenuClick}
+			/>
+		</Layout.Header>
 	);
 };
