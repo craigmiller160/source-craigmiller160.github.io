@@ -89,7 +89,7 @@ type ResumeParsingContext = Readonly<{
 }>;
 
 const parseResume = (resumeText: string): Resume => {
-	const lines = resumeText.split('\n');
+	const lines = resumeText.trim().split('\n');
 	const startingContext: ResumeParsingContext = {
 		resume: BASE_RESUME,
 		section: 'contact',
