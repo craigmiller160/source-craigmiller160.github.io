@@ -1,5 +1,14 @@
 @import "../../styles/responsive";
+@import "../../styles/theme";
 
-.content {
-  @include responsive-width;
+.content-wrapper {
+  background-color: $color-050;
+  height: 100vh;
+
+  .content {
+    @include responsive-width;
+
+    height: 100vh;
+    background-color: white;
+  }
 }

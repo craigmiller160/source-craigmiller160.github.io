@@ -4,5 +4,9 @@ import classes from './Content.module.scss';
 
 export const Content = () => {
 	const router = useRoutes(routes);
-	return <main className={classes.content}>{router}</main>;
+	return (
+		<main className={classes.contentWrapper}>
+			<div className={classes.content}>{router}</div>
+		</main>
+	);
 };
