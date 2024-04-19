@@ -2,7 +2,8 @@ import { createRoot } from 'react-dom/client';
 
 const rootElement = document.querySelector('#root');
 if (!rootElement) {
-    throw new Error('Cannot find root element to mount React to');
+	throw new Error('Cannot find root element to mount React to');
 }
 
 const root = createRoot(rootElement);
+root.render(<h1>Hello World</h1>);
