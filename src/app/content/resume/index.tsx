@@ -9,22 +9,20 @@ export const ResumePage = () => (
 	<div className={classes.resume}>
 		<section className={classes.section}>
 			<div className={classes.row}>
+				<Typography.Title level={3}>{resume.name}</Typography.Title>
 				<Typography.Title level={3}>
-					{resume.current.name}
-				</Typography.Title>
-				<Typography.Title level={3}>
-					{resume.current.contact.email}
+					{resume.contact.email}
 				</Typography.Title>
 			</div>
 		</section>
 		<section className={classes.section}>
 			<div className={classes.row}>
 				<Typography.Title level={3}>
-					{resume.current.intro.title}
+					{resume.intro.title}
 				</Typography.Title>
 			</div>
 			<div className={classes.row}>
-				<Typography.Text>{resume.current.intro.body}</Typography.Text>
+				<Typography.Text>{resume.intro.body}</Typography.Text>
 			</div>
 		</section>
 		<section className={classes.section}>
