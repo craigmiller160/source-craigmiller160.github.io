@@ -9,5 +9,14 @@
     @include responsive-width;
 
     background-color: $color-100;
+
+    .item {
+      color: $foreground-dark;
+    }
+
+    .brand {
+      font-size: $antd-font-size-h4;
+
+    }
   }
 }

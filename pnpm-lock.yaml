@@ -8,6 +8,9 @@ dependencies:
   antd:
     specifier: ^5.16.2
     version: 5.16.2(react-dom@18.2.0)(react@18.2.0)
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   googleapis:
     specifier: ^134.0.0
     version: 134.0.0
