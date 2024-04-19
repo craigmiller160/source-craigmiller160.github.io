@@ -1,4 +1,4 @@
-import { Layout, Menu, type MenuProps, Typography } from 'antd';
+import { Layout, Menu, type MenuProps } from 'antd';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 
@@ -9,8 +9,8 @@ const items: MenuProps['items'] = [
 		label: 'Craig Miller'
 	},
 	{
-		key: 'b',
-		label: 'BCD',
+		key: 'resume',
+		label: 'Resume',
 		className: classes.item
 	}
 ];
