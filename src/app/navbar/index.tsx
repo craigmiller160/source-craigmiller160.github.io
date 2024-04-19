@@ -1,17 +1,10 @@
 import { Layout } from 'antd';
-import { theme } from '../theme';
+import classes from './Navbar.module.scss';
 
 export const Navbar = () => {
 	return (
 		<Layout>
-			<Layout.Header
-				style={{
-					backgroundColor: theme.token?.colorPrimary,
-					color: 'white'
-				}}
-			>
-				Header
-			</Layout.Header>
+			<Layout.Header className={classes.navbar}>Header</Layout.Header>
 		</Layout>
 	);
 };
