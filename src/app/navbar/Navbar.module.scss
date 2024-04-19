@@ -1,10 +1,12 @@
 @import "../../styles/theme";
+@import "../../styles/responsive";
 
 .navbar {
-  padding: 0 5rem;
-  background-color: transparent;
+  background-color: $color-100;
 
   .menu {
-    margin: 0;
+    @include responsive-width;
+
+    background-color: $color-100;
   }
 }

@@ -1,5 +1,22 @@
-$color-100: '#00b8ff';
-$color-200: '#009bd6';
-$color-300: '#00719c';
-$color-400: '#00415a';
-$color-500: '#001f2b';
+$color-100: #00b8ff;
+$color-200: #009bd6;
+$color-300: #00719c;
+$color-400: #00415a;
+$color-500: #001f2b;
+
+$foreground-light: white;
+$foreground-dark: black;
+
+$page-margin-xxl: 0 20rem;
+$page-margin-xl: 0 15rem;
+$page-margin-lg: 0 10rem;
+$page-margin-md: 0 5rem;
+$page-margin-sm: 0;
+$page-margin-xs: 0;
+
+$antd-breakpoint-xxl: 1600px;
+$antd-breakpoint-xl: 1200px;
+$antd-breakpoint-lg: 992px;
+$antd-breakpoint-md: 768px;
+$antd-breakpoint-sm: 576px;
+$antd-breakpoint-xs: 480px;
