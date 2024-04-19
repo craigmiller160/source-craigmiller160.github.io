@@ -129,7 +129,7 @@ const parseSkillLine = (
 			'Databases',
 			'Cloud Deployment',
 			'Agile Experience'
-		].includes(line)
+		].includes(line.trim())
 	) {
 		return context;
 	}

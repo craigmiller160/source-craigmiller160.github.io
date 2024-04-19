@@ -59,19 +59,48 @@
   },
   "skills": {
     "agileExperience": [
-      "Agile Experience"
+      "Scrum",
+      "Kanban"
     ],
     "cloudDeployment": [
-      "Cloud Deployment"
+      "Docker",
+      "Kubernetes",
+      "CloudFoundry",
+      "OpenShift",
+      "AWS"
     ],
     "databases": [
-      "Databases"
+      "PostgreSQL",
+      "MySQL",
+      "SQL Server",
+      "Oracle",
+      "MongoDB",
+      "Flyway",
+      "Liquibase"
     ],
     "frameworksAndTools": [
-      "Frameworks/Tools"
+      "SpringBoot",
+      "Jersey/JAX-RS",
+      "Maven",
+      "Gradle",
+      "Hibernate",
+      "React",
+      "Angular",
+      "Vue",
+      "Svelte",
+      "NodeJS",
+      "ExpressJS"
     ],
     "languages": [
-      "Languages"
+      "Java",
+      "JavaScript",
+      "HTML5/CSS3",
+      "TypeScript",
+      "Kotlin",
+      "Scala",
+      "SQL",
+      "Bash",
+      "XSLT"
     ]
   }
 }
