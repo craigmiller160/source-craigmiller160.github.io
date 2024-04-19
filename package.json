@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "scss": "typed-scss-modules src",
     "download-resume": "tsx ./src/resume-downloader",
     "postinstall": "c-init browser"
   },
@@ -16,6 +17,7 @@
     "@types/react-dom": "^18.2.25",
     "cross-env": "^7.0.3",
     "tsx": "^4.7.2",
+    "typed-scss-modules": "^8.0.1",
     "typescript": "^5.4.5"
   },
   "dependencies": {
