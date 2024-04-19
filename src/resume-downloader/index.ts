@@ -79,7 +79,9 @@ type ResumeSection =
 	| 'intro'
 	| 'experience'
 	| 'skills'
-	| 'certifications';
+	| 'certifications'
+	| 'education'
+	| 'honors';
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
@@ -112,7 +114,9 @@ const parseLine = (
 		.with('intro', () => parseIntroLine(context, line))
 		.with('experience', () => parseExperienceLine(context, line))
 		.with('skills', () => parseSkillLine(context, line))
-		.with('certifications', () => context)
+		.with('certifications', () => parseCertificationsLine(context, line))
+		.with('education', () => parseEducationLine(context, line))
+		.with('honors', () => parseHonorsLine(context, line))
 		.exhaustive();
 
 const isNotEmpty = (array: ReadonlyArray<string>): boolean => array.length > 0;
@@ -278,6 +282,44 @@ const parseContactLine = (
 
 	return produce(context, (draft) => {
 		draft.resume.name = line.trim();
+	});
+};
+
+const parseCertificationsLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if ('Certifications' === line.trim()) {
+		return context;
+	}
+
+	if ('Education' === line.trim()) {
+		return produce(context, (draft) => {
+			draft.section = 'education';
+		});
+	}
+
+	return produce(context, (draft) => {
+		draft.resume.certifications.push(line.trim());
+	});
+};
+
+const parseEducationLine = (context: ResumeParsingContext, line: string) =>
+	produce(context, (draft) => {
+		draft.resume.education = line.trim();
+		draft.section = 'honors';
+	});
+
+const parseHonorsLine = (
+	context: ResumeParsingContext,
+	line: string
+): ResumeParsingContext => {
+	if ('Honors & Achievements' === line.trim()) {
+		return context;
+	}
+
+	return produce(context, (draft) => {
+		draft.resume.honorsAndAchievements.push(line.trim());
 	});
 };
 
