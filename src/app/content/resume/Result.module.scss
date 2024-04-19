@@ -1,0 +1,15 @@
+.resume {
+  // TODO need to adjust this by screen size
+  padding: 0 10rem;
+
+  .section {
+    margin-bottom: 0.5rem;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
