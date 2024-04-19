@@ -273,10 +273,15 @@ const parseContactLine = (
 		return context;
 	}
 
+	if (context.resume.contact.email.length > 0) {
+		return produce(context, (draft) => {
+			draft.section = 'intro';
+		});
+	}
+
 	if (context.resume.name.length > 0) {
 		return produce(context, (draft) => {
 			draft.resume.contact.email = line.trim();
-			draft.section = 'intro';
 		});
 	}
 
