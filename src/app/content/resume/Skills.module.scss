@@ -3,4 +3,8 @@
 .skills {
   display: flex;
   flex-direction: column;
+
+  .category {
+    flex: 1;
+  }
 }
