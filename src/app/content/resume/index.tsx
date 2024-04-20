@@ -10,7 +10,7 @@ export const ResumePage = () => (
 		<section className={classes.section}>
 			<div className={classes.row}>
 				<Typography.Title level={3}>{resume.name}</Typography.Title>
-				<Typography.Title level={3}>
+				<Typography.Title level={3} className={classes.marginTopFix}>
 					{resume.contact.email}
 				</Typography.Title>
 			</div>
