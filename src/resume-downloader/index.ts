@@ -75,7 +75,6 @@ const downloadResume = async () => {
 };
 
 type ResumeSection =
-	| 'contact'
 	| 'intro'
 	| 'experience'
 	| 'skills'
@@ -92,7 +91,7 @@ const parseResume = (resumeText: string): Resume => {
 	const lines = resumeText.trim().split('\n');
 	const startingContext: ResumeParsingContext = {
 		resume: BASE_RESUME,
-		section: 'contact',
+		section: 'intro',
 		experienceIndex: 0
 	};
 
@@ -110,7 +109,6 @@ const parseLine = (
 	line: string
 ): ResumeParsingContext =>
 	match(context.section)
-		.with('contact', () => parseContactLine(context, line))
 		.with('intro', () => parseIntroLine(context, line))
 		.with('experience', () => parseExperienceLine(context, line))
 		.with('skills', () => parseSkillLine(context, line))
@@ -253,6 +251,22 @@ const parseIntroLine = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {
+	if (!context.resume.name) {
+		return produce(context, (draft) => {
+			draft.resume.name = line.trim();
+		});
+	}
+
+	if (
+		!STARTS_WITH_WHITESPACE_REGEX.test(line) &&
+		context.resume.name &&
+		!context.resume.contact.email
+	) {
+		return produce(context, (draft) => {
+			draft.resume.contact.email = line.trim();
+		});
+	}
+
 	if (!context.resume.intro.title) {
 		return produce(context, (draft) => {
 			draft.resume.intro.title = line.trim();
@@ -261,11 +275,10 @@ const parseIntroLine = (
 
 	return produce(context, (draft) => {
 		draft.resume.intro.body = line.trim();
-		draft.section = 'experience';
 	});
 };
 
-const parseContactLine = (
+const parseIntro = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {

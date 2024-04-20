@@ -5,7 +5,8 @@
   },
   "education": "Bachelor’s Degree, Ramapo College of New Jersey",
   "certifications": [
-    "Oracle Certified Java Professional"
+    "Scrum, Kanban",
+    "* Oracle Certified Java Professional"
   ],
   "experience": [
     {
@@ -63,26 +64,23 @@
   },
   "skills": {
     "agileExperience": [
-      "Scrum",
-      "Kanban"
-    ],
-    "cloudDeployment": [
       "Docker",
       "Kubernetes",
       "CloudFoundry",
       "OpenShift",
       "AWS"
     ],
-    "databases": [
+    "cloudDeployment": [
       "PostgreSQL",
       "MySQL",
       "SQL Server",
       "Oracle",
       "MongoDB",
       "Flyway",
-      "Liquibase"
+      "Liquibase",
+      "Kafka"
     ],
-    "frameworksAndTools": [
+    "databases": [
       "SpringBoot",
       "Jersey/JAX-RS",
       "Maven",
@@ -95,7 +93,7 @@
       "NodeJS",
       "ExpressJS"
     ],
-    "languages": [
+    "frameworksAndTools": [
       "Java",
       "JavaScript",
       "HTML5/CSS3",
@@ -105,6 +103,9 @@
       "SQL",
       "Bash",
       "XSLT"
+    ],
+    "languages": [
+      "Databases/MQs"
     ]
   }
 }
