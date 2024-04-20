@@ -5,9 +5,11 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import {
 	CodeOutlined,
+	DollarOutlined,
 	FormOutlined,
 	GithubOutlined,
-	ProfileOutlined
+	ProfileOutlined,
+	ProjectOutlined
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
@@ -17,11 +19,14 @@ const RESUME_KEY = 'resume';
 const GITHUB_SOURCE_KEY = 'github_portfolio_source';
 const GITHUB_KEY = 'github';
 const GITHUB_PROFILE_KEY = 'github_profile';
+const PERSONAL_PROJECTS_KEY = 'personal_projects';
+const PROJECT_EXPENSE_TRACKER_KEY = 'project_expense_tracker';
 type MenuKey =
 	| typeof NOTHING_KEY
 	| typeof RESUME_KEY
 	| typeof GITHUB_SOURCE_KEY
-	| typeof GITHUB_PROFILE_KEY;
+	| typeof GITHUB_PROFILE_KEY
+	| typeof PROJECT_EXPENSE_TRACKER_KEY;
 
 const items: MenuProps['items'] = [
 	{
@@ -34,6 +39,20 @@ const items: MenuProps['items'] = [
 		label: 'Resume',
 		className: classes.item,
 		icon: <FormOutlined />
+	},
+	{
+		key: PERSONAL_PROJECTS_KEY,
+		label: 'Personal Projects',
+		className: classes.item,
+		icon: <ProjectOutlined />,
+		children: [
+			{
+				key: PROJECT_EXPENSE_TRACKER_KEY,
+				label: 'Expense Tracker',
+				className: classes.item,
+				icon: <DollarOutlined />
+			}
+		]
 	},
 	{
 		key: GITHUB_KEY,
@@ -69,6 +88,7 @@ const useExtendedNavigate = (): ExtendedNavigate => {
 const menuKeyToRoute = (key: MenuKey): string =>
 	match<MenuKey, string>(key)
 		.with(P.union('nothing', 'resume'), () => '/resume')
+		.with('project_expense_tracker', () => '/projects/expense-tracker')
 		.with(
 			'github_portfolio_source',
 			() =>
@@ -77,18 +97,13 @@ const menuKeyToRoute = (key: MenuKey): string =>
 		.with('github_profile', () => 'https://github.com/craigmiller160')
 		.exhaustive();
 
-const menuKeyToStateMenuKey = (key: MenuKey): MenuKey =>
-	match<MenuKey, MenuKey>(key)
+const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
+	match<MenuKey, MenuKey>(newKey)
 		.with(
-			P.union(
-				'nothing',
-				'resume',
-				'github_portfolio_source',
-				'github_profile'
-			),
-			() => 'resume'
+			P.union('nothing', 'github_portfolio_source', 'github_profile'),
+			() => currentKey
 		)
-		.exhaustive();
+		.otherwise(() => newKey);
 
 export const Navbar = () => {
 	const [menuKey, setMenuKey] = useState<MenuKey>('resume');
@@ -97,8 +112,7 @@ export const Navbar = () => {
 	const onMenuClick = (info: MenuInfo) => {
 		const key = info.key as MenuKey;
 
-		const stateMenuKey = menuKeyToStateMenuKey(key);
-		setMenuKey(stateMenuKey);
+		setMenuKey((currentKey) => menuKeyToStateMenuKey(key, currentKey));
 
 		const route = menuKeyToRoute(key);
 		navigate(route);
