@@ -1,5 +1,12 @@
 market-tracker
 expense-tracker
+- backend
+- frontend
+- postgres
+- rules engine
+- keycloak
+- cert manager
+- onepassword
 covid-19
 db-backup-service
 tolkien-ai
