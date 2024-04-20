@@ -28,6 +28,7 @@
 
 .row {
   display: flex;
+
   @media (min-width: $antd-breakpoint-lg) {
     flex-direction: row;
     justify-content: space-between;
