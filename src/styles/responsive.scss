@@ -34,7 +34,7 @@
     align-items: baseline;
   }
 
-  @media (max-width: $antd-breakpoint-md - 1) {
+  @media (max-width: $antd-breakpoint-lg - 1) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
