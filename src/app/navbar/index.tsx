@@ -3,13 +3,14 @@ import { type MenuInfo } from 'rc-menu/lib/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
-import { FormOutlined } from '@ant-design/icons';
+import { CodeOutlined, FormOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
 const RESUME_KEY = 'resume';
-type MenuKey = typeof NOTHING_KEY | typeof RESUME_KEY;
+const SOURCE_KEY = 'source';
+type MenuKey = typeof NOTHING_KEY | typeof RESUME_KEY | typeof SOURCE_KEY;
 
 const items: MenuProps['items'] = [
 	{
@@ -22,24 +23,51 @@ const items: MenuProps['items'] = [
 		label: 'Resume',
 		className: classes.item,
 		icon: <FormOutlined />
+	},
+	{
+		key: SOURCE_KEY,
+		label: 'Page Source',
+		className: classes.item,
+		icon: <CodeOutlined />
 	}
 ];
+
+type ExtendedNavigate = (uri: string) => void;
+const useExtendedNavigate = (): ExtendedNavigate => {
+	const navigate = useNavigate();
+	return (uri) => {
+		if (/^https?.+$/.test(uri)) {
+			window.open(uri, '_blank');
+		}
+		navigate(uri);
+	};
+};
 
 const menuKeyToRoute = (key: MenuKey): string =>
 	match(key)
 		.with(P.union('nothing', 'resume'), () => '/resume')
+		.with(
+			'source',
+			() =>
+				'https://github.com/craigmiller160/source-craigmiller160.portfolio'
+		)
+		.exhaustive();
+
+const menuKeyToStateMenuKey = (key: MenuKey): MenuKey =>
+	match<MenuKey, MenuKey>(key)
+		.with(P.union('nothing', 'resume', 'source'), () => 'resume')
 		.exhaustive();
 
 export const Navbar = () => {
 	const [menuKey, setMenuKey] = useState<MenuKey>('resume');
-	const navigate = useNavigate();
+	const navigate = useExtendedNavigate();
 
 	const onMenuClick = (info: MenuInfo) => {
-		let key: MenuKey = info.key as MenuKey;
-		if (info.key === NOTHING_KEY) {
-			key = 'resume';
-		}
-		setMenuKey(key);
+		const key = info.key as MenuKey;
+
+		const stateMenuKey = menuKeyToStateMenuKey(key);
+		setMenuKey(stateMenuKey);
+
 		const route = menuKeyToRoute(key);
 		navigate(route);
 	};
