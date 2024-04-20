@@ -12,6 +12,16 @@
 
     .item {
       color: $foreground-dark;
+
+      :global(.ant-menu-submenu-title) {
+        :global(.ant-menu-item-icon) {
+          color: $foreground-dark;
+        }
+
+        :global(.ant-menu-title-content) {
+          color: $foreground-dark;
+        }
+      }
     }
 
     .brand {
