@@ -4,6 +4,7 @@ import { Card } from 'antd';
 import classes from './Resume.module.scss';
 import { Experience } from './Experience';
 import { Introduction } from './Introduction';
+import {Skills} from './Skills';
 
 const resume = resumeSchema.parse(myResume);
 
@@ -12,6 +13,7 @@ export const ResumePage = () => (
 		<Card>
 			<Introduction resume={resume} />
 			<Experience resume={resume} />
+			<Skills resume={resume} />
 		</Card>
 	</div>
 );
