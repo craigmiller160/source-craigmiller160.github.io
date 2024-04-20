@@ -18,11 +18,19 @@ const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
 const STARTS_WITH_WHITESPACE_REGEX = /^\s+/;
 const STARTS_WITH_ASTERISK_REGEX = /^\*/;
 const ITEM_AND_DATES_REGEX = /^(?<item>.+)\((?<dates>.+)\)$/;
+const ITEM_AND_INSTITUTION_REGEX = /^(?<item>.+), (?<institution>.+)$/;
 
 const itemAndDatesSchema = z
 	.object({
 		item: z.string(),
 		dates: z.string()
+	})
+	.readonly();
+
+const itemAndInstitutionSchema = z
+	.object({
+		item: z.string(),
+		institution: z.string()
 	})
 	.readonly();
 
@@ -318,8 +326,22 @@ const parseEducationLine = (context: ResumeParsingContext, line: string) => {
 		});
 	}
 
+	const cleanedEducationLine = line
+		.trim()
+		.replace(STARTS_WITH_ASTERISK_REGEX, '')
+		.trim();
+	const groups =
+		ITEM_AND_INSTITUTION_REGEX.exec(cleanedEducationLine)?.groups;
+	if (!groups) {
+		throw new Error(`Invalid education line format: ${groups}`);
+	}
+	const { item, institution } = itemAndInstitutionSchema.parse(groups);
+
 	return produce(context, (draft) => {
-		draft.resume.education = line.trim();
+		draft.resume.education.push({
+			degree: item,
+			institution
+		});
 	});
 };
 
