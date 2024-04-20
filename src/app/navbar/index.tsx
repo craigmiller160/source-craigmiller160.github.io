@@ -3,14 +3,25 @@ import { type MenuInfo } from 'rc-menu/lib/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
-import { CodeOutlined, FormOutlined } from '@ant-design/icons';
+import {
+	CodeOutlined,
+	FormOutlined,
+	GithubOutlined,
+	ProfileOutlined
+} from '@ant-design/icons';
 import { useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
 const RESUME_KEY = 'resume';
-const SOURCE_KEY = 'source';
-type MenuKey = typeof NOTHING_KEY | typeof RESUME_KEY | typeof SOURCE_KEY;
+const GITHUB_SOURCE_KEY = 'github_portfolio_source';
+const GITHUB_KEY = 'github';
+const GITHUB_PROFILE_KEY = 'github_profile';
+type MenuKey =
+	| typeof NOTHING_KEY
+	| typeof RESUME_KEY
+	| typeof GITHUB_SOURCE_KEY
+	| typeof GITHUB_PROFILE_KEY;
 
 const items: MenuProps['items'] = [
 	{
@@ -25,10 +36,22 @@ const items: MenuProps['items'] = [
 		icon: <FormOutlined />
 	},
 	{
-		key: SOURCE_KEY,
-		label: 'Portfolio Source',
+		key: GITHUB_KEY,
+		label: 'Github',
 		className: classes.item,
-		icon: <CodeOutlined />
+		icon: <GithubOutlined />,
+		children: [
+			{
+				key: GITHUB_PROFILE_KEY,
+				label: 'Full Profile',
+				icon: <ProfileOutlined />
+			},
+			{
+				key: GITHUB_SOURCE_KEY,
+				label: 'Portfolio Source',
+				icon: <CodeOutlined />
+			}
+		]
 	}
 ];
 
@@ -44,18 +67,27 @@ const useExtendedNavigate = (): ExtendedNavigate => {
 };
 
 const menuKeyToRoute = (key: MenuKey): string =>
-	match(key)
+	match<MenuKey, string>(key)
 		.with(P.union('nothing', 'resume'), () => '/resume')
 		.with(
-			'source',
+			'github_portfolio_source',
 			() =>
 				'https://github.com/craigmiller160/source-craigmiller160.portfolio'
 		)
+		.with('github_profile', () => 'https://github.com/craigmiller160')
 		.exhaustive();
 
 const menuKeyToStateMenuKey = (key: MenuKey): MenuKey =>
 	match<MenuKey, MenuKey>(key)
-		.with(P.union('nothing', 'resume', 'source'), () => 'resume')
+		.with(
+			P.union(
+				'nothing',
+				'resume',
+				'github_portfolio_source',
+				'github_profile'
+			),
+			() => 'resume'
+		)
 		.exhaustive();
 
 export const Navbar = () => {
