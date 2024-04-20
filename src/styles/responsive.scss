@@ -26,12 +26,22 @@
   }
 }
 
-@mixin responsive-flex {
+.row {
+  display: flex;
   @media (min-width: $antd-breakpoint-lg) {
     flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   @media (max-width: $antd-breakpoint-md - 1) {
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
 }
