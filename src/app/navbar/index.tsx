@@ -4,6 +4,8 @@ import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { FormOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router';
+import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
 const RESUME_KEY = 'resume';
@@ -23,14 +25,23 @@ const items: MenuProps['items'] = [
 	}
 ];
 
+const menuKeyToRoute = (key: MenuKey): string =>
+	match(key)
+		.with(P.union('nothing', 'resume'), () => '/resume')
+		.exhaustive();
+
 export const Navbar = () => {
 	const [menuKey, setMenuKey] = useState<MenuKey>('resume');
+	const navigate = useNavigate();
 
 	const onMenuClick = (info: MenuInfo) => {
+		let key: MenuKey = info.key as MenuKey;
 		if (info.key === NOTHING_KEY) {
-			return;
+			key = 'resume';
 		}
-		setMenuKey(info.key as MenuKey);
+		setMenuKey(key);
+		const route = menuKeyToRoute(key);
+		navigate(route);
 	};
 
 	return (
