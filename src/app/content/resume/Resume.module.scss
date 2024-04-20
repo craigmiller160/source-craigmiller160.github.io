@@ -1,3 +1,5 @@
+@import "../../../styles/responsive";
+
 .resume {
   // TODO need to adjust this by screen size
   padding: 0 10rem;
@@ -8,7 +10,9 @@
 
   .row {
     display: flex;
-    flex-direction: row;
+
+    @include responsive-flex;
+
     justify-content: space-between;
     align-items: baseline;
   }

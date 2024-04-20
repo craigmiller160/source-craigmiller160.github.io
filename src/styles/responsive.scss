@@ -25,3 +25,13 @@
     margin: 0 $page-margin-xxl;
   }
 }
+
+@mixin responsive-flex {
+  @media (min-width: $antd-breakpoint-lg) {
+    flex-direction: row;
+  }
+
+  @media (max-width: $antd-breakpoint-md - 1) {
+    flex-direction: column;
+  }
+}
