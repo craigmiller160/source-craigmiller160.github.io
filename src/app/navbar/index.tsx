@@ -12,7 +12,7 @@ const items: MenuProps['items'] = [
 	{
 		key: NOTHING_KEY,
 		className: classNames(classes.brand, classes.item),
-		label: 'Craig Miller'
+		label: "Craig Miller's Portfolio"
 	},
 	{
 		key: RESUME_KEY,
