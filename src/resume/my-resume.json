@@ -60,7 +60,10 @@
     }
   ],
   "honorsAndAchievements": [
-    "* Eagle Scout, Boy Scouts of America"
+    {
+      "honor": "Eagle Scout",
+      "institution": "Boy Scouts of America"
+    }
   ],
   "intro": {
     "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
