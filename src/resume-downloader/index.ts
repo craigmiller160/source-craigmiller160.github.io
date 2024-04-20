@@ -128,12 +128,18 @@ const parseSkillLine = (
 		[
 			'Languages',
 			'Frameworks/Tools',
-			'Databases',
+			'Databases/MQs',
 			'Cloud Deployment',
 			'Agile Experience'
 		].includes(line.trim())
 	) {
 		return context;
+	}
+
+	if ('Certifications' === line.trim()) {
+		return produce(context, (draft) => {
+			draft.section = 'certifications';
+		});
 	}
 
 	const skills = line.split(',').map((item) => item.trim());
@@ -171,7 +177,6 @@ const parseSkillLine = (
 			)
 			.otherwise(() => {
 				draft.resume.skills.agileExperience = skills;
-				draft.section = 'certifications';
 			});
 	});
 };
@@ -293,10 +298,6 @@ const parseCertificationsLine = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {
-	if ('Certifications' === line.trim()) {
-		return context;
-	}
-
 	if ('Education' === line.trim()) {
 		return produce(context, (draft) => {
 			draft.section = 'education';
@@ -308,11 +309,15 @@ const parseCertificationsLine = (
 	});
 };
 
-const parseEducationLine = (context: ResumeParsingContext, line: string) =>
-	produce(context, (draft) => {
+const parseEducationLine = (context: ResumeParsingContext, line: string) => {
+	if ('Honors & Achievements' === line.trim()) {
+		return context;
+	}
+
+	return produce(context, (draft) => {
 		draft.resume.education = line.trim();
-		draft.section = 'honors';
 	});
+};
 
 const parseHonorsLine = (
 	context: ResumeParsingContext,
