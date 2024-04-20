@@ -11,7 +11,9 @@ type ExperienceProps = Readonly<{
 
 const Experience = (props: ExperienceProps) => (
 	<div className={classes.row}>
-		<Typography.Title level={5}>{props.job.company}</Typography.Title>
+		<Typography.Title level={5}>
+			{props.job.company} ({props.job.dates})
+		</Typography.Title>
 	</div>
 );
 
