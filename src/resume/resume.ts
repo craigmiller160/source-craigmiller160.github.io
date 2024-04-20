@@ -55,6 +55,7 @@ const educationSchema = z
 		institution: z.string()
 	})
 	.readonly();
+export type Education = z.TypeOf<typeof educationSchema>;
 
 export const resumeSchema = z
 	.object({
