@@ -4,17 +4,17 @@ import 'antd/dist/reset.css';
 import './app.scss';
 import { theme } from './theme';
 import { Content } from './content';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Footer } from './footer';
 
 export const App = () => (
 	<ConfigProvider theme={theme}>
-		<BrowserRouter>
+		<HashRouter>
 			<Layout>
 				<Navbar />
 				<Content />
 				<Footer />
 			</Layout>
-		</BrowserRouter>
+		</HashRouter>
 	</ConfigProvider>
 );
