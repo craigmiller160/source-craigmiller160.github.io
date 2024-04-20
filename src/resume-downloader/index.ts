@@ -180,10 +180,6 @@ const parseExperienceLine = (
 	context: ResumeParsingContext,
 	line: string
 ): ResumeParsingContext => {
-	if ('Industry Experience' === line.trim()) {
-		return context;
-	}
-
 	if ('Technical Knowledge' === line.trim()) {
 		return produce(context, (draft) => {
 			draft.section = 'skills';
@@ -278,15 +274,15 @@ const parseIntroLine = (
 		});
 	}
 
-	if (context.resume.intro.title) {
-		return produce(context, (draft) => {
-			draft.resume.intro.body = line.trim();
-		});
-	}
-
 	if ('Industry Experience' === line.trim()) {
 		return produce(context, (draft) => {
 			draft.section = 'experience';
+		});
+	}
+
+	if (context.resume.intro.title) {
+		return produce(context, (draft) => {
+			draft.resume.intro.body = line.trim();
 		});
 	}
 
