@@ -18,5 +18,15 @@ export const Other = (props: Props) => (
 				</ul>
 			</div>
 		</section>
+		<section>
+			<div className={classes.col}>
+				<Typography.Title level={3}>Education</Typography.Title>
+			</div>
+		</section>
+		<section>
+			<div className={classes.col}>
+				<Typography.Title level={3}>Honors & Achievements</Typography.Title>
+			</div>
+		</section>
 	</div>
 );
