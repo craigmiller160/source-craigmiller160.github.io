@@ -26,7 +26,7 @@ const items: MenuProps['items'] = [
 	},
 	{
 		key: SOURCE_KEY,
-		label: 'Page Source',
+		label: 'Portfolio Source',
 		className: classes.item,
 		icon: <CodeOutlined />
 	}
