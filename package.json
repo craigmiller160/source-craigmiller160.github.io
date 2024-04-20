@@ -6,7 +6,8 @@
     "scss": "typed-scss-modules src",
     "download-resume": "tsx ./src/resume-downloader",
     "postinstall": "c-init browser",
-    "build": "c-validate && bash ./scripts/build-and-deploy.sh"
+    "forceBuild": "bash ./scripts/build-and-deploy.sh",
+    "build": "c-validate && npm run forceBuild"
   },
   "keywords": [],
   "author": "",
