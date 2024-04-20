@@ -2,6 +2,7 @@ import { type Job, resumeSchema } from '../../../resume/resume';
 import myResume from '../../../resume/my-resume.json';
 import { Typography } from 'antd';
 import classes from './Resume.module.scss';
+import classNames from 'classnames';
 
 const resume = resumeSchema.parse(myResume);
 
@@ -10,10 +11,15 @@ type ExperienceProps = Readonly<{
 }>;
 
 const Experience = (props: ExperienceProps) => (
-	<div className={classes.row}>
-		<Typography.Title level={5}>
+	<div className={classNames(classes.col, classes.job)}>
+		<Typography.Title level={5} className={classes.title}>
 			{props.job.company} ({props.job.dates})
 		</Typography.Title>
+		<Typography.Text className={classes.positions}>
+			{props.job.positions
+				.map((position) => `${position.title} (${position.dates})`)
+				.join(', ')}
+		</Typography.Text>
 	</div>
 );
 
