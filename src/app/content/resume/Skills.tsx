@@ -15,19 +15,33 @@ export const Skills = (props: Props) => (
 		<div className={classes.row}>
 			<div className={classNames(classes.col, classes.category)}>
 				<Typography.Title level={5}>Languages</Typography.Title>
-				{props.resume.skills.languages.join(', ')}
+				<Typography.Text>
+					{props.resume.skills.languages.join(', ')}
+				</Typography.Text>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
 				<Typography.Title level={5}>Frameworks/Tools</Typography.Title>
+				<Typography.Text>
+					{props.resume.skills.frameworksAndTools.join(', ')}
+				</Typography.Text>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
 				<Typography.Title level={5}>Databases</Typography.Title>
+				<Typography.Text>
+					{props.resume.skills.databases.join(', ')}
+				</Typography.Text>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
 				<Typography.Title level={5}>Cloud Deployment</Typography.Title>
+				<Typography.Text>
+					{props.resume.skills.cloudDeployment.join(', ')}
+				</Typography.Text>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
 				<Typography.Title level={5}>Agile Experience</Typography.Title>
+				<Typography.Text>
+					{props.resume.skills.agileExperience.join(', ')}
+				</Typography.Text>
 			</div>
 		</div>
 	</section>
