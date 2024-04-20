@@ -3,7 +3,12 @@
   "contact": {
     "email": "craigmiller.software.engineer@gmail.com"
   },
-  "education": "* Bachelor’s Degree, Ramapo College of New Jersey",
+  "education": [
+    {
+      "degree": "Bachelor’s Degree",
+      "institution": "Ramapo College of New Jersey"
+    }
+  ],
   "certifications": [
     "Oracle Certified Java Professional"
   ],

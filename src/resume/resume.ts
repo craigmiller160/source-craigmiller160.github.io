@@ -57,6 +57,14 @@ const educationSchema = z
 	.readonly();
 export type Education = z.TypeOf<typeof educationSchema>;
 
+const honorSchema = z
+	.object({
+		honor: z.string(),
+		institution: z.string()
+	})
+	.readonly();
+export type Honor = z.TypeOf<typeof honorSchema>;
+
 export const resumeSchema = z
 	.object({
 		name: z.string(),
@@ -66,7 +74,7 @@ export const resumeSchema = z
 		skills: skillsSchema,
 		certifications: z.array(z.string()).readonly(),
 		education: z.array(educationSchema).readonly(),
-		honorsAndAchievements: z.array(z.string()).readonly()
+		honorsAndAchievements: z.array(honorSchema).readonly()
 	})
 	.readonly();
 

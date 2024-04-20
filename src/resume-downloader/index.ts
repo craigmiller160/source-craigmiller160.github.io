@@ -353,8 +353,21 @@ const parseHonorsLine = (
 		return context;
 	}
 
+	const cleanedHonorsLine = line
+		.trim()
+		.replace(STARTS_WITH_ASTERISK_REGEX, '')
+		.trim();
+	const groups = ITEM_AND_INSTITUTION_REGEX.exec(cleanedHonorsLine)?.groups;
+	if (!groups) {
+		throw new Error(`Invalid education line format: ${groups}`);
+	}
+	const { item, institution } = itemAndInstitutionSchema.parse(groups);
+
 	return produce(context, (draft) => {
-		draft.resume.honorsAndAchievements.push(line.trim());
+		draft.resume.honorsAndAchievements.push({
+			honor: item,
+			institution
+		});
 	});
 };
 
