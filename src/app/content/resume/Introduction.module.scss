@@ -1,0 +1,10 @@
+@import "../../../styles/responsive";
+
+.introduction {
+  .margin-top-fix {
+    &:global(.ant-typography) {
+      // Weird antd class affecting only a single element, this should fix it
+      margin-top: 0;
+    }
+  }
+}

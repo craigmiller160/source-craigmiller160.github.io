@@ -1,5 +1,5 @@
 import type { Resume } from '../../../resume/resume';
-import classes from './Resume.module.scss';
+import classes from './Introduction.module.scss';
 import { Typography } from 'antd';
 
 type Props = Readonly<{
@@ -7,7 +7,7 @@ type Props = Readonly<{
 }>;
 
 export const Introduction = (props: Props) => (
-	<>
+	<div className={classes.introduction}>
 		<section>
 			<div className={classes.row}>
 				<Typography.Title level={3}>
@@ -28,5 +28,5 @@ export const Introduction = (props: Props) => (
 				<Typography.Text>{props.resume.intro.body}</Typography.Text>
 			</div>
 		</section>
-	</>
+	</div>
 );
