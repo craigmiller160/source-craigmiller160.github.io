@@ -20,6 +20,11 @@ const Experience = (props: ExperienceProps) => (
 				.map((position) => `${position.title} (${position.dates})`)
 				.join(', ')}
 		</Typography.Text>
+		<ul>
+			{props.job.achievements.map((achievement, index) => (
+				<li key={index}>{achievement}</li>
+			))}
+		</ul>
 	</div>
 );
 
