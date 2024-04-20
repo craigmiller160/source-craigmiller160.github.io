@@ -1,0 +1,14 @@
+@import "../../styles/theme";
+@import "../../styles/responsive";
+
+.footer {
+  background-color: $color-100;
+
+  .footer-content {
+    @include responsive-width;
+
+    a {
+      color: $foreground-dark;
+    }
+  }
+}
