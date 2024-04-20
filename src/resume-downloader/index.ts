@@ -305,7 +305,9 @@ const parseCertificationsLine = (
 	}
 
 	return produce(context, (draft) => {
-		draft.resume.certifications.push(line.trim());
+		draft.resume.certifications.push(
+			line.trim().replace(STARTS_WITH_ASTERISK_REGEX, '').trim()
+		);
 	});
 };
 
