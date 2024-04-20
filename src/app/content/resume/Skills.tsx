@@ -28,7 +28,7 @@ export const Skills = (props: Props) => (
 				</Typography.Text>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>Databases</Typography.Title>
+				<Typography.Title level={5}>Databases / MQs</Typography.Title>
 				<Typography.Text>
 					{props.resume.skills.databases.join(', ')}
 				</Typography.Text>
