@@ -11,5 +11,22 @@ export const Skills = (props: Props) => (
 		<div className={classes.row}>
 			<Typography.Title level={3}>Technical Knowledge</Typography.Title>
 		</div>
+		<div className={classes.row}>
+			<div className={classes.col}>
+				<Typography.Title level={5}>Languages</Typography.Title>
+			</div>
+			<div className={classes.col}>
+				<Typography.Title level={5}>Frameworks/Tools</Typography.Title>
+			</div>
+			<div className={classes.col}>
+				<Typography.Title level={5}>Databases</Typography.Title>
+			</div>
+			<div className={classes.col}>
+				<Typography.Title level={5}>Cloud Deployment</Typography.Title>
+			</div>
+			<div className={classes.col}>
+				<Typography.Title level={5}>Agile Experience</Typography.Title>
+			</div>
+		</div>
 	</section>
 );
