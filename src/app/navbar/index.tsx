@@ -3,6 +3,7 @@ import { type MenuInfo } from 'rc-menu/lib/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { FormOutlined } from '@ant-design/icons';
 
 const NOTHING_KEY = 'nothing';
 const RESUME_KEY = 'resume';
@@ -17,7 +18,8 @@ const items: MenuProps['items'] = [
 	{
 		key: RESUME_KEY,
 		label: 'Resume',
-		className: classes.item
+		className: classes.item,
+		icon: <FormOutlined />
 	}
 ];
 
