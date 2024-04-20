@@ -267,40 +267,30 @@ const parseIntroLine = (
 		});
 	}
 
-	if (!context.resume.intro.title) {
+	if (
+		!STARTS_WITH_WHITESPACE_REGEX.test(line) &&
+		context.resume.contact.email &&
+		!line.startsWith('Riverview') &&
+		!context.resume.intro.title
+	) {
 		return produce(context, (draft) => {
 			draft.resume.intro.title = line.trim();
 		});
 	}
 
-	return produce(context, (draft) => {
-		draft.resume.intro.body = line.trim();
-	});
-};
-
-const parseIntro = (
-	context: ResumeParsingContext,
-	line: string
-): ResumeParsingContext => {
-	if (STARTS_WITH_WHITESPACE_REGEX.test(line)) {
-		return context;
-	}
-
-	if (context.resume.contact.email.length > 0) {
+	if (context.resume.intro.title) {
 		return produce(context, (draft) => {
-			draft.section = 'intro';
+			draft.resume.intro.body = line.trim();
 		});
 	}
 
-	if (context.resume.name.length > 0) {
+	if ('Industry Experience' === line.trim()) {
 		return produce(context, (draft) => {
-			draft.resume.contact.email = line.trim();
+			draft.section = 'experience';
 		});
 	}
 
-	return produce(context, (draft) => {
-		draft.resume.name = line.trim();
-	});
+	return context;
 };
 
 const parseCertificationsLine = (
