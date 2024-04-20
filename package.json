@@ -5,7 +5,8 @@
   "scripts": {
     "scss": "typed-scss-modules src",
     "download-resume": "tsx ./src/resume-downloader",
-    "postinstall": "c-init browser"
+    "postinstall": "c-init browser",
+    "build": "c-validate && bash ./scripts/build-and-deploy.sh"
   },
   "keywords": [],
   "author": "",

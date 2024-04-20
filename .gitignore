@@ -4,3 +4,4 @@
 node_modules
 market-tracker-service-account.json
 src/resume/my-resume.txt
+build
