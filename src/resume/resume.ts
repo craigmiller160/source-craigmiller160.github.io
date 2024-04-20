@@ -65,7 +65,7 @@ export const resumeSchema = z
 		experience: z.array(jobSchema).readonly(),
 		skills: skillsSchema,
 		certifications: z.array(z.string()).readonly(),
-		education: educationSchema,
+		education: z.array(educationSchema).readonly(),
 		honorsAndAchievements: z.array(z.string()).readonly()
 	})
 	.readonly();

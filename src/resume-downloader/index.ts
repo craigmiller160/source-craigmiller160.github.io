@@ -31,7 +31,7 @@ const BASE_RESUME: Resume = {
 	contact: {
 		email: ''
 	},
-	education: '',
+	education: [],
 	certifications: [],
 	experience: [],
 	honorsAndAchievements: [],
