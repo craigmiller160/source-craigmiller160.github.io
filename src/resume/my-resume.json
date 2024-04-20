@@ -3,7 +3,7 @@
   "contact": {
     "email": "craigmiller.software.engineer@gmail.com"
   },
-  "education": "Eagle Scout, Boy Scouts of America",
+  "education": "Bachelor’s Degree, Ramapo College of New Jersey",
   "certifications": [
     "* Oracle Certified Java Professional"
   ],
@@ -54,7 +54,9 @@
       ]
     }
   ],
-  "honorsAndAchievements": [],
+  "honorsAndAchievements": [
+    "Eagle Scout, Boy Scouts of America"
+  ],
   "intro": {
     "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
     "title": "Staff/Principal/Senior Full Stack Engineer"

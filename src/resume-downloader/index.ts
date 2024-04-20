@@ -311,7 +311,9 @@ const parseCertificationsLine = (
 
 const parseEducationLine = (context: ResumeParsingContext, line: string) => {
 	if ('Honors & Achievements' === line.trim()) {
-		return context;
+		return produce(context, (draft) => {
+			draft.section = 'honors';
+		});
 	}
 
 	return produce(context, (draft) => {
