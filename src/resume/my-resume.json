@@ -3,9 +3,8 @@
   "contact": {
     "email": "craigmiller.software.engineer@gmail.com"
   },
-  "education": "Bachelor’s Degree, Ramapo College of New Jersey",
+  "education": "Eagle Scout, Boy Scouts of America",
   "certifications": [
-    "Scrum, Kanban",
     "* Oracle Certified Java Professional"
   ],
   "experience": [
@@ -55,22 +54,24 @@
       ]
     }
   ],
-  "honorsAndAchievements": [
-    "Eagle Scout, Boy Scouts of America"
-  ],
+  "honorsAndAchievements": [],
   "intro": {
     "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
     "title": "Staff/Principal/Senior Full Stack Engineer"
   },
   "skills": {
     "agileExperience": [
+      "Scrum",
+      "Kanban"
+    ],
+    "cloudDeployment": [
       "Docker",
       "Kubernetes",
       "CloudFoundry",
       "OpenShift",
       "AWS"
     ],
-    "cloudDeployment": [
+    "databases": [
       "PostgreSQL",
       "MySQL",
       "SQL Server",
@@ -80,7 +81,7 @@
       "Liquibase",
       "Kafka"
     ],
-    "databases": [
+    "frameworksAndTools": [
       "SpringBoot",
       "Jersey/JAX-RS",
       "Maven",
@@ -93,7 +94,7 @@
       "NodeJS",
       "ExpressJS"
     ],
-    "frameworksAndTools": [
+    "languages": [
       "Java",
       "JavaScript",
       "HTML5/CSS3",
@@ -103,9 +104,6 @@
       "SQL",
       "Bash",
       "XSLT"
-    ],
-    "languages": [
-      "Databases/MQs"
     ]
   }
 }
