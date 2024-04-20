@@ -1,6 +1,6 @@
 import type { Job, Resume } from '../../../resume/resume';
 import classNames from 'classnames';
-import classes from './Resume.module.scss';
+import classes from './Experience.module.scss';
 import { Typography } from 'antd';
 
 type ExperienceProps = Readonly<{
@@ -30,7 +30,7 @@ const Job = (props: JobProps) => (
 );
 
 export const Experience = (props: ExperienceProps) => (
-	<section className={classes.section}>
+	<section className={classes.experience}>
 		<div className={classes.row}>
 			<Typography.Title level={3}>Industry Experience</Typography.Title>
 		</div>

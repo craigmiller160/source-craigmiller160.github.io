@@ -8,7 +8,7 @@ type Props = Readonly<{
 
 export const Introduction = (props: Props) => (
 	<>
-		<section className={classes.section}>
+		<section>
 			<div className={classes.row}>
 				<Typography.Title level={3}>
 					{props.resume.name}
@@ -18,7 +18,7 @@ export const Introduction = (props: Props) => (
 				</Typography.Title>
 			</div>
 		</section>
-		<section className={classes.section}>
+		<section>
 			<div className={classes.row}>
 				<Typography.Title level={3}>
 					{props.resume.intro.title}

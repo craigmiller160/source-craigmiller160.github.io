@@ -1,0 +1,15 @@
+@import "../../../styles/responsive";
+
+.experience {
+  .job {
+    margin-bottom: 0.2rem;
+
+    .title {
+      margin-bottom: 0;
+    }
+
+    .positions {
+      font-style: italic;
+    }
+  }
+}
