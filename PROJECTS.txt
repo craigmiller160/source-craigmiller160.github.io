@@ -1,0 +1,13 @@
+market-tracker
+expense-tracker
+covid-19
+db-backup-service
+tolkien-ai
+oauth2-server
+
+
+REMEMBER
+keycloak
+cert-manager
+onepassword
+nexus
