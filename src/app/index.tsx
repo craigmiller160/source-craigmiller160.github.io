@@ -5,6 +5,7 @@ import './app.scss';
 import { theme } from './theme';
 import { Content } from './content';
 import { BrowserRouter } from 'react-router-dom';
+import {Footer} from './footer';
 
 export const App = () => (
 	<ConfigProvider theme={theme}>
@@ -12,6 +13,7 @@ export const App = () => (
 			<Layout>
 				<Navbar />
 				<Content />
+				<Footer />
 			</Layout>
 		</BrowserRouter>
 	</ConfigProvider>
