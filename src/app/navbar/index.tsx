@@ -113,20 +113,23 @@ const menuKeyToRoute = (key: MenuKey): string =>
 				'https://github.com/craigmiller160/source-craigmiller160.portfolio'
 		)
 		.with('github_profile', () => 'https://github.com/craigmiller160')
+		.with('about_me', () => '/about-me')
 		.exhaustive();
 
 const routeToMenuKey = (route: string): MenuKey =>
 	match<string, MenuKey>(route)
 		.with('/projects/expense-tracker', () => 'project_expense_tracker')
 		.with(P.union('/resume', '/'), () => 'resume')
+		.with('/about-me', () => 'about_me')
 		.run();
 
 const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 	match<MenuKey, MenuKey>(newKey)
 		.with(
-			P.union('nothing', 'github_portfolio_source', 'github_profile'),
+			P.union('github_portfolio_source', 'github_profile'),
 			() => currentKey
 		)
+		.with('nothing', () => 'resume')
 		.otherwise(() => newKey);
 
 export const Navbar = () => {
