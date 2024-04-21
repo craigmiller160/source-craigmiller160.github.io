@@ -12,13 +12,6 @@ const ExpenseTracker = namedLazy(
 );
 const AboutMe = namedLazy(() => import('../app/content/about-me'), 'AboutMe');
 
-const resumeRoutes: RouteObject[] = [
-	{
-		path: '/resume',
-		element: <LazySuspenseWrapper component={ResumePage} />
-	}
-];
-
 const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/expense-tracker',
@@ -34,8 +27,11 @@ const aboutMeRoutes: RouteObject[] = [
 ];
 
 export const routes: RouteObject[] = [
+	{
+		path: '/resume',
+		element: <LazySuspenseWrapper component={ResumePage} />
+	},
 	...(import.meta.env.VITE_ENABLE_ABOUT_ME === 'true' ? aboutMeRoutes : []),
-	...resumeRoutes,
 	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsRoutes : []),
 	{
 		path: '*',

@@ -9,7 +9,8 @@ import {
 	FormOutlined,
 	GithubOutlined,
 	ProfileOutlined,
-	ProjectOutlined
+	ProjectOutlined,
+	UserOutlined
 } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
@@ -21,26 +22,14 @@ const GITHUB_KEY = 'github';
 const GITHUB_PROFILE_KEY = 'github_profile';
 const PERSONAL_PROJECTS_KEY = 'personal_projects';
 const PROJECT_EXPENSE_TRACKER_KEY = 'project_expense_tracker';
+const ABOUT_ME_KEY = 'about_me';
 type MenuKey =
 	| typeof NOTHING_KEY
 	| typeof RESUME_KEY
 	| typeof GITHUB_SOURCE_KEY
 	| typeof GITHUB_PROFILE_KEY
-	| typeof PROJECT_EXPENSE_TRACKER_KEY;
-
-const baseItems: MenuProps['items'] = [
-	{
-		key: NOTHING_KEY,
-		className: classNames(classes.brand, classes.item),
-		label: "Craig Miller's Portfolio"
-	},
-	{
-		key: RESUME_KEY,
-		label: 'Resume',
-		className: classes.item,
-		icon: <FormOutlined />
-	}
-];
+	| typeof PROJECT_EXPENSE_TRACKER_KEY
+	| typeof ABOUT_ME_KEY;
 
 const projectsItems: MenuProps['items'] = [
 	{
@@ -59,7 +48,29 @@ const projectsItems: MenuProps['items'] = [
 	}
 ];
 
-const githubItems: MenuProps['items'] = [
+const aboutMeItems: MenuProps['items'] = [
+	{
+		key: ABOUT_ME_KEY,
+		className: classes.item,
+		label: 'About Me',
+		icon: <UserOutlined />
+	}
+];
+
+const items: MenuProps['items'] = [
+	{
+		key: NOTHING_KEY,
+		className: classNames(classes.brand, classes.item),
+		label: "Craig Miller's Portfolio"
+	},
+	...(import.meta.env.VITE_ENABLE_ABOUT_ME === 'true' ? aboutMeItems : []),
+	{
+		key: RESUME_KEY,
+		label: 'Resume',
+		className: classes.item,
+		icon: <FormOutlined />
+	},
+	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
 	{
 		key: GITHUB_KEY,
 		label: 'Github',
@@ -78,12 +89,6 @@ const githubItems: MenuProps['items'] = [
 			}
 		]
 	}
-];
-
-const items: MenuProps['items'] = [
-	...baseItems,
-	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
-	...githubItems
 ];
 
 type ExtendedNavigate = (uri: string) => void;
