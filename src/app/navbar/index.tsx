@@ -11,7 +11,7 @@ import {
 	ProfileOutlined,
 	ProjectOutlined
 } from '@ant-design/icons';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
@@ -97,6 +97,12 @@ const menuKeyToRoute = (key: MenuKey): string =>
 		.with('github_profile', () => 'https://github.com/craigmiller160')
 		.exhaustive();
 
+const routeToMenuKey = (route: string): MenuKey =>
+	match<string, MenuKey>(route)
+		.with('/projects/expense-tracker', () => 'project_expense_tracker')
+		.with(P.union('/resume', '/'), () => 'resume')
+		.run();
+
 const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 	match<MenuKey, MenuKey>(newKey)
 		.with(
@@ -106,7 +112,9 @@ const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 		.otherwise(() => newKey);
 
 export const Navbar = () => {
-	const [menuKey, setMenuKey] = useState<MenuKey>('resume');
+	const location = useLocation();
+	const initialMenuKey = routeToMenuKey(location.pathname);
+	const [menuKey, setMenuKey] = useState<MenuKey>(initialMenuKey);
 	const navigate = useExtendedNavigate();
 
 	const onMenuClick = (info: MenuInfo) => {
