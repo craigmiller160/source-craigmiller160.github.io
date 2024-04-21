@@ -1,11 +1,20 @@
 import { Navigate, type RouteObject } from 'react-router';
-import { ResumePage } from '../app/content/resume';
-import { ExpenseTracker } from '../app/content/projects/expense-tracker';
+import { namedLazy } from '../utils/react-wrappers/namedLazy';
+import { LazySuspenseWrapper } from '../utils/react-wrappers/LazySuspenseWrapper';
+
+const ResumePage = namedLazy(
+	() => import('../app/content/resume'),
+	'ResumePage'
+);
+const ExpenseTracker = namedLazy(
+	() => import('../app/content/projects/expense-tracker'),
+	'ExpenseTracker'
+);
 
 const allRoutes: RouteObject[] = [
 	{
 		path: '/resume',
-		element: <ResumePage />
+		element: <LazySuspenseWrapper component={ResumePage} />
 	},
 	{
 		path: '*',
@@ -16,7 +25,7 @@ const allRoutes: RouteObject[] = [
 const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/expense-tracker',
-		element: <ExpenseTracker />
+		element: <LazySuspenseWrapper component={ExpenseTracker} />
 	}
 ];
 
