@@ -22,5 +22,5 @@ const projectsRoutes: RouteObject[] = [
 
 export const routes: RouteObject[] = [
 	...allRoutes,
-	...(import.meta.env.VITE_ENABLE_PROJECTS ? projectsRoutes : [])
+	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsRoutes : [])
 ];

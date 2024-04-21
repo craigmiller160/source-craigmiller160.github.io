@@ -82,7 +82,7 @@ const githubItems: MenuProps['items'] = [
 
 const items: MenuProps['items'] = [
 	...baseItems,
-	...(import.meta.env.VITE_ENABLE_PROJECTS ? projectsItems : []),
+	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
 	...githubItems
 ];
 
