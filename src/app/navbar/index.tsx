@@ -80,6 +80,7 @@ const useExtendedNavigate = (): ExtendedNavigate => {
 	return (uri) => {
 		if (/^https?.+$/.test(uri)) {
 			window.open(uri, '_blank');
+			return;
 		}
 		navigate(uri);
 	};
