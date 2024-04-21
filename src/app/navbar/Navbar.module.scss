@@ -3,11 +3,22 @@
 
 :global(.ant-menu-sub) {
   .item {
-    &:global(.ant-menu-item-selected) {
+    &:global(.ant-menu-item-selected),
+    &:global(.ant-menu-submenu-selected) {
       background-color: white;
       color: $foreground-dark;
       border-left: 2px solid #00719c;
       border-radius: 0;
+    }
+
+    :global(.ant-menu-submenu-title) {
+      :global(.ant-menu-item-icon) {
+        color: $foreground-dark;
+      }
+
+      :global(.ant-menu-title-content) {
+        color: $foreground-dark;
+      }
     }
   }
 }
