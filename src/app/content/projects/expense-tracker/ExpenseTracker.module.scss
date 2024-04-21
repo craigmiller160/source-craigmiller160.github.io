@@ -1,0 +1,9 @@
+@import "../../../../styles/responsive";
+
+.expense-tracker {
+  @include responsive-content-width;
+
+  .page-title {
+    justify-content: center;
+  }
+}

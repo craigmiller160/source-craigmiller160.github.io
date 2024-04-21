@@ -1,21 +1,7 @@
 @import "../../../styles/responsive";
 
 .resume {
-  @media (min-width: $antd-breakpoint-xs) {
-    padding: 0;
-  }
-
-  @media (min-width: $antd-breakpoint-lg) {
-    padding: 0;
-  }
-
-  @media (min-width: $antd-breakpoint-xl) {
-    padding: 0 3rem;
-  }
-
-  @media (min-width: $antd-breakpoint-xxl) {
-    padding: 0 7rem;
-  }
+  @include responsive-content-width;
 
   section {
     margin-bottom: 0.5rem;

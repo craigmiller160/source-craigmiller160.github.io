@@ -1,6 +1,6 @@
 @import "./theme";
 
-@mixin responsive-width {
+@mixin responsive-page-width {
   @media (min-width: $antd-breakpoint-xs) {
     margin: 0 $page-margin-xs;
   }
@@ -23,6 +23,24 @@
 
   @media (min-width: $antd-breakpoint-xxl) {
     margin: 0 $page-margin-xxl;
+  }
+}
+
+@mixin responsive-content-width {
+  @media (min-width: $antd-breakpoint-xs) {
+    padding: 0;
+  }
+
+  @media (min-width: $antd-breakpoint-lg) {
+    padding: 0;
+  }
+
+  @media (min-width: $antd-breakpoint-xl) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: $antd-breakpoint-xxl) {
+    padding: 0 7rem;
   }
 }
 
