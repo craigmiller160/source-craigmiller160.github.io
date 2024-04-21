@@ -1,6 +1,17 @@
 @import "../../styles/theme";
 @import "../../styles/responsive";
 
+:global(.ant-menu-sub) {
+  .item {
+    &:global(.ant-menu-item-selected) {
+      background-color: white;
+      color: $foreground-dark;
+      border-left: 2px solid #00719c;
+      border-radius: 0;
+    }
+  }
+}
+
 .navbar {
   background-color: $color-100;
   padding: 0;
