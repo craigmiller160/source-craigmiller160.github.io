@@ -28,7 +28,7 @@ type MenuKey =
 	| typeof GITHUB_PROFILE_KEY
 	| typeof PROJECT_EXPENSE_TRACKER_KEY;
 
-const items: MenuProps['items'] = [
+const baseItems: MenuProps['items'] = [
 	{
 		key: NOTHING_KEY,
 		className: classNames(classes.brand, classes.item),
@@ -39,7 +39,10 @@ const items: MenuProps['items'] = [
 		label: 'Resume',
 		className: classes.item,
 		icon: <FormOutlined />
-	},
+	}
+];
+
+const projectsItems: MenuProps['items'] = [
 	{
 		key: PERSONAL_PROJECTS_KEY,
 		label: 'Personal Projects',
@@ -53,7 +56,10 @@ const items: MenuProps['items'] = [
 				icon: <DollarOutlined />
 			}
 		]
-	},
+	}
+];
+
+const githubItems: MenuProps['items'] = [
 	{
 		key: GITHUB_KEY,
 		label: 'Github',
@@ -72,6 +78,12 @@ const items: MenuProps['items'] = [
 			}
 		]
 	}
+];
+
+const items: MenuProps['items'] = [
+	...baseItems,
+	...(import.meta.env.VITE_ENABLE_PROJECTS ? projectsItems : []),
+	...githubItems
 ];
 
 type ExtendedNavigate = (uri: string) => void;

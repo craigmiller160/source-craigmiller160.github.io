@@ -13,7 +13,7 @@ const allRoutes: RouteObject[] = [
 	}
 ];
 
-const devRoutes: RouteObject[] = [
+const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/expense-tracker',
 		element: <ExpenseTracker />
@@ -22,5 +22,5 @@ const devRoutes: RouteObject[] = [
 
 export const routes: RouteObject[] = [
 	...allRoutes,
-	...(import.meta.env.DEV ? devRoutes : [])
+	...(import.meta.env.VITE_ENABLE_PROJECTS ? projectsRoutes : [])
 ];

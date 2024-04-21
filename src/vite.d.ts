@@ -5,5 +5,6 @@ interface ImportMeta {
 		MODE: string;
 		PROD: boolean;
 		SSR: boolean;
+		VITE_ENABLE_PROJECTS: boolean;
 	};
 }
