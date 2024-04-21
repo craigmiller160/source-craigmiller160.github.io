@@ -3,6 +3,17 @@
 .expense-tracker {
   @include responsive-content-width;
 
+  display: flex;
+  flex-direction: column;
+
+  :global(.ant-card) {
+    margin-bottom: 0.5rem;
+
+    span:global(.ant-typography) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   .page-title {
     justify-content: center;
   }
