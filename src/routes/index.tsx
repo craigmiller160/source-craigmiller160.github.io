@@ -19,22 +19,18 @@ const projectsRoutes: RouteObject[] = [
 	}
 ];
 
-const aboutMeRoutes: RouteObject[] = [
+export const routes: RouteObject[] = [
 	{
 		path: '/about-me',
 		element: <LazySuspenseWrapper component={AboutMe} />
-	}
-];
-
-export const routes: RouteObject[] = [
+	},
 	{
 		path: '/resume',
 		element: <LazySuspenseWrapper component={ResumePage} />
 	},
-	...(import.meta.env.VITE_ENABLE_ABOUT_ME === 'true' ? aboutMeRoutes : []),
 	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsRoutes : []),
 	{
 		path: '*',
-		element: <Navigate to="/resume" />
+		element: <Navigate to="/about-me" />
 	}
 ];

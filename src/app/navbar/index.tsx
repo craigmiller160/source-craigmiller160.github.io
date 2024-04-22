@@ -48,22 +48,18 @@ const projectsItems: MenuProps['items'] = [
 	}
 ];
 
-const aboutMeItems: MenuProps['items'] = [
-	{
-		key: ABOUT_ME_KEY,
-		className: classes.item,
-		label: 'About Me',
-		icon: <UserOutlined />
-	}
-];
-
 const items: MenuProps['items'] = [
 	{
 		key: NOTHING_KEY,
 		className: classNames(classes.brand, classes.item),
 		label: "Craig Miller's Portfolio"
 	},
-	...(import.meta.env.VITE_ENABLE_ABOUT_ME === 'true' ? aboutMeItems : []),
+	{
+		key: ABOUT_ME_KEY,
+		className: classes.item,
+		label: 'About Me',
+		icon: <UserOutlined />
+	},
 	{
 		key: RESUME_KEY,
 		label: 'Resume',
