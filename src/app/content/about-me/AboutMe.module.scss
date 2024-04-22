@@ -10,4 +10,16 @@
     flex-direction: row;
     justify-content: center;
   }
+
+  .content-wrapper {
+    width:100%;
+
+    >* {
+      flex: 1;
+    }
+
+    >*:first-child {
+      margin-right: 0.5rem;
+    }
+  }
 }
