@@ -6,13 +6,13 @@ import diagram from '../../../../images/expense-tracker.drawio.png';
 export const ExpenseTracker = () => {
 	return (
 		<div className={classes.expenseTracker}>
-			<div className={classNames(classes.row, classes.pageTitle)}>
+			<div className={classNames(classes.row, classes.header)}>
 				<Typography.Title level={3}>
 					Expense Tracker Project
 				</Typography.Title>
 			</div>
 			<Card className={classes.col}>
-				<div className={classNames(classes.row, classes.pageTitle)}>
+				<div className={classNames(classes.row, classes.header)}>
 					<Typography.Title level={5}>Introduction</Typography.Title>
 				</div>
 				<div className={classes.col}>
@@ -34,6 +34,11 @@ export const ExpenseTracker = () => {
 				</div>
 			</Card>
 			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						Architecture Diagram
+					</Typography.Title>
+				</div>
 				<Image src={diagram} />
 			</Card>
 			<Card>
