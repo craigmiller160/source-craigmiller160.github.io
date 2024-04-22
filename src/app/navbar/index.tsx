@@ -1,4 +1,5 @@
-import { Layout, Menu, type MenuProps } from 'antd';
+import Layout from 'antd/es/layout';
+import Menu, { type MenuProps } from 'antd/es/menu';
 import { type MenuInfo } from 'rc-menu/lib/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';

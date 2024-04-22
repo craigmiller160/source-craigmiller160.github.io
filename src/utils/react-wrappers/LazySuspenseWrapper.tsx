@@ -1,6 +1,6 @@
 import type { ComponentType, LazyExoticComponent } from 'react';
 import { Suspense } from 'react';
-import { Spin } from 'antd';
+import Spin from 'antd/es/spin';
 import classes from './LazySuspenseWrapper.module.scss';
 
 type Props = Readonly<{
