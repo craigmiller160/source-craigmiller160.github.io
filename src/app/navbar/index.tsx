@@ -46,6 +46,45 @@ type MenuKey =
 	| typeof PROJECT_COVID_19_KEY
 	| typeof PROJECT_TOLKIEN_AI_KEY;
 
+const items: MenuProps['items'] = [
+	{
+		key: NOTHING_KEY,
+		className: classNames(classes.brand, classes.item),
+		label: "Craig Miller's Portfolio"
+	},
+	{
+		key: ABOUT_ME_KEY,
+		className: classes.item,
+		label: 'About Me',
+		icon: <UserOutlined />
+	},
+	{
+		key: RESUME_KEY,
+		label: 'Resume',
+		className: classes.item,
+		icon: <FormOutlined />
+	},
+	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
+	{
+		key: GITHUB_KEY,
+		label: 'Github',
+		className: classes.item,
+		icon: <GithubOutlined />,
+		children: [
+			{
+				key: GITHUB_PROFILE_KEY,
+				label: 'Full Profile',
+				icon: <ProfileOutlined />
+			},
+			{
+				key: GITHUB_SOURCE_KEY,
+				label: 'Portfolio Source',
+				icon: <CodeOutlined />
+			}
+		]
+	}
+];
+
 const projectsItems: MenuProps['items'] = [
 	{
 		key: PERSONAL_PROJECTS_KEY,
@@ -89,46 +128,7 @@ const projectsItems: MenuProps['items'] = [
 				className: classes.item,
 				icon: <MedicineBoxOutlined />
 			}
-		]
-	}
-];
-
-const items: MenuProps['items'] = [
-	{
-		key: NOTHING_KEY,
-		className: classNames(classes.brand, classes.item),
-		label: "Craig Miller's Portfolio"
-	},
-	{
-		key: ABOUT_ME_KEY,
-		className: classes.item,
-		label: 'About Me',
-		icon: <UserOutlined />
-	},
-	{
-		key: RESUME_KEY,
-		label: 'Resume',
-		className: classes.item,
-		icon: <FormOutlined />
-	},
-	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
-	{
-		key: GITHUB_KEY,
-		label: 'Github',
-		className: classes.item,
-		icon: <GithubOutlined />,
-		children: [
-			{
-				key: GITHUB_PROFILE_KEY,
-				label: 'Full Profile',
-				icon: <ProfileOutlined />
-			},
-			{
-				key: GITHUB_SOURCE_KEY,
-				label: 'Portfolio Source',
-				icon: <CodeOutlined />
-			}
-		]
+		].filter((item) => !!item)
 	}
 ];
 
