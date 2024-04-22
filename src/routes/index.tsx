@@ -15,6 +15,10 @@ const MarketTracker = namedLazy(
 	() => import('../app/content/projects/market-tracker'),
 	'MarketTracker'
 );
+const TolkienAi = namedLazy(
+	() => import('../app/content/projects/tolkien-ai'),
+	'TolkienAi'
+);
 
 const projectsRoutes: RouteObject[] = [
 	{
@@ -24,6 +28,10 @@ const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/market-tracker',
 		element: <LazySuspenseWrapper component={MarketTracker} />
+	},
+	{
+		path: '/projects/tolkien-ai',
+		element: <LazySuspenseWrapper component={TolkienAi} />
 	}
 ];
 
