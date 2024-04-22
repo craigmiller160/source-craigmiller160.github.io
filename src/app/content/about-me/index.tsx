@@ -1,5 +1,6 @@
 import classes from './AboutMe.module.scss';
-import { Card, Image } from 'antd';
+import Card from 'antd/es/card';
+import Image from 'antd/es/image';
 import Title from 'antd/es/typography/Title';
 import Text from 'antd/es/typography/Text';
 import meAndDogs from '../../../images/me_and_dogs.jpeg';

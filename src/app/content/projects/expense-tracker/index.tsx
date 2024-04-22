@@ -1,6 +1,7 @@
 import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
-import { Card, Typography } from 'antd';
+import Typography from 'antd/es/typography';
+import Card from 'antd/es/card';
 
 export const ExpenseTracker = () => {
 	return (

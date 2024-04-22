@@ -1,6 +1,6 @@
 import type { Resume } from '../../../resume/resume';
 import classes from './Other.module.scss';
-import { Typography } from 'antd';
+import Title from 'antd/es/typography/Title';
 import { BulletList } from '../../../ui/BulletList';
 
 type Props = Readonly<{
@@ -11,13 +11,13 @@ export const Other = (props: Props) => (
 	<div className={classes.other}>
 		<section>
 			<div className={classes.col}>
-				<Typography.Title level={3}>Certifications</Typography.Title>
+				<Title level={3}>Certifications</Title>
 				<BulletList items={props.resume.certifications} />
 			</div>
 		</section>
 		<section>
 			<div className={classes.col}>
-				<Typography.Title level={3}>Education</Typography.Title>
+				<Title level={3}>Education</Title>
 				<BulletList
 					items={props.resume.education.map((education) => (
 						<>
@@ -30,9 +30,7 @@ export const Other = (props: Props) => (
 		</section>
 		<section>
 			<div className={classes.col}>
-				<Typography.Title level={3}>
-					Honors & Achievements
-				</Typography.Title>
+				<Title level={3}>Honors & Achievements</Title>
 				<BulletList
 					items={props.resume.honorsAndAchievements.map((honor) => (
 						<>

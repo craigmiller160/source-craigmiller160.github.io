@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router';
 import { routes } from '../../routes';
 import classes from './Content.module.scss';
-import { Layout } from 'antd';
+import Layout from 'antd/es/layout'
 
 export const Content = () => {
 	const router = useRoutes(routes);
