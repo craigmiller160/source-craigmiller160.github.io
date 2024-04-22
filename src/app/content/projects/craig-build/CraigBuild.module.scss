@@ -1,0 +1,12 @@
+@import "../../../../styles/responsive";
+
+.craig-build {
+  @include responsive-content-width;
+
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    justify-content: center;
+  }
+}
