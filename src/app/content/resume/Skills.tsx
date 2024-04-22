@@ -2,6 +2,7 @@ import type { Resume } from '../../../resume/resume';
 import classes from './Skills.module.scss';
 import classNames from 'classnames';
 import { Typography } from 'antd';
+import { BulletList } from '../../../ui/BulletList';
 
 type Props = Readonly<{
 	resume: Resume;
@@ -15,11 +16,7 @@ type SkillListProps = Readonly<{
 const SkillList = (props: SkillListProps) => (
 	<>
 		<Typography.Title level={5}>{props.title}</Typography.Title>
-		<ul>
-			{props.skills.map((skill) => (
-				<li key={skill}>{skill}</li>
-			))}
-		</ul>
+		<BulletList items={props.skills} />
 	</>
 );
 
