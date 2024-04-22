@@ -20,6 +20,9 @@ dependencies:
   immer:
     specifier: ^10.0.4
     version: 10.0.4
+  rc-image:
+    specifier: ^7.6.0
+    version: 7.6.0(react-dom@18.2.0)(react@18.2.0)
   rc-menu:
     specifier: ^9.13.0
     version: 9.13.0(react-dom@18.2.0)(react@18.2.0)
