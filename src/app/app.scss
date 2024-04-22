@@ -5,6 +5,15 @@ body {
   padding: 0;
 }
 
+@mixin justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+span.ant-typography {
+  @include justify;
+}
+
 .ant-card {
   margin-bottom: $vertical-spacing;
 

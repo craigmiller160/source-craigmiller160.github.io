@@ -1,11 +1,6 @@
 @import "../../../styles/responsive";
 @import "../../../styles/fixes";
 
-:global(.ant-typography) {
-  text-align: justify;
-  text-justify: inter-word;
-}
-
 .about-me {
   @include responsive-content-width;
 
