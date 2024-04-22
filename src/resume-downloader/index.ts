@@ -82,6 +82,7 @@ const downloadResume = async () => {
 	await fs.writeFile(PARSED_OUTPUT_FILE, JSON.stringify(parsed, null, 2));
 };
 
+type Skill = keyof Resume['skills'];
 type ResumeSection =
 	| 'intro'
 	| 'experience'
@@ -93,6 +94,7 @@ type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
 	experienceIndex: number;
+	currentSkill: Skill;
 }>;
 
 const parseResume = (resumeText: string): Resume => {
@@ -100,7 +102,8 @@ const parseResume = (resumeText: string): Resume => {
 	const startingContext: ResumeParsingContext = {
 		resume: BASE_RESUME,
 		section: 'intro',
-		experienceIndex: 0
+		experienceIndex: 0,
+		currentSkill: 'languages'
 	};
 
 	return (
@@ -125,7 +128,6 @@ const parseLine = (
 		.with('honors', () => parseHonorsLine(context, line))
 		.exhaustive();
 
-const isNotEmpty = (array: ReadonlyArray<string>): boolean => array.length > 0;
 const isEmpty = (array: ReadonlyArray<string>): boolean => array.length === 0;
 
 const parseSkillLine = (
@@ -150,42 +152,57 @@ const parseSkillLine = (
 		});
 	}
 
-	const skills = line.split(',').map((item) => item.trim());
+	const startsWithWhitespace = STARTS_WITH_WHITESPACE_REGEX.test(line);
+
+	const skill = line.trim().replace(STARTS_WITH_ASTERISK_REGEX, '').trim();
+
+	const currentSkill = match<
+		{ startsWithWhitespace: boolean; skills: Resume['skills'] },
+		Skill
+	>({
+		skills: context.resume.skills,
+		startsWithWhitespace
+	})
+		.with(
+			{
+				startsWithWhitespace: true,
+				skills: { languages: P.when(isEmpty) }
+			},
+			() => 'languages'
+		)
+		.with(
+			{
+				startsWithWhitespace: true,
+				skills: { frameworksAndTools: P.when(isEmpty) }
+			},
+			() => 'frameworksAndTools'
+		)
+		.with(
+			{
+				startsWithWhitespace: true,
+				skills: { databases: P.when(isEmpty) }
+			},
+			() => 'databases'
+		)
+		.with(
+			{
+				startsWithWhitespace: true,
+				skills: { cloudDeployment: P.when(isEmpty) }
+			},
+			() => 'cloudDeployment'
+		)
+		.with(
+			{
+				startsWithWhitespace: true,
+				skills: { agileExperience: P.when(isEmpty) }
+			},
+			() => 'agileExperience'
+		)
+		.otherwise(() => context.currentSkill);
+
 	return produce(context, (draft) => {
-		match(draft.resume.skills)
-			.with({ languages: P.when(isEmpty) }, () => {
-				draft.resume.skills.languages = skills;
-			})
-			.with(
-				{
-					frameworksAndTools: P.when(isEmpty),
-					languages: P.when(isNotEmpty)
-				},
-				() => {
-					draft.resume.skills.frameworksAndTools = skills;
-				}
-			)
-			.with(
-				{
-					frameworksAndTools: P.when(isNotEmpty),
-					databases: P.when(isEmpty)
-				},
-				() => {
-					draft.resume.skills.databases = skills;
-				}
-			)
-			.with(
-				{
-					databases: P.when(isNotEmpty),
-					cloudDeployment: P.when(isEmpty)
-				},
-				() => {
-					draft.resume.skills.cloudDeployment = skills;
-				}
-			)
-			.otherwise(() => {
-				draft.resume.skills.agileExperience = skills;
-			});
+		draft.resume.skills[currentSkill].push(skill);
+		draft.currentSkill = currentSkill;
 	});
 };
 
