@@ -1,6 +1,6 @@
 import { resumeSchema } from '../../../resume/resume';
 import myResume from '../../../resume/my-resume.json';
-import { Card } from 'antd';
+import Card from 'antd/es/card';
 import classes from './Resume.module.scss';
 import { Experience } from './Experience';
 import { Introduction } from './Introduction';
