@@ -1,5 +1,5 @@
 import classes from './BulletList.module.scss';
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 
 type Props = Readonly<{
 	items: ReadonlyArray<string | ReactNode>;

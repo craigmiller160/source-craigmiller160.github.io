@@ -2,6 +2,7 @@ import type { Job, Resume } from '../../../resume/resume';
 import classNames from 'classnames';
 import classes from './Experience.module.scss';
 import { Typography } from 'antd';
+import { BulletList } from '../../../ui/BulletList';
 
 type ExperienceProps = Readonly<{
 	resume: Resume;
@@ -21,11 +22,7 @@ const Job = (props: JobProps) => (
 				.map((position) => `${position.title} (${position.dates})`)
 				.join(', ')}
 		</Typography.Text>
-		<ul>
-			{props.job.achievements.map((achievement, index) => (
-				<li key={index}>{achievement}</li>
-			))}
-		</ul>
+		<BulletList items={props.job.achievements} />
 	</div>
 );
 
