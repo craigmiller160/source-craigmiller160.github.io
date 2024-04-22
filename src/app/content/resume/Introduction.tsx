@@ -7,7 +7,7 @@ type Props = Readonly<{
 }>;
 
 export const Introduction = (props: Props) => (
-	<div className={classes.introduction}>
+	<div>
 		<section>
 			<div className={classes.row}>
 				<Typography.Title level={3}>

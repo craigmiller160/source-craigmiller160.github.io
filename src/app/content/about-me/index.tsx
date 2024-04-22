@@ -7,7 +7,7 @@ export const AboutMe = () => (
 		<Card>
 			<section className={classes.row}>
 				<Typography.Title level={3}>Craig Miller</Typography.Title>
-				<Typography.Title level={3}>(He/Him)</Typography.Title>
+				<Typography.Title level={3} className={classes.marginTopFix}>(He/Him)</Typography.Title>
 			</section>
 			<section className={classes.imageWrapper}>
 				<Image src={meAndDogs} width="40%" />

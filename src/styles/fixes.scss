@@ -1,0 +1,7 @@
+.margin-top-fix {
+  &:global(.ant-typography) {
+    // Weird antd class affecting only the second occurrence of Typography.Text elements, this should fix it
+    // I hate using !important, but it's hard to fix this otherwise
+    margin-top: 0 !important;
+  }
+}
