@@ -1,6 +1,7 @@
 import type { Resume } from '../../../resume/resume';
 import classes from './Introduction.module.scss';
-import { Typography } from 'antd';
+import Title from 'antd/es/typography/Title';
+import Text from 'antd/es/typography/Text';
 
 type Props = Readonly<{
 	resume: Resume;
@@ -10,22 +11,22 @@ export const Introduction = (props: Props) => (
 	<div>
 		<section>
 			<div className={classes.row}>
-				<Typography.Title level={3}>
+				<Title level={3}>
 					{props.resume.name}
-				</Typography.Title>
-				<Typography.Title level={3} className={classes.marginTopFix}>
+				</Title>
+				<Title level={3} className={classes.marginTopFix}>
 					{props.resume.contact.email}
-				</Typography.Title>
+				</Title>
 			</div>
 		</section>
 		<section>
 			<div className={classes.row}>
-				<Typography.Title level={3}>
+				<Title level={3}>
 					{props.resume.intro.title}
-				</Typography.Title>
+				</Title>
 			</div>
 			<div className={classes.row}>
-				<Typography.Text>{props.resume.intro.body}</Typography.Text>
+				<Text>{props.resume.intro.body}</Text>
 			</div>
 		</section>
 	</div>
