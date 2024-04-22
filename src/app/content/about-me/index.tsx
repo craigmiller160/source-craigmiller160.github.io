@@ -5,13 +5,18 @@ import meAndDogs from '../../../images/me_and_dogs.jpeg';
 export const AboutMe = () => (
 	<div className={classes.aboutMe}>
 		<Card>
-			<div className={classes.imageWrapper}>
+			<section className={classes.row}>
+				<Typography.Title level={3}>Craig Miller</Typography.Title>
+				<Typography.Title level={3}>(He/Him)</Typography.Title>
+			</section>
+			<section className={classes.imageWrapper}>
 				<Image src={meAndDogs} width="40%" />
-			</div>
-			<div className={classes.col}>
-				<Typography.Text></Typography.Text>
-				<Typography.Text></Typography.Text>
-			</div>
+			</section>
+			<section className={classes.col}>
+				<Typography.Text>
+					Welcome to the personal portfolio of Craig Miller.{' '}
+				</Typography.Text>
+			</section>
 		</Card>
 	</div>
 );

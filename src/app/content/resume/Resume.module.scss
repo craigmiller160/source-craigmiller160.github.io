@@ -3,8 +3,4 @@
 
 .resume {
   @include responsive-content-width;
-
-  section {
-    margin-bottom: $vertical-spacing;
-  }
 }
