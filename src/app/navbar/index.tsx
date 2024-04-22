@@ -101,7 +101,7 @@ const useExtendedNavigate = (): ExtendedNavigate => {
 
 const menuKeyToRoute = (key: MenuKey): string =>
 	match<MenuKey, string>(key)
-		.with(P.union('nothing', 'resume'), () => '/resume')
+		.with(P.union('nothing', 'about_me'), () => '/about-me')
 		.with('project_expense_tracker', () => '/projects/expense-tracker')
 		.with(
 			'github_portfolio_source',
@@ -109,7 +109,7 @@ const menuKeyToRoute = (key: MenuKey): string =>
 				'https://github.com/craigmiller160/source-craigmiller160.portfolio'
 		)
 		.with('github_profile', () => 'https://github.com/craigmiller160')
-		.with('about_me', () => '/about-me')
+		.with('resume', () => '/resume')
 		.exhaustive();
 
 const routeToMenuKey = (route: string): MenuKey =>
@@ -125,7 +125,7 @@ const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 			P.union('github_portfolio_source', 'github_profile'),
 			() => currentKey
 		)
-		.with('nothing', () => 'resume')
+		.with('nothing', () => 'about_me')
 		.otherwise(() => newKey);
 
 export const Navbar = () => {
