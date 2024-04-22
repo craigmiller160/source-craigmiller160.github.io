@@ -11,11 +11,19 @@ const ExpenseTracker = namedLazy(
 	'ExpenseTracker'
 );
 const AboutMe = namedLazy(() => import('../app/content/about-me'), 'AboutMe');
+const MarketTracker = namedLazy(
+	() => import('../app/content/projects/market-tracker'),
+	'MarketTracker'
+);
 
 const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/expense-tracker',
 		element: <LazySuspenseWrapper component={ExpenseTracker} />
+	},
+	{
+		path: '/projects/market-tracker',
+		element: <LazySuspenseWrapper component={MarketTracker} />
 	}
 ];
 

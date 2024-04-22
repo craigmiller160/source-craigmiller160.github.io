@@ -6,7 +6,7 @@ export const MarketTracker = () => (
 	<div className={classes.marketTracker}>
 		<div className={classNames(classes.row, classes.header)}>
 			<Typography.Title level={3}>
-				Expense Tracker Project
+				Market Tracker Project
 			</Typography.Title>
 		</div>
 		<Card className={classes.col}>
