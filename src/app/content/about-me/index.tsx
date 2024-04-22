@@ -5,7 +5,7 @@ import meAndDogs from '../../../images/me_and_dogs.jpeg';
 export const AboutMe = () => (
 	<div className={classes.aboutMe}>
 		<Card>
-			<div>
+			<div className={classes.imageWrapper}>
 				<Image src={meAndDogs} width="40%" />
 			</div>
 		</Card>
