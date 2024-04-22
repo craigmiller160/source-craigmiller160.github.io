@@ -1,7 +1,7 @@
 import type { ComponentType, LazyExoticComponent } from 'react';
 import { Suspense } from 'react';
 import { Spin } from 'antd';
-import classes from './LazySuspenseWrapper.module.scss'
+import classes from './LazySuspenseWrapper.module.scss';
 
 type Props = Readonly<{
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
