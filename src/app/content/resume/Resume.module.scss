@@ -1,9 +1,10 @@
 @import "../../../styles/responsive";
+@import "../../../styles/theme";
 
 .resume {
   @include responsive-content-width;
 
   section {
-    margin-bottom: 0.5rem;
+    margin-bottom: $vertical-spacing;
   }
 }
