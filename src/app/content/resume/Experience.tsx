@@ -1,7 +1,8 @@
 import type { Job, Resume } from '../../../resume/resume';
 import classNames from 'classnames';
 import classes from './Experience.module.scss';
-import { Typography } from 'antd';
+import Title from 'antd/es/typography/Title';
+import Text from 'antd/es/typography/Text';
 import { BulletList } from '../../../ui/BulletList';
 
 type ExperienceProps = Readonly<{
@@ -14,14 +15,14 @@ type JobProps = Readonly<{
 
 const Job = (props: JobProps) => (
 	<div className={classNames(classes.col, classes.job)}>
-		<Typography.Title level={5} className={classes.title}>
+		<Title level={5} className={classes.title}>
 			{props.job.company} ({props.job.dates})
-		</Typography.Title>
-		<Typography.Text className={classes.positions}>
+		</Title>
+		<Text className={classes.positions}>
 			{props.job.positions
 				.map((position) => `${position.title} (${position.dates})`)
 				.join(', ')}
-		</Typography.Text>
+		</Text>
 		<BulletList items={props.job.achievements} />
 	</div>
 );
@@ -29,7 +30,7 @@ const Job = (props: JobProps) => (
 export const Experience = (props: ExperienceProps) => (
 	<section className={classes.experience}>
 		<div className={classes.row}>
-			<Typography.Title level={3}>Industry Experience</Typography.Title>
+			<Title level={3}>Industry Experience</Title>
 		</div>
 		{props.resume.experience.map((job, index) => (
 			<Job key={index} job={job} />

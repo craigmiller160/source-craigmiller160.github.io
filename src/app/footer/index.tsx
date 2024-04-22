@@ -1,10 +1,11 @@
-import { Layout, Typography } from 'antd';
+import Layout from 'antd/es/layout';
+import Title from 'antd/es/typography/Title';
 import classes from './Footer.module.scss';
 
 export const Footer = () => (
 	<Layout.Footer className={classes.footer}>
 		<div className={classes.footerContent}>
-			<Typography.Title level={5}>Attributions</Typography.Title>
+			<Title level={5}>Attributions</Title>
 			<a
 				href="https://www.flaticon.com/free-icons/program"
 				title="program icons"

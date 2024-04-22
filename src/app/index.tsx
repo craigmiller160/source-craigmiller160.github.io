@@ -1,5 +1,6 @@
 import { Navbar } from './navbar';
-import { ConfigProvider, Layout } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
+import Layout from 'antd/es/layout';
 import 'antd/dist/reset.css';
 import './app.scss';
 import { theme } from './theme';
