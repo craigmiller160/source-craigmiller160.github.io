@@ -115,8 +115,8 @@ const menuKeyToRoute = (key: MenuKey): string =>
 const routeToMenuKey = (route: string): MenuKey =>
 	match<string, MenuKey>(route)
 		.with('/projects/expense-tracker', () => 'project_expense_tracker')
-		.with(P.union('/resume', '/'), () => 'resume')
-		.with('/about-me', () => 'about_me')
+		.with(P.union('/about-me', '/'), () => 'about_me')
+		.with('/resume', () => 'resume')
 		.run();
 
 const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
