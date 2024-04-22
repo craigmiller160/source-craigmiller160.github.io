@@ -221,6 +221,9 @@ const parseExperienceLine = (
 		context.resume.experience[context.experienceIndex]?.achievements
 			?.length > 0;
 	const isOpeningExperienceLine =
+		!STARTS_WITH_WHITESPACE_REGEX.test(line) &&
+		!STARTS_WITH_ASTERISK_REGEX.test(line.trim());
+	const isPositionsLine =
 		STARTS_WITH_WHITESPACE_REGEX.test(line) &&
 		!STARTS_WITH_ASTERISK_REGEX.test(line.trim());
 
@@ -244,7 +247,7 @@ const parseExperienceLine = (
 		});
 	}
 
-	if (isOpeningExperienceLine) {
+	if (isPositionsLine) {
 		const positions = line
 			.trim()
 			.split(',')

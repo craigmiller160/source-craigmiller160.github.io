@@ -26,9 +26,18 @@
         "Boosted the company’s appeal to potential candidates by being a mentor for the corporate summer internship program, with several intern direct reports ultimately becoming full time employees of the company.",
         "Improved predictability to business partners by increasing sprint completion rate from ~40% to ~75% by boosting communication of capacity constraints from developer team."
       ],
-      "company": "Software Engineer (2018-2021), Senior Software Engineer ",
-      "dates": "2021-Present",
-      "positions": []
+      "company": "Cigna ",
+      "dates": "2018-Present",
+      "positions": [
+        {
+          "title": "Software Engineer ",
+          "dates": "2018-2021"
+        },
+        {
+          "title": "Senior Software Engineer ",
+          "dates": "2021-Present"
+        }
+      ]
     },
     {
       "achievements": [
@@ -36,9 +45,18 @@
         "Ensured the competitiveness of a legacy medical forms company in the digital space by designing and implementing an all-in-one electronic form integration solution, complete with security protections and a customer-facing web UI.",
         "Boosted company’s competitive advantage by designing system to allow clients to easily configure mappings of inbound legacy data feeds to modern REST API calls."
       ],
-      "company": "Java Developer (2015-2016), Solutions Architect ",
-      "dates": "2016-2018",
-      "positions": []
+      "company": "PilotFish Technology ",
+      "dates": "2015-2018",
+      "positions": [
+        {
+          "title": "Java Developer ",
+          "dates": "2015-2016"
+        },
+        {
+          "title": "Solutions Architect ",
+          "dates": "2016-2018"
+        }
+      ]
     }
   ],
   "honorsAndAchievements": [
