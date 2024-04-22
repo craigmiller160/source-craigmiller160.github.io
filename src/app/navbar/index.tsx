@@ -4,7 +4,6 @@ import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
 import {
-	BookOutlined,
 	ClusterOutlined,
 	CodeOutlined,
 	DollarOutlined,
@@ -12,6 +11,7 @@ import {
 	GithubOutlined,
 	LockOutlined,
 	MedicineBoxOutlined,
+	OpenAIOutlined,
 	ProfileOutlined,
 	ProjectOutlined,
 	StockOutlined,
@@ -69,7 +69,7 @@ const projectsItems: MenuProps['items'] = [
 				key: PROJECT_TOLKIEN_AI_KEY,
 				label: 'Tolkien AI',
 				className: classes.item,
-				icon: <BookOutlined />
+				icon: <OpenAIOutlined />
 			},
 			{
 				key: PROJECT_CRAIG_BUILD_KEY,
