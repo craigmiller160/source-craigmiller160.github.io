@@ -1,7 +1,8 @@
 import classes from './BulletList.module.scss';
+import type {ReactNode} from 'react';
 
 type Props = Readonly<{
-	items: ReadonlyArray<string>;
+	items: ReadonlyArray<string | ReactNode>;
 }>;
 
 export const BulletList = (props: Props) => (
