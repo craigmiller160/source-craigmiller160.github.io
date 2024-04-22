@@ -4,12 +4,16 @@ import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
 import {
+	ClusterOutlined,
 	CodeOutlined,
 	DollarOutlined,
 	FormOutlined,
 	GithubOutlined,
+	LockOutlined,
+	MedicineBoxOutlined,
 	ProfileOutlined,
 	ProjectOutlined,
+	StockOutlined,
 	UserOutlined
 } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router';
@@ -24,7 +28,6 @@ const PERSONAL_PROJECTS_KEY = 'personal_projects';
 const PROJECT_EXPENSE_TRACKER_KEY = 'project_expense_tracker';
 const ABOUT_ME_KEY = 'about_me';
 const PROJECT_MARKET_TRACKER_KEY = 'project_market_tracker';
-const PROJECT_DB_BACKUP_SERVICE_KEY = 'project_db_backup_service';
 const PROJECT_OAUTH2_SERVER_KEY = 'project_oauth2_server';
 const PROJECT_CRAIG_BUILD_KEY = 'project_craig_build';
 const PROJECT_COVID_19_KEY = 'project_covid_19';
@@ -37,7 +40,6 @@ type MenuKey =
 	| typeof ABOUT_ME_KEY
 	| typeof PROJECT_CRAIG_BUILD_KEY
 	| typeof PROJECT_MARKET_TRACKER_KEY
-	| typeof PROJECT_DB_BACKUP_SERVICE_KEY
 	| typeof PROJECT_OAUTH2_SERVER_KEY
 	| typeof PROJECT_COVID_19_KEY;
 
@@ -53,6 +55,30 @@ const projectsItems: MenuProps['items'] = [
 				label: 'Expense Tracker',
 				className: classes.item,
 				icon: <DollarOutlined />
+			},
+			{
+				key: PROJECT_MARKET_TRACKER_KEY,
+				label: 'Market Tracker',
+				className: classes.item,
+				icon: <StockOutlined />
+			},
+			{
+				key: PROJECT_CRAIG_BUILD_KEY,
+				label: 'Project Build System',
+				className: classes.item,
+				icon: <ClusterOutlined />
+			},
+			{
+				key: PROJECT_OAUTH2_SERVER_KEY,
+				label: 'Homemade OAuth2 Server (Retired)',
+				className: classes.item,
+				icon: <LockOutlined />
+			},
+			{
+				key: PROJECT_COVID_19_KEY,
+				label: 'Covid19 Tracker (Retired)',
+				className: classes.item,
+				icon: <MedicineBoxOutlined />
 			}
 		]
 	}
