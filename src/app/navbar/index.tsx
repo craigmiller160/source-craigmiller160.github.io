@@ -4,6 +4,7 @@ import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
 import {
+	BookOutlined,
 	ClusterOutlined,
 	CodeOutlined,
 	DollarOutlined,
@@ -31,6 +32,7 @@ const PROJECT_MARKET_TRACKER_KEY = 'project_market_tracker';
 const PROJECT_OAUTH2_SERVER_KEY = 'project_oauth2_server';
 const PROJECT_CRAIG_BUILD_KEY = 'project_craig_build';
 const PROJECT_COVID_19_KEY = 'project_covid_19';
+const PROJECT_TOLKIEN_AI_KEY = 'project_tolkien_ai';
 type MenuKey =
 	| typeof NOTHING_KEY
 	| typeof RESUME_KEY
@@ -41,7 +43,8 @@ type MenuKey =
 	| typeof PROJECT_CRAIG_BUILD_KEY
 	| typeof PROJECT_MARKET_TRACKER_KEY
 	| typeof PROJECT_OAUTH2_SERVER_KEY
-	| typeof PROJECT_COVID_19_KEY;
+	| typeof PROJECT_COVID_19_KEY
+	| typeof PROJECT_TOLKIEN_AI_KEY;
 
 const projectsItems: MenuProps['items'] = [
 	{
@@ -61,6 +64,12 @@ const projectsItems: MenuProps['items'] = [
 				label: 'Market Tracker',
 				className: classes.item,
 				icon: <StockOutlined />
+			},
+			{
+				key: PROJECT_TOLKIEN_AI_KEY,
+				label: 'Tolkien AI',
+				className: classes.item,
+				icon: <BookOutlined />
 			},
 			{
 				key: PROJECT_CRAIG_BUILD_KEY,
