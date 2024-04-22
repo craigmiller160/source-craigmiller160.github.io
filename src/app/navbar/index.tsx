@@ -128,7 +128,7 @@ const projectsItems: MenuProps['items'] = [
 				className: classes.item,
 				icon: <MedicineBoxOutlined />
 			}
-		].filter((item) => !!item)
+		]
 	}
 ];
 
