@@ -16,7 +16,8 @@
     {
       "achievements": [
         "Architected and implemented a new Point of Care solution, seamlessly integrating the company’s services into a common Electronic Medical Records (EMR) provider, and further boosting the company’s competitive advantage.",
-        "Led multiple platform modernization efforts, including:",
+        "Led a major platform modernization effort to migrate the entire application suite from Pivotal CloudFoundry to the Kubernetes-based Red Hat OpenShift.",
+        "Made several enhancements to the enterprise CI/CD platform to improve flexibility, thus automating more workflows and reducing the amount of time developers have to spend on regular tasks.",
         "Improved application stability and reduced the prevalence of bugs by spearheading the adoption of TypeScript in frontend applications.",
         "Boosted the speed and predictability of releases by pioneering the use of a micro-frontend architecture at the company, allowing for more narrowly focused releases of frontend applications.",
         "Significantly accelerated page load times, improving the user experience, by overhauling the frontend build system to reduce application size by 50%.",
