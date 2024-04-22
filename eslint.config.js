@@ -11,7 +11,8 @@ export default [
 					paths: [
 						{
 							name: 'antd',
-							message: 'Please use more detailed import: antd/'
+							message:
+								'Please use more detailed import: antd/es/XYZ'
 						}
 					]
 				}
