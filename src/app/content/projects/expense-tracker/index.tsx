@@ -1,6 +1,7 @@
 import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
-import { Card, Typography } from 'antd';
+import { Card, Image, Typography } from 'antd';
+import diagram from '../../../../images/expense-tracker.drawio.png';
 
 export const ExpenseTracker = () => {
 	return (
@@ -31,6 +32,9 @@ export const ExpenseTracker = () => {
 						data.
 					</Typography.Text>
 				</div>
+			</Card>
+			<Card>
+				<Image src={diagram} />
 			</Card>
 			<Card>
 				<ul>
