@@ -30,7 +30,9 @@ export const Other = (props: Props) => (
 		</section>
 		<section>
 			<div className={classes.col}>
-				<Typography.Title level={3}>Honors & Achievements</Typography.Title>
+				<Typography.Title level={3}>
+					Honors & Achievements
+				</Typography.Title>
 				<BulletList
 					items={props.resume.honorsAndAchievements.map((honor) => (
 						<>
