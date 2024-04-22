@@ -7,6 +7,22 @@ type Props = Readonly<{
 	resume: Resume;
 }>;
 
+type SkillListProps = Readonly<{
+	title: string;
+	skills: ReadonlyArray<string>;
+}>;
+
+const SkillList = (props: SkillListProps) => (
+	<>
+		<Typography.Title level={5}>{props.title}</Typography.Title>
+		<ul>
+			{props.skills.map((skill) => (
+				<li key={skill}>{skill}</li>
+			))}
+		</ul>
+	</>
+);
+
 export const Skills = (props: Props) => (
 	<section className={classes.skills}>
 		<div className={classes.row}>
@@ -14,36 +30,34 @@ export const Skills = (props: Props) => (
 		</div>
 		<div className={classes.row}>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>Languages</Typography.Title>
-				<Typography.Text>
-					{props.resume.skills.languages.join(', ')}
-				</Typography.Text>
+				<SkillList
+					title="Languages"
+					skills={props.resume.skills.languages}
+				/>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>
-					Frameworks / Tools
-				</Typography.Title>
-				<Typography.Text>
-					{props.resume.skills.frameworksAndTools.join(', ')}
-				</Typography.Text>
+				<SkillList
+					title="Frameworks / Tools"
+					skills={props.resume.skills.frameworksAndTools}
+				/>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>Databases / MQs</Typography.Title>
-				<Typography.Text>
-					{props.resume.skills.databases.join(', ')}
-				</Typography.Text>
+				<SkillList
+					title="Databases / MQs"
+					skills={props.resume.skills.databases}
+				/>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>Cloud Deployment</Typography.Title>
-				<Typography.Text>
-					{props.resume.skills.cloudDeployment.join(', ')}
-				</Typography.Text>
+				<SkillList
+					title="Cloud Deployment"
+					skills={props.resume.skills.cloudDeployment}
+				/>
 			</div>
 			<div className={classNames(classes.col, classes.category)}>
-				<Typography.Title level={5}>Agile Experience</Typography.Title>
-				<Typography.Text>
-					{props.resume.skills.agileExperience.join(', ')}
-				</Typography.Text>
+				<SkillList
+					title="Agile Experience"
+					skills={props.resume.skills.agileExperience}
+				/>
 			</div>
 		</div>
 	</section>
