@@ -1,8 +1,7 @@
 import classes from './AboutMe.module.scss';
 import Card from 'antd/es/card';
 import Image from 'antd/es/image';
-import Title from 'antd/es/typography/Title';
-import Text from 'antd/es/typography/Text';
+import Typography from 'antd/es/typography';
 import meAndDogs from '../../../images/me_and_dogs.jpeg';
 import classNames from 'classnames';
 import { useSubTitleSize } from '../../../ui/responsive/useSubTitleSize';
@@ -13,20 +12,20 @@ export const AboutMe = () => {
 		<div className={classes.aboutMe}>
 			<Card>
 				<section className={classes.row}>
-					<Title level={3}>Craig Miller</Title>
-					<Title
+					<Typography.Title level={3}>Craig Miller</Typography.Title>
+					<Typography.Title
 						level={subTitleSize}
 						className={classes.marginTopFix}
 					>
 						(He/Him)
-					</Title>
+					</Typography.Title>
 				</section>
 				<section
 					className={classNames(classes.row, classes.contentWrapper)}
 				>
 					<Image src={meAndDogs} />
 					<div className={classes.col}>
-						<Text>
+						<Typography.Text>
 							Hello! My name is Craig Miller, and with nearly a
 							decade of experience in software engineering,
 							sometimes I think I&apos;ve seen it all. Of course,
@@ -34,8 +33,8 @@ export const AboutMe = () => {
 							me that nope, there are still plenty of surprises
 							here for me. Of course, that is one of the things I
 							love most about this job.
-						</Text>
-						<Text>
+						</Typography.Text>
+						<Typography.Text>
 							Over the years, I&apos;ve honed my skills as a
 							full-stack web developer. While I&apos;ve primarily
 							worked with the JavaScript/TypeScript and JVM
@@ -51,8 +50,8 @@ export const AboutMe = () => {
 							portfolio site will be a great opportunity to show
 							off the cool things I&apos;ve created while
 							exploring the hobby side of this field.
-						</Text>
-						<Text>
+						</Typography.Text>
+						<Typography.Text>
 							When I finally put my computer down, my life is
 							filled with epic battles against video game bosses,
 							marathons of sci-fi and fantasy sagas, and
@@ -62,8 +61,8 @@ export const AboutMe = () => {
 							wonderful fiancée and our two crazy dogs, who are
 							likely more famous than I am among my colleagues,
 							thanks to their cameo roles in our video calls.
-						</Text>
-						<Text>
+						</Typography.Text>
+						<Typography.Text>
 							Family, fun, and a fierce commitment to my craft —
 							that’s me in a nutshell. I take immense pride in my
 							work, treating every project as if it were my own
@@ -71,7 +70,7 @@ export const AboutMe = () => {
 							just experienced but also genuinely invested and a
 							little bit quirky, look no further. Let&apos;s build
 							something great together!
-						</Text>
+						</Typography.Text>
 					</div>
 				</section>
 			</Card>

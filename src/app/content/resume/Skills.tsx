@@ -1,7 +1,7 @@
 import type { Resume } from '../../../resume/resume';
 import classes from './Skills.module.scss';
 import classNames from 'classnames';
-import Title from 'antd/es/typography/Title';
+import Typography from 'antd/es/typography';
 import { BulletList } from '../../../ui/BulletList';
 
 type Props = Readonly<{
@@ -15,7 +15,7 @@ type SkillListProps = Readonly<{
 
 const SkillList = (props: SkillListProps) => (
 	<>
-		<Title level={5}>{props.title}</Title>
+		<Typography.Title level={5}>{props.title}</Typography.Title>
 		<BulletList items={props.skills} />
 	</>
 );
@@ -23,7 +23,7 @@ const SkillList = (props: SkillListProps) => (
 export const Skills = (props: Props) => (
 	<section className={classes.skills}>
 		<div className={classes.row}>
-			<Title level={3}>Technical Knowledge</Title>
+			<Typography.Title level={3}>Technical Knowledge</Typography.Title>
 		</div>
 		<div className={classes.row}>
 			<div className={classNames(classes.col, classes.category)}>
