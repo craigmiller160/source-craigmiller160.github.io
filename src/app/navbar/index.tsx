@@ -70,7 +70,7 @@ const projectsItems: MenuProps['items'] = [
 			},
 			{
 				key: PROJECT_OAUTH2_SERVER_KEY,
-				label: 'Homemade OAuth2 Server (Retired)',
+				label: 'OAuth2 Server (Retired)',
 				className: classes.item,
 				icon: <LockOutlined />
 			},
