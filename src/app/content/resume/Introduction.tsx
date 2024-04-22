@@ -11,9 +11,7 @@ export const Introduction = (props: Props) => (
 	<div>
 		<section>
 			<div className={classes.row}>
-				<Title level={3}>
-					{props.resume.name}
-				</Title>
+				<Title level={3}>{props.resume.name}</Title>
 				<Title level={3} className={classes.marginTopFix}>
 					{props.resume.contact.email}
 				</Title>
@@ -21,9 +19,7 @@ export const Introduction = (props: Props) => (
 		</section>
 		<section>
 			<div className={classes.row}>
-				<Title level={3}>
-					{props.resume.intro.title}
-				</Title>
+				<Title level={3}>{props.resume.intro.title}</Title>
 			</div>
 			<div className={classes.row}>
 				<Text>{props.resume.intro.body}</Text>
