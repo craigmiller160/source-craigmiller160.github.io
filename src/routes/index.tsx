@@ -19,6 +19,10 @@ const TolkienAi = namedLazy(
 	() => import('../app/content/projects/tolkien-ai'),
 	'TolkienAi'
 );
+const CraigBuild = namedLazy(
+	() => import('../app/content/projects/craig-build'),
+	'CraigBuild'
+);
 
 const projectsRoutes: RouteObject[] = [
 	{
@@ -32,6 +36,10 @@ const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/tolkien-ai',
 		element: <LazySuspenseWrapper component={TolkienAi} />
+	},
+	{
+		path: '/projects/craig-build',
+		element: <LazySuspenseWrapper component={CraigBuild} />
 	}
 ];
 
