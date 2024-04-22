@@ -22,37 +22,24 @@ export const AboutMe = () => (
 						of experience in software engineering, sometimes I think
 						I&apos;ve seen it all. Of course, every time I think
 						that something happens to remind me that nope, there are
-						still plenty of surprises here for me.
+						still plenty of surprises here for me. Of course, that
+						is one of the things I love most about this job.
 					</Typography.Text>
 					<Typography.Text>
-						Over the years, I&apos;ve honed my skills in the
-						thrilling world of full stack web development, crafting
-						everything from pixel-perfect interfaces to robust
-						backend solutions. My tools of the trade include the
-						dynamic duo of JavaScript and Java, with a generous side
-						of database expertise, ranging from the relational
-						heavyweights to the more agile non-relational
-						contenders.
-					</Typography.Text>
-					<Typography.Text>
-						Even after years of navigating the complexities of big
-						enterprise environments, my relationship with code is
-						still a passion that hasn&apos;t dimmed. As a senior
-						engineer, I&apos;ve steered numerous projects, playing
-						multiple roles from technical wizard to strategic guide.
-						Despite the corporate backdrop, my heart beats true to
-						the rhythm of innovative coding and problem-solving.
-					</Typography.Text>
-					<Typography.Text>
-						When I&apos;m not architecting software solutions or
-						leading a charge of developers towards the next release,
-						I dive into the world of side projects. These
-						aren&apos;t just any projects; they&apos;re my
-						playground for experimentation and creativity. I&apos;ve
-						worked on a suite of personal projects over the years
-						that have let me do everything from explore new tech and
-						design patterns to building helpful tools I still use
-						today.
+						Over the years, I&apos;ve honed my skills as a
+						full-stack web developer. While I&apos;ve primarily
+						worked with the JavaScript/TypeScript and JVM
+						ecosystems, I&apos;ve also gotten hands on with a
+						variety of databases and even some DevOps tasks creating
+						CI/CD pipelines and setting up cloud systems. As a
+						senior engineer, I&apos;ve steered numerous projects,
+						playing multiple roles from technical wizard to
+						strategic guide. Even after years of navigating the
+						complexities of big enterprise environments, my
+						relationship with code is still a passion that
+						hasn&apos;t dimmed. This portfolio site will be a great
+						opportunity to show off the cool things I&apos;ve
+						created while exploring the hobby side of this field.
 					</Typography.Text>
 					<Typography.Text>
 						When I finally put my computer down, my life is filled
