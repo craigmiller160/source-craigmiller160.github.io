@@ -58,13 +58,18 @@ export const items: ReadonlyArray<NavbarItem> = [
 				type: 'action',
 				label: 'Full Profile',
 				icon: <ProfileOutlined />,
-				action: () => null
+				action: () =>
+					window.open('https://github.com/craigmiller160', '_blank')
 			},
 			{
 				type: 'action',
 				label: 'Portfolio Source',
 				icon: <CodeOutlined />,
-				action: () => null
+				action: () =>
+					window.open(
+						'https://github.com/craigmiller160/source-craigmiller160.portfolio',
+						'_blank'
+					)
 			}
 		]
 	}
