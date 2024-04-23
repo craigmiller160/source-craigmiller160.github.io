@@ -1,4 +1,5 @@
 import classes from './Navbar.module.scss';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => (
 	<header className={classes.navbar}>

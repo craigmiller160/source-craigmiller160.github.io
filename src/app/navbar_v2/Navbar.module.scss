@@ -3,10 +3,14 @@
 
 .navbar {
   background-color: $color-100;
-  padding: 0;
+  padding: 0.5rem 1rem;
   height: 4rem;
 
   .menu {
     @include responsive-page-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
   }
 }
