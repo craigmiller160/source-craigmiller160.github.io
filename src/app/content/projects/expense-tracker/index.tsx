@@ -30,28 +30,41 @@ export const ExpenseTracker = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		<Card>
-			<div className={classNames(classes.row, classes.header)}>
-				<Typography.Title level={5}>
-					Architecture Diagram
-				</Typography.Title>
-			</div>
-			<Image src={diagram} />
-		</Card>
-		<Card>
-			<ul>
-				<li>Intro</li>
-				<li>Diagram</li>
-				<li>
-					Features
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
+			<>
+				<Card>
+					<div className={classNames(classes.row, classes.header)}>
+						<Typography.Title level={5}>
+							Architecture Diagram
+						</Typography.Title>
+					</div>
+					<Image src={diagram} />
+				</Card>
+				<Card>
 					<ul>
-						<li>Import Data</li>
-						<li>Rules engine</li>
-						<li>Search, filter, and categorize</li>
-						<li>Reports</li>
+						<li>Intro</li>
+						<li>Diagram</li>
+						<li>
+							Features
+							<ul>
+								<li>Import Data</li>
+								<li>Rules engine</li>
+								<li>Search, filter, and categorize</li>
+								<li>Reports</li>
+							</ul>
+						</li>
 					</ul>
-				</li>
-			</ul>
-		</Card>
+				</Card>
+			</>
+		)}
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
 	</div>
 );
