@@ -10,7 +10,6 @@ import {
 	FormOutlined,
 	GithubOutlined,
 	LockOutlined,
-	MedicineBoxOutlined,
 	OpenAIOutlined,
 	ProfileOutlined,
 	ProjectOutlined,
@@ -31,7 +30,6 @@ const ABOUT_ME_KEY = 'about_me';
 const PROJECT_MARKET_TRACKER_KEY = 'project_market_tracker';
 const PROJECT_OAUTH2_SERVER_KEY = 'project_oauth2_server';
 const PROJECT_CRAIG_BUILD_KEY = 'project_craig_build';
-const PROJECT_COVID_19_KEY = 'project_covid_19';
 const PROJECT_TOLKIEN_AI_KEY = 'project_tolkien_ai';
 type MenuKey =
 	| typeof NOTHING_KEY
@@ -43,7 +41,6 @@ type MenuKey =
 	| typeof PROJECT_CRAIG_BUILD_KEY
 	| typeof PROJECT_MARKET_TRACKER_KEY
 	| typeof PROJECT_OAUTH2_SERVER_KEY
-	| typeof PROJECT_COVID_19_KEY
 	| typeof PROJECT_TOLKIEN_AI_KEY;
 
 const projectsItems: MenuProps['items'] = [
@@ -82,12 +79,6 @@ const projectsItems: MenuProps['items'] = [
 				label: 'OAuth2 Server (Retired)',
 				className: classes.item,
 				icon: <LockOutlined />
-			},
-			{
-				key: PROJECT_COVID_19_KEY,
-				label: 'Covid19 Tracker (Retired)',
-				className: classes.item,
-				icon: <MedicineBoxOutlined />
 			}
 		]
 	}
@@ -148,7 +139,6 @@ const menuKeyToRoute = (key: MenuKey): string =>
 	match<MenuKey, string>(key)
 		.with(P.union('nothing', 'about_me'), () => '/about-me')
 		.with('project_expense_tracker', () => '/projects/expense-tracker')
-		.with('project_covid_19', () => '/projects/covid19')
 		.with('project_craig_build', () => '/projects/craig-build')
 		.with('project_market_tracker', () => '/projects/market-tracker')
 		.with('project_oauth2_server', () => '/projects/oauth2-server')
@@ -167,7 +157,6 @@ const routeToMenuKey = (route: string): MenuKey =>
 		.with('/projects/expense-tracker', () => 'project_expense_tracker')
 		.with(P.union('/about-me', '/'), () => 'about_me')
 		.with('/resume', () => 'resume')
-		.with('/projects/covid19', () => 'project_covid_19')
 		.with('/projects/craig-build', () => 'project_craig_build')
 		.with('/projects/market-tracker', () => 'project_market_tracker')
 		.with('/projects/oauth2-server', () => 'project_oauth2_server')
