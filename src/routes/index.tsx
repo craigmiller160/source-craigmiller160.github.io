@@ -25,7 +25,7 @@ const CraigBuild = namedLazy(
 );
 const OAuth2Server = namedLazy(
 	() => import('../app/content/projects/oauth2-server'),
-	'OAuth2Server'
+	'Oauth2Server'
 );
 
 const projectsRoutes: RouteObject[] = [
