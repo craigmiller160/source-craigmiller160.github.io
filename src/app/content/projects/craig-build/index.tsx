@@ -28,8 +28,8 @@ export const CraigBuild = () => (
 					command. However, with a single command it will scan the
 					project, identify which type of project it is, validate the
 					configuration, build, test, and deploy it. It is the heart
-					of my current home infrastructure, and one day maybe I'll
-					turn it into a proper CI/CD.
+					of my current home infrastructure, and one day maybe
+					I&apos;ll turn it into a proper CI/CD.
 				</Typography.Text>
 			</div>
 		</Card>
