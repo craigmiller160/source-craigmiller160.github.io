@@ -1,9 +1,15 @@
 import type { ReactNode } from 'react';
 import {
+	ClusterOutlined,
 	CodeOutlined,
+	DollarOutlined,
 	FormOutlined,
 	GithubOutlined,
+	LockOutlined,
+	OpenAIOutlined,
 	ProfileOutlined,
+	ProjectOutlined,
+	StockOutlined,
 	UserOutlined
 } from '@ant-design/icons';
 
@@ -48,6 +54,43 @@ export const items: ReadonlyArray<NavbarItem> = [
 		label: 'Resume',
 		path: '/resume',
 		icon: <FormOutlined />
+	},
+	{
+		type: 'group',
+		label: 'Personal Projects',
+		icon: <ProjectOutlined />,
+		children: [
+			{
+				type: 'route',
+				label: 'Expense Tracker',
+				icon: <DollarOutlined />,
+				path: '/projects/expense-tracker'
+			},
+			{
+				type: 'route',
+				label: 'Market Tracker',
+				icon: <StockOutlined />,
+				path: '/projects/market-tracker'
+			},
+			{
+				type: 'route',
+				label: 'Tolkien AI',
+				icon: <OpenAIOutlined />,
+				path: '/projects/tolkien-ai'
+			},
+			{
+				type: 'route',
+				label: 'Project Build System',
+				icon: <ClusterOutlined />,
+				path: '/projects/craig-build'
+			},
+			{
+				type: 'route',
+				label: 'OAuth2 Server (Retired)',
+				icon: <LockOutlined />,
+				path: '/projects/oauth2-server'
+			}
+		]
 	},
 	{
 		type: 'group',
