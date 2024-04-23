@@ -8,9 +8,18 @@
 
   .menu {
     @include responsive-page-width;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 100%;
+
+    >* {
+      margin: 0 1rem;
+    }
+  }
+
+  .desktop-active {
+    border-bottom: 2px solid black;
   }
 }

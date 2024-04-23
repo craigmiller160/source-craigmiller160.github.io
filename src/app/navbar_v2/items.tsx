@@ -23,7 +23,7 @@ type NavbarBaseItem = Readonly<{
 	icon: ReactNode;
 }>;
 
-type NavbarBrandItem = Omit<NavbarBaseItem, 'icon'> &
+export type NavbarBrandItem = Omit<NavbarBaseItem, 'icon'> &
 	Readonly<{
 		type: 'brand';
 	}>;
