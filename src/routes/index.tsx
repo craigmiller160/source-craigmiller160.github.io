@@ -23,6 +23,10 @@ const CraigBuild = namedLazy(
 	() => import('../app/content/projects/craig-build'),
 	'CraigBuild'
 );
+const OAuth2Server = namedLazy(
+	() => import('../app/content/projects/oauth2-server'),
+	'OAuth2Server'
+);
 
 const projectsRoutes: RouteObject[] = [
 	{
@@ -40,6 +44,10 @@ const projectsRoutes: RouteObject[] = [
 	{
 		path: '/projects/craig-build',
 		element: <LazySuspenseWrapper component={CraigBuild} />
+	},
+	{
+		path: '/projects/oauth2-server',
+		element: <LazySuspenseWrapper component={OAuth2Server} />
 	}
 ];
 
