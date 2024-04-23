@@ -1,4 +1,5 @@
 import { Navbar } from './navbar_v2';
+import { Navbar as OldNavbar } from './navbar';
 import { ConfigProvider, Layout } from 'antd';
 import 'antd/dist/reset.css';
 import './app.scss';
@@ -12,6 +13,8 @@ export const App = () => (
 		<HashRouter>
 			<Layout>
 				<Navbar />
+				<br />
+				<OldNavbar />
 				<Content />
 				<Footer />
 			</Layout>
