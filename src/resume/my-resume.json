@@ -90,7 +90,8 @@
       "MongoDB",
       "Flyway",
       "Liquibase",
-      "Kafka"
+      "Kafka",
+      "Weaviate"
     ],
     "frameworksAndTools": [
       "SpringBoot",
