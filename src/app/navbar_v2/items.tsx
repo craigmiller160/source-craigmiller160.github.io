@@ -13,36 +13,49 @@ import {
 	UserOutlined
 } from '@ant-design/icons';
 
-export type NavbarItemType = 'route' | 'group' | 'action';
+export type NavbarItemType = 'route' | 'group' | 'action' | 'brand';
 
-type BaseNavbarItem = Readonly<{
+type NavbarBaseItem = Readonly<{
 	type: NavbarItemType;
 	label: string;
 	className?: string;
-	icon: ReactNode;
+	icon?: ReactNode;
 }>;
 
-export type NavbarRouteItem = BaseNavbarItem &
+type NavbarBrandItem = NavbarBaseItem &
+	Readonly<{
+		type: 'brand';
+	}>;
+
+export type NavbarRouteItem = NavbarBaseItem &
 	Readonly<{
 		type: 'route';
 		path: string;
 	}>;
 
-export type NavbarActionItem = BaseNavbarItem &
+export type NavbarActionItem = NavbarBaseItem &
 	Readonly<{
 		type: 'action';
 		action: () => void;
 	}>;
 
-export type NavbarGroupItem = BaseNavbarItem &
+export type NavbarGroupItem = NavbarBaseItem &
 	Readonly<{
 		type: 'group';
 		children: ReadonlyArray<NavbarItem>;
 	}>;
 
-export type NavbarItem = NavbarRouteItem | NavbarGroupItem | NavbarActionItem;
+export type NavbarItem =
+	| NavbarRouteItem
+	| NavbarGroupItem
+	| NavbarActionItem
+	| NavbarBrandItem;
 
 export const items: ReadonlyArray<NavbarItem> = [
+	{
+		type: 'brand',
+		label: 'Craig Miller&apos; Portfolio'
+	},
 	{
 		type: 'route',
 		label: 'About Me',
