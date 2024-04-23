@@ -1,4 +1,4 @@
-import { Navbar } from './navbar';
+import { Navbar } from './navbar_v2';
 import { ConfigProvider, Layout } from 'antd';
 import 'antd/dist/reset.css';
 import './app.scss';

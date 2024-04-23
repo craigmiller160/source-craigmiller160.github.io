@@ -1,0 +1,12 @@
+@import "../../styles/theme";
+@import "../../styles/responsive";
+
+.navbar {
+  background-color: $color-100;
+  padding: 0;
+  height: 4rem;
+
+  .menu {
+    @include responsive-page-width;
+  }
+}
