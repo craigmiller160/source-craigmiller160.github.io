@@ -50,7 +50,7 @@ export type NavbarItem =
 	| NavbarActionItem
 	| NavbarBrandItem;
 
-export const items: ReadonlyArray<NavbarItem> = [
+export const navbarItems: ReadonlyArray<NavbarItem> = [
 	{
 		type: 'brand',
 		label: "Craig Miller's Portfolio"

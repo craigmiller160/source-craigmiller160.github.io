@@ -1,12 +1,12 @@
 import classes from './Navbar.module.scss';
-import { items, type NavbarItem } from './items';
+import { navbarItems, type NavbarItem } from './navbarItems';
 import { type ReactNode, useMemo } from 'react';
 import { match } from 'ts-pattern';
 import {
 	DesktopNavbarBrand,
 	DesktopNavbarGroup,
 	DesktopNavbarRoute
-} from './NavbarItems';
+} from './DesktopNavbarItems';
 
 const navbarItemToDesktopComponent = (
 	item: NavbarItem,
@@ -25,7 +25,7 @@ const navbarItemToDesktopComponent = (
 		.otherwise(() => <span />);
 
 const useDesktopItems = () =>
-	useMemo(() => items.map(navbarItemToDesktopComponent), []);
+	useMemo(() => navbarItems.map(navbarItemToDesktopComponent), []);
 
 export const Navbar = () => {
 	const desktopItems = useDesktopItems();

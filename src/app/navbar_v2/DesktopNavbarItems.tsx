@@ -3,10 +3,10 @@ import type {
 	NavbarGroupItem,
 	NavbarItem,
 	NavbarRouteItem
-} from './items';
+} from './navbarItems';
 import { Typography } from 'antd';
 import { NavLink } from 'react-router-dom';
-import classes from './NavbarItems.module.scss';
+import classes from './DesktopNavbarItems.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
