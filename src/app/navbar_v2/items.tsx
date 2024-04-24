@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import classes from './NavbarItems.module.scss';
 import {
 	ClusterOutlined,
 	CodeOutlined,
@@ -19,7 +18,6 @@ export type NavbarItemType = 'route' | 'group' | 'action' | 'brand';
 type NavbarBaseItem = Readonly<{
 	type: NavbarItemType;
 	label: string;
-	className?: string;
 	icon: ReactNode;
 }>;
 
@@ -55,8 +53,7 @@ export type NavbarItem =
 export const items: ReadonlyArray<NavbarItem> = [
 	{
 		type: 'brand',
-		label: "Craig Miller's Portfolio",
-		className: classes.brand
+		label: "Craig Miller's Portfolio"
 	},
 	{
 		type: 'route',

@@ -1,1 +1,1 @@
-export declare const brand: string;
+export declare const item: string;
