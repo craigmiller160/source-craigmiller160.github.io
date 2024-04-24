@@ -8,7 +8,7 @@ import { Typography } from 'antd';
 import { NavLink } from 'react-router-dom';
 import classes from './DesktopNavbarItems.module.scss';
 import classNames from 'classnames';
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { match } from 'ts-pattern';
 
@@ -54,12 +54,14 @@ export const DesktopNavbarRoute = (props: NavbarItemProps<NavbarRouteItem>) => (
 
 export const DesktopNavbarGroup = (props: NavbarItemProps<NavbarGroupItem>) => {
 	const [isHover, setHover] = useState<boolean>(false);
+	const rootRef = useRef<HTMLDivElement>(null);
 
 	const onHoverStart = () => setHover(true);
 	const onHoverEnd = () => setHover(false);
 
 	return (
 		<div
+			ref={rootRef}
 			onMouseEnter={onHoverStart}
 			onMouseLeave={onHoverEnd}
 			className={classNames(classes.item, classes.pointer)}
@@ -69,7 +71,10 @@ export const DesktopNavbarGroup = (props: NavbarItemProps<NavbarGroupItem>) => {
 				<Typography.Text>{props.item.label}</Typography.Text>
 			</div>
 			{createPortal(
-				<DesktopNavbarGroupItems hover={isHover} />,
+				<DesktopNavbarGroupItems
+					items={props.item.children}
+					hover={isHover}
+				/>,
 				portalRoot
 			)}
 		</div>

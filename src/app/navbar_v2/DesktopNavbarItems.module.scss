@@ -36,6 +36,7 @@
 
 .group-items {
   visibility: hidden;
+  position: absolute;
 
   &.show {
     visibility: visible;
