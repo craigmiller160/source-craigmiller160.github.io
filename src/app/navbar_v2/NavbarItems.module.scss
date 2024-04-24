@@ -20,21 +20,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: $foreground-dark;
+
+    &:global(.active), &:hover {
+      border-bottom: 2px solid $foreground-dark;
+    }
   }
 
   &.pointer {
     cursor: pointer;
-  }
-
-  a {
-    color: $foreground-dark;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    &:global(.active) {
-      border-bottom: 2px solid $foreground-dark;
-    }
   }
 }
