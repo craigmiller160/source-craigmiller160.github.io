@@ -8,11 +8,20 @@ import {
 	DesktopNavbarRoute
 } from './NavbarItems';
 
-const navbarItemToDesktopComponent = (item: NavbarItem): ReactNode =>
+const navbarItemToDesktopComponent = (
+	item: NavbarItem,
+	index: number
+): ReactNode =>
 	match(item)
-		.with({ type: 'brand' }, (_) => <DesktopNavbarBrand item={_} />)
-		.with({ type: 'route' }, (_) => <DesktopNavbarRoute item={_} />)
-		.with({ type: 'group' }, (_) => <DesktopNavbarGroup item={_} />)
+		.with({ type: 'brand' }, (_) => (
+			<DesktopNavbarBrand key={index} item={_} />
+		))
+		.with({ type: 'route' }, (_) => (
+			<DesktopNavbarRoute key={index} item={_} />
+		))
+		.with({ type: 'group' }, (_) => (
+			<DesktopNavbarGroup key={index} item={_} />
+		))
 		.otherwise(() => <span />);
 
 const useDesktopItems = () =>

@@ -8,6 +8,13 @@ import { Typography } from 'antd';
 import { NavLink } from 'react-router-dom';
 import classes from './NavbarItems.module.scss';
 import classNames from 'classnames';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+
+const portalRoot = document.querySelector('#portal-root');
+if (!portalRoot) {
+	throw new Error('Cannot find portal root element');
+}
 
 type NavbarItemComponentProps<T extends NavbarItem> = Readonly<{
 	item: T;
@@ -34,11 +41,34 @@ export const DesktopNavbarRoute = (
 
 export const DesktopNavbarGroup = (
 	props: NavbarItemComponentProps<NavbarGroupItem>
-) => (
-	<div className={classNames(classes.item, classes.pointer)}>
-		<div className={classes.itemContents}>
-			{props.item.icon}
-			<Typography.Text>{props.item.label}</Typography.Text>
+) => {
+	const [isHover, setHover] = useState<boolean>(false);
+
+	const onHoverStart = () => setHover(true);
+	const onHoverEnd = () => setHover(false);
+
+	return (
+		<div
+			onMouseEnter={onHoverStart}
+			onMouseLeave={onHoverEnd}
+			className={classNames(classes.item, classes.pointer)}
+		>
+			<div className={classes.itemContents}>
+				{props.item.icon}
+				<Typography.Text>{props.item.label}</Typography.Text>
+			</div>
+			{createPortal(
+				<DesktopNavbarGroupItems hover={isHover} />,
+				portalRoot
+			)}
 		</div>
-	</div>
-);
+	);
+};
+
+const DesktopNavbarGroupItems = ({ hover }: { hover: boolean }) => {
+	return (
+		<div style={{ visibility: hover ? 'visible' : 'hidden' }}>
+			<p>Hello World</p>
+		</div>
+	);
+};
