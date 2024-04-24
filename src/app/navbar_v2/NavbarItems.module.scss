@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   margin-right: 2rem;
 
   :global(.ant-typography) {
@@ -14,6 +13,17 @@
 
   :global(.anticon) {
     margin-right: 0.5rem;
+  }
+
+  .item-contents {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.pointer {
+    cursor: pointer;
   }
 
   a {
