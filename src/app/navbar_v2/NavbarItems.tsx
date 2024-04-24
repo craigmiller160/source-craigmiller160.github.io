@@ -2,7 +2,6 @@ import type { NavbarBrandItem, NavbarItem, NavbarRouteItem } from './items';
 import { Typography } from 'antd';
 import { NavLink } from 'react-router-dom';
 import classes from './NavbarItems.module.scss';
-import classNames from 'classnames';
 
 type NavbarItemComponentProps<T extends NavbarItem> = Readonly<{
 	item: T;
@@ -19,7 +18,7 @@ export const DesktopNavbarBrand = (
 export const DesktopNavbarRoute = (
 	props: NavbarItemComponentProps<NavbarRouteItem>
 ) => (
-	<div className={classNames(classes.item, classes.route)}>
+	<div className={classes.item}>
 		<NavLink to={props.item.path}>
 			{props.item.icon}
 			<Typography.Text>{props.item.label}</Typography.Text>

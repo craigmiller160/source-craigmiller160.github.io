@@ -1,6 +1,13 @@
 @import "../../styles/theme";
 
 .item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-right: 2rem;
+
   :global(.ant-typography) {
     margin: 0;
   }
@@ -8,12 +15,16 @@
   :global(.anticon) {
     margin-right: 0.5rem;
   }
-}
-
-.route {
-  margin: 0 1rem;
 
   a {
     color: $foreground-dark;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:global(.active) {
+      border-bottom: 2px solid $foreground-dark;
+    }
   }
 }
