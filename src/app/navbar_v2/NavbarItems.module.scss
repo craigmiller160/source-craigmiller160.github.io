@@ -1,5 +1,19 @@
+@import "../../styles/theme";
+
 .item {
-  &:global(.ant-typography) {
+  :global(.ant-typography) {
     margin: 0;
+  }
+
+  :global(.anticon) {
+    margin-right: 0.5rem;
+  }
+}
+
+.route {
+  margin: 0 1rem;
+
+  a {
+    color: $foreground-dark;
   }
 }
