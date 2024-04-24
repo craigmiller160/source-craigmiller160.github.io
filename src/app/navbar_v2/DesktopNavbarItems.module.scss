@@ -33,3 +33,11 @@
     cursor: pointer;
   }
 }
+
+.group-items {
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+}
