@@ -21,6 +21,8 @@
     flex-direction: row;
     align-items: center;
     color: $foreground-dark;
+    border-bottom: 2px solid $color-100;
+    transition: border-bottom 0.5s ease;
 
     &:global(.active), &:hover {
       border-bottom: 2px solid $foreground-dark;
