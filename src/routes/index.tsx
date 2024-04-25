@@ -27,8 +27,13 @@ const OAuth2Server = namedLazy(
 	() => import('../app/content/projects/oauth2-server'),
 	'Oauth2Server'
 );
+const Projects = namedLazy(() => import('../app/content/projects'), 'Projects');
 
 const projectsRoutes: RouteObject[] = [
+	{
+		path: '/projects',
+		element: <LazySuspenseWrapper component={Projects} />
+	},
 	{
 		path: '/projects/expense-tracker',
 		element: <LazySuspenseWrapper component={ExpenseTracker} />

@@ -1,14 +1,12 @@
-import { Tabs } from 'antd';
-import { type Tab } from 'rc-tabs/es/interface';
-
-const items: Tab[] = [
-	{
-		key: 'one',
-		label: 'One'
-	},
-	{ key: 'two', label: 'Two' }
-];
+import classes from './Projects.module.scss';
+import { Typography } from 'antd';
 
 export const Projects = () => {
-	return <Tabs items={items} />;
+	return (
+		<div className={classes.projects}>
+			<div className={classes.row}>
+				<Typography.Title level={3}>Personal Projects</Typography.Title>
+			</div>
+		</div>
+	);
 };
