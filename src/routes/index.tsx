@@ -29,19 +29,7 @@ const OAuth2Server = namedLazy(
 );
 const Projects = namedLazy(() => import('../app/content/projects'), 'Projects');
 
-export const routes: RouteObject[] = [
-	{
-		path: '/about-me',
-		element: <LazySuspenseWrapper component={AboutMe} />
-	},
-	{
-		path: '/resume',
-		element: <LazySuspenseWrapper component={ResumePage} />
-	},
-	{
-		path: '/projects',
-		element: <LazySuspenseWrapper component={Projects} />
-	},
+export const projectRoutes: RouteObject[] = [
 	{
 		path: '/projects/expense-tracker',
 		element: <LazySuspenseWrapper component={ExpenseTracker} />
@@ -61,7 +49,23 @@ export const routes: RouteObject[] = [
 	{
 		path: '/projects/oauth2-server',
 		element: <LazySuspenseWrapper component={OAuth2Server} />
+	}
+];
+
+export const routes: RouteObject[] = [
+	{
+		path: '/about-me',
+		element: <LazySuspenseWrapper component={AboutMe} />
 	},
+	{
+		path: '/resume',
+		element: <LazySuspenseWrapper component={ResumePage} />
+	},
+	{
+		path: '/projects',
+		element: <LazySuspenseWrapper component={Projects} />
+	},
+	...projectRoutes,
 	{
 		path: '*',
 		element: <Navigate to="/about-me" />
