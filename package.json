@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "scss": "typed-scss-modules src/**/*.module.scss",
+    "scss": "typed-scss-modules 'src/**/*.module.scss'",
     "download-resume": "tsx ./src/resume-downloader",
     "postinstall": "c-init browser",
     "forceBuild": "bash ./scripts/build-and-deploy.sh",

@@ -1,5 +1,12 @@
 @import "../../../styles/responsive";
+@import "../../../styles/theme";
 
 .projects {
   @include responsive-content-width;
+
+  .title {
+    @media (min-width: $antd-breakpoint-lg) {
+      justify-content: center;
+    }
+  }
 }
