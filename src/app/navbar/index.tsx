@@ -5,13 +5,11 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import {
 	ClusterOutlined,
-	CodeOutlined,
 	DollarOutlined,
 	FormOutlined,
 	GithubOutlined,
 	LockOutlined,
 	OpenAIOutlined,
-	ProfileOutlined,
 	ProjectOutlined,
 	StockOutlined,
 	UserOutlined
@@ -21,9 +19,7 @@ import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
 const RESUME_KEY = 'resume';
-const GITHUB_SOURCE_KEY = 'github_portfolio_source';
 const GITHUB_KEY = 'github';
-const GITHUB_PROFILE_KEY = 'github_profile';
 const PERSONAL_PROJECTS_KEY = 'personal_projects';
 const PROJECT_EXPENSE_TRACKER_KEY = 'project_expense_tracker';
 const ABOUT_ME_KEY = 'about_me';
@@ -34,8 +30,7 @@ const PROJECT_TOLKIEN_AI_KEY = 'project_tolkien_ai';
 type MenuKey =
 	| typeof NOTHING_KEY
 	| typeof RESUME_KEY
-	| typeof GITHUB_SOURCE_KEY
-	| typeof GITHUB_PROFILE_KEY
+	| typeof GITHUB_KEY
 	| typeof PROJECT_EXPENSE_TRACKER_KEY
 	| typeof ABOUT_ME_KEY
 	| typeof PROJECT_CRAIG_BUILD_KEY
@@ -107,19 +102,7 @@ const items: MenuProps['items'] = [
 		key: GITHUB_KEY,
 		label: 'Github',
 		className: classes.item,
-		icon: <GithubOutlined />,
-		children: [
-			{
-				key: GITHUB_PROFILE_KEY,
-				label: 'Full Profile',
-				icon: <ProfileOutlined />
-			},
-			{
-				key: GITHUB_SOURCE_KEY,
-				label: 'Portfolio Source',
-				icon: <CodeOutlined />
-			}
-		]
+		icon: <GithubOutlined />
 	}
 ];
 
@@ -143,12 +126,7 @@ const menuKeyToRoute = (key: MenuKey): string =>
 		.with('project_market_tracker', () => '/projects/market-tracker')
 		.with('project_oauth2_server', () => '/projects/oauth2-server')
 		.with('project_tolkien_ai', () => '/projects/tolkien-ai')
-		.with(
-			'github_portfolio_source',
-			() =>
-				'https://github.com/craigmiller160/source-craigmiller160.portfolio'
-		)
-		.with('github_profile', () => 'https://github.com/craigmiller160')
+		.with('github', () => 'https://github.com/craigmiller160')
 		.with('resume', () => '/resume')
 		.exhaustive();
 
@@ -165,10 +143,7 @@ const routeToMenuKey = (route: string): MenuKey =>
 
 const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 	match<MenuKey, MenuKey>(newKey)
-		.with(
-			P.union('github_portfolio_source', 'github_profile'),
-			() => currentKey
-		)
+		.with('github', () => currentKey)
 		.with('nothing', () => 'about_me')
 		.otherwise(() => newKey);
 
