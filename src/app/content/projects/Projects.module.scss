@@ -27,9 +27,7 @@
     }
 
     .list {
-      @media (min-width: $antd-breakpoint-md) {
-        width: 100%;
-      }
+      width: 100%;
 
       @media (min-width: $antd-breakpoint-lg) {
         width: 70%;
