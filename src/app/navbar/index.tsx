@@ -8,6 +8,7 @@ import {
 	DollarOutlined,
 	FormOutlined,
 	GithubOutlined,
+	LinkedinOutlined,
 	LockOutlined,
 	OpenAIOutlined,
 	ProjectOutlined,
@@ -27,6 +28,7 @@ const PROJECT_MARKET_TRACKER_KEY = 'project_market_tracker';
 const PROJECT_OAUTH2_SERVER_KEY = 'project_oauth2_server';
 const PROJECT_CRAIG_BUILD_KEY = 'project_craig_build';
 const PROJECT_TOLKIEN_AI_KEY = 'project_tolkien_ai';
+const LINKED_IN_KEY = 'linkedin';
 type MenuKey =
 	| typeof NOTHING_KEY
 	| typeof RESUME_KEY
@@ -36,7 +38,8 @@ type MenuKey =
 	| typeof PROJECT_CRAIG_BUILD_KEY
 	| typeof PROJECT_MARKET_TRACKER_KEY
 	| typeof PROJECT_OAUTH2_SERVER_KEY
-	| typeof PROJECT_TOLKIEN_AI_KEY;
+	| typeof PROJECT_TOLKIEN_AI_KEY
+	| typeof LINKED_IN_KEY;
 
 const projectsItems: MenuProps['items'] = [
 	{
@@ -99,6 +102,12 @@ const items: MenuProps['items'] = [
 	},
 	...(import.meta.env.VITE_ENABLE_PROJECTS === 'true' ? projectsItems : []),
 	{
+		key: LINKED_IN_KEY,
+		label: 'LinkedIn',
+		className: classes.item,
+		icon: <LinkedinOutlined />
+	},
+	{
 		key: GITHUB_KEY,
 		label: 'Github',
 		className: classes.item,
@@ -127,6 +136,10 @@ const menuKeyToRoute = (key: MenuKey): string =>
 		.with('project_oauth2_server', () => '/projects/oauth2-server')
 		.with('project_tolkien_ai', () => '/projects/tolkien-ai')
 		.with('github', () => 'https://github.com/craigmiller160')
+		.with(
+			'linkedin',
+			() => 'https://www.linkedin.com/in/craig-miller-93a64435'
+		)
 		.with('resume', () => '/resume')
 		.exhaustive();
 
@@ -143,7 +156,7 @@ const routeToMenuKey = (route: string): MenuKey =>
 
 const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
 	match<MenuKey, MenuKey>(newKey)
-		.with('github', () => currentKey)
+		.with(P.union('github', 'linkedin'), () => currentKey)
 		.with('nothing', () => 'about_me')
 		.otherwise(() => newKey);
 
