@@ -10,7 +10,12 @@
     }
   }
 
-  .list {
+  .list-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
     :global(.ant-list-item) {
       cursor: pointer;
     }
@@ -21,10 +26,16 @@
       }
     }
 
-    @media (min-width: $antd-breakpoint-lg) {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+    .list {
+      @media (min-width: $antd-breakpoint-xxl) {
+        width: 50%;
+      }
+
+      .list-item {
+        &:hover {
+          background-color: $color-050;
+        }
+      }
     }
   }
 }

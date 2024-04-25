@@ -54,12 +54,16 @@ export const Projects = () => {
 			<div className={classNames(classes.row, classes.title)}>
 				<Typography.Title level={3}>Personal Projects</Typography.Title>
 			</div>
-			<div className={classes.list}>
+			<div className={classes.listWrapper}>
 				<List
+					className={classes.list}
 					dataSource={items}
 					renderItem={(item) => (
-						<List.Item>
-							<List.Item.Meta avatar={item.icon} title={item.label} />
+						<List.Item className={classes.listItem}>
+							<List.Item.Meta
+								avatar={item.icon}
+								title={item.label}
+							/>
 						</List.Item>
 					)}
 				/>
