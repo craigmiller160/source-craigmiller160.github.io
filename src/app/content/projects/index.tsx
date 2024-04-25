@@ -59,7 +59,10 @@ export const Projects = () => {
 					className={classes.list}
 					dataSource={items}
 					renderItem={(item) => (
-						<List.Item className={classes.listItem}>
+						<List.Item
+							className={classes.listItem}
+							onClick={item.onClick}
+						>
 							<List.Item.Meta
 								avatar={item.icon}
 								title={item.label}
