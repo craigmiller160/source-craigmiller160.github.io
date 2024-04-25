@@ -5,7 +5,7 @@ export const Projects = () => {
 	return (
 		<div className={classes.projects}>
 			<div className={classes.row}>
-				<Typography.Title level={3}>Personal Projects</Typography.Title>
+				<Typography.Title level={3}>Personal Projects 2</Typography.Title>
 			</div>
 		</div>
 	);
