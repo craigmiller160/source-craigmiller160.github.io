@@ -25,47 +25,6 @@ type MenuKey =
 	| typeof PERSONAL_PROJECTS_KEY
 	| typeof LINKED_IN_KEY;
 
-// const projectsItems: MenuProps['items'] = [
-// 	{
-// 		key: PERSONAL_PROJECTS_KEY,
-// 		label: 'Personal Projects',
-// 		className: classes.item,
-// 		icon: <ProjectOutlined />,
-// 		children: [
-// 			{
-// 				key: PROJECT_EXPENSE_TRACKER_KEY,
-// 				label: 'Expense Tracker',
-// 				className: classes.item,
-// 				icon: <DollarOutlined />
-// 			},
-// 			{
-// 				key: PROJECT_MARKET_TRACKER_KEY,
-// 				label: 'Market Tracker',
-// 				className: classes.item,
-// 				icon: <StockOutlined />
-// 			},
-// 			{
-// 				key: PROJECT_TOLKIEN_AI_KEY,
-// 				label: 'Tolkien AI',
-// 				className: classes.item,
-// 				icon: <OpenAIOutlined />
-// 			},
-// 			{
-// 				key: PROJECT_CRAIG_BUILD_KEY,
-// 				label: 'Project Build System',
-// 				className: classes.item,
-// 				icon: <ClusterOutlined />
-// 			},
-// 			{
-// 				key: PROJECT_OAUTH2_SERVER_KEY,
-// 				label: 'OAuth2 Server (Retired)',
-// 				className: classes.item,
-// 				icon: <LockOutlined />
-// 			}
-// 		]
-// 	}
-// ];
-
 const createItems = (navigate: NavigateFunction): MenuProps['items'] => [
 	{
 		key: NOTHING_KEY,
