@@ -1,8 +1,6 @@
 import { Layout, Menu, type MenuProps } from 'antd';
-import { type MenuInfo } from 'rc-menu/es/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
-import { useState } from 'react';
 import {
 	FormOutlined,
 	GithubOutlined,
@@ -10,7 +8,7 @@ import {
 	ProjectOutlined,
 	UserOutlined
 } from '@ant-design/icons';
-import { useLocation, useNavigate } from 'react-router';
+import { type NavigateFunction, useLocation, useNavigate } from 'react-router';
 import { match, P } from 'ts-pattern';
 
 const NOTHING_KEY = 'nothing';
@@ -68,95 +66,67 @@ type MenuKey =
 // 	}
 // ];
 
-const items: MenuProps['items'] = [
+const createItems = (navigate: NavigateFunction): MenuProps['items'] => [
 	{
 		key: NOTHING_KEY,
 		className: classNames(classes.brand, classes.item),
-		label: "Craig Miller's Portfolio"
+		label: "Craig Miller's Portfolio",
+		onClick: () => navigate('/about-me')
 	},
 	{
 		key: ABOUT_ME_KEY,
 		className: classes.item,
 		label: 'About Me',
-		icon: <UserOutlined />
+		icon: <UserOutlined />,
+		onClick: () => navigate('/about-me')
 	},
 	{
 		key: RESUME_KEY,
 		label: 'Resume',
 		className: classes.item,
-		icon: <FormOutlined />
+		icon: <FormOutlined />,
+		onClick: () => navigate('/resume')
 	},
 	{
 		key: PERSONAL_PROJECTS_KEY,
 		label: 'Personal Projects',
 		className: classes.item,
-		icon: <ProjectOutlined />
+		icon: <ProjectOutlined />,
+		onClick: () => navigate('/projects')
 	},
 	{
 		key: LINKED_IN_KEY,
 		label: 'LinkedIn',
 		className: classes.item,
-		icon: <LinkedinOutlined />
+		icon: <LinkedinOutlined />,
+		onClick: () =>
+			window.open(
+				'https://www.linkedin.com/in/craig-miller-93a64435',
+				'_blank'
+			)
 	},
 	{
 		key: GITHUB_KEY,
 		label: 'Github',
 		className: classes.item,
-		icon: <GithubOutlined />
+		icon: <GithubOutlined />,
+		onClick: () =>
+			window.open('https://github.com/craigmiller160', '_blank')
 	}
 ];
 
-type ExtendedNavigate = (uri: string) => void;
-const useExtendedNavigate = (): ExtendedNavigate => {
-	const navigate = useNavigate();
-	return (uri) => {
-		if (/^https?.+$/.test(uri)) {
-			window.open(uri, '_blank');
-			return;
-		}
-		navigate(uri);
-	};
-};
-
-// const menuKeyToRoute = (key: MenuKey): string =>
-// 	match<MenuKey, string>(key)
-// 		.with(P.union('nothing', 'about_me'), () => '/about-me')
-// 		.
-// 		.with('github', () => 'https://github.com/craigmiller160')
-// 		.with(
-// 			'linkedin',
-// 			() => 'https://www.linkedin.com/in/craig-miller-93a64435'
-// 		)
-// 		.with('resume', () => '/resume')
-// 		.exhaustive();
-
 const routeToMenuKey = (route: string): MenuKey =>
 	match<string, MenuKey>(route)
-		.with('/projects', () => 'personal_projects')
+		.with(P.string.startsWith('/projects'), () => 'personal_projects')
 		.with(P.union('/about-me', '/'), () => 'about_me')
 		.with('/resume', () => 'resume')
 		.run();
 
-const menuKeyToStateMenuKey = (newKey: MenuKey, currentKey: MenuKey): MenuKey =>
-	match<MenuKey, MenuKey>(newKey)
-		.with(P.union('github', 'linkedin'), () => currentKey)
-		.with('nothing', () => 'about_me')
-		.otherwise(() => newKey);
-
 export const Navbar = () => {
 	const location = useLocation();
-	const initialMenuKey = routeToMenuKey(location.pathname);
-	const [menuKey, setMenuKey] = useState<MenuKey>(initialMenuKey);
-	const navigate = useExtendedNavigate();
-
-	const onMenuClick = (info: MenuInfo) => {
-		const key = info.key as MenuKey;
-
-		setMenuKey((currentKey) => menuKeyToStateMenuKey(key, currentKey));
-
-		// const route = menuKeyToRoute(key);
-		// navigate(route);
-	};
+	const menuKey = routeToMenuKey(location.pathname);
+	const navigate = useNavigate();
+	const items = createItems(navigate);
 
 	return (
 		<Layout.Header className={classes.navbar}>
@@ -166,7 +136,6 @@ export const Navbar = () => {
 				mode="horizontal"
 				items={items}
 				selectedKeys={[menuKey]}
-				onClick={onMenuClick}
 			/>
 		</Layout.Header>
 	);
