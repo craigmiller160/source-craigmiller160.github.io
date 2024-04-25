@@ -3,8 +3,13 @@ import { List, Typography } from 'antd';
 import classNames from 'classnames';
 import type { ReactNode } from 'react';
 import { type NavigateFunction, useNavigate } from 'react-router';
-import { DollarOutlined } from '@ant-design/icons';
-import { navbar } from '../../navbar/Navbar.module.scss';
+import {
+	ClusterOutlined,
+	DollarOutlined,
+	LockOutlined,
+	OpenAIOutlined,
+	StockOutlined
+} from '@ant-design/icons';
 
 type ListDataItem = Readonly<{
 	label: string;
@@ -17,6 +22,26 @@ const createListItems = (navigate: NavigateFunction): ListDataItem[] => [
 		label: 'Expense Tracker',
 		icon: <DollarOutlined />,
 		onClick: () => navigate('/projects/expense-tracker')
+	},
+	{
+		label: 'Market Tracker',
+		icon: <StockOutlined />,
+		onClick: () => navigate('/projects/market-tracker')
+	},
+	{
+		label: 'Tolkien AI',
+		icon: <OpenAIOutlined />,
+		onClick: () => navigate('/projects/tolkien-ai')
+	},
+	{
+		label: 'Project Build System',
+		icon: <ClusterOutlined />,
+		onClick: () => navigate('/projects/craig-build')
+	},
+	{
+		label: 'OAuth2 Server (Retired)',
+		icon: <LockOutlined />,
+		onClick: () => navigate('/projects/oauth2-server')
 	}
 ];
 
