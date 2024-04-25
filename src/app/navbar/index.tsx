@@ -1,5 +1,5 @@
 import { Layout, Menu, type MenuProps } from 'antd';
-import { type MenuInfo } from 'rc-menu/lib/interface';
+import { type MenuInfo } from 'rc-menu/es/interface';
 import classes from './Navbar.module.scss';
 import classNames from 'classnames';
 import { useState } from 'react';
