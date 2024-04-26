@@ -3,7 +3,8 @@ import {
 	ClusterOutlined,
 	DollarOutlined,
 	LockOutlined,
-	OpenAIOutlined, ProfileOutlined,
+	OpenAIOutlined,
+	ProfileOutlined,
 	StockOutlined
 } from '@ant-design/icons';
 
