@@ -1,16 +1,21 @@
-import { useLocation } from 'react-router';
+import { type NavigateFunction, useLocation, useNavigate } from 'react-router';
 import type { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
 import { Breadcrumb } from 'antd';
 import { match, P } from 'ts-pattern';
 import classes from './ContentBreadcrumbs.module.scss';
 
-const BASE_BREADCRUMBS: ItemType[] = [
+const getBaseBreadcrumbs = (navigate: NavigateFunction): ItemType[] => [
 	{
-		title: 'Portfolio'
+		title: 'Portfolio',
+		className: classes.link,
+		onClick: () => navigate('/about-me')
 	}
 ];
 
-const getProjectBreadcrumb = (path: string): ItemType[] => {
+const getProjectBreadcrumb = (
+	navigate: NavigateFunction,
+	path: string
+): ItemType[] => {
 	const projectBreadcrumb = match<string, ItemType>(path)
 		.with('/projects/expense-tracker', () => ({
 			title: 'Expense Tracker'
@@ -31,15 +36,20 @@ const getProjectBreadcrumb = (path: string): ItemType[] => {
 
 	return [
 		{
-			title: 'Projects'
+			title: 'Projects',
+			className: classes.link,
+			onClick: () => navigate('/projects')
 		},
 		projectBreadcrumb
 	];
 };
 
-const getBreadcrumbsFromRoute = (path: string): ItemType[] => {
+const getBreadcrumbsFromRoute = (
+	navigate: NavigateFunction,
+	path: string
+): ItemType[] => {
 	const routeBreadcrumbs = match<string, ItemType[]>(path)
-		.with('/about-me', () => [
+		.with(P.union('/about-me', '/'), () => [
 			{
 				title: 'About Me'
 			}
@@ -55,15 +65,16 @@ const getBreadcrumbsFromRoute = (path: string): ItemType[] => {
 			}
 		])
 		.with(P.string.startsWith('/projects'), () =>
-			getProjectBreadcrumb(path)
+			getProjectBreadcrumb(navigate, path)
 		)
 		.run();
-	return [...BASE_BREADCRUMBS, ...routeBreadcrumbs];
+	return [...getBaseBreadcrumbs(navigate), ...routeBreadcrumbs];
 };
 
 export const ContentBreadcrumbs = () => {
 	const location = useLocation();
-	const items = getBreadcrumbsFromRoute(location.pathname);
+	const navigate = useNavigate();
+	const items = getBreadcrumbsFromRoute(navigate, location.pathname);
 	return (
 		<div className={classes.contentBreadcrumbs}>
 			<Breadcrumb items={items} />
