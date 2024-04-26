@@ -3,7 +3,7 @@ import {
 	ClusterOutlined,
 	DollarOutlined,
 	LockOutlined,
-	OpenAIOutlined,
+	OpenAIOutlined, ProfileOutlined,
 	StockOutlined
 } from '@ant-design/icons';
 
@@ -14,6 +14,11 @@ type ProjectItem = Readonly<{
 }>;
 
 export const projectItems: ProjectItem[] = [
+	{
+		label: 'Portfolio Source Code',
+		icon: <ProfileOutlined />,
+		path: 'https://github.com/craigmiller160/source-craigmiller160.portfolio'
+	},
 	{
 		label: 'Expense Tracker',
 		icon: <DollarOutlined />,

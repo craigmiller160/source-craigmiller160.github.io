@@ -4,8 +4,19 @@ import classNames from 'classnames';
 import { useNavigate } from 'react-router';
 import { projectItems } from './projectItems';
 
-export const Projects = () => {
+const useExtendedNavigate = (): ((p: string) => void) => {
 	const navigate = useNavigate();
+	return (path) => {
+		if (/^https/.test(path)) {
+			window.open(path, '_blank');
+			return;
+		}
+		navigate(path);
+	};
+};
+
+export const Projects = () => {
+	const navigate = useExtendedNavigate();
 
 	return (
 		<div className={classes.projects}>
