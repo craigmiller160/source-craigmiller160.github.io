@@ -40,6 +40,3 @@ export const projectItems: ProjectItem[] = [
 		path: '/projects/oauth2-server'
 	}
 ];
-
-export const getLabelFromRoute = (path: string): string | undefined =>
-	projectItems.find((item) => item.path === path)?.label;
