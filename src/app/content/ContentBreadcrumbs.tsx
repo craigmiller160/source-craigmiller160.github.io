@@ -2,6 +2,7 @@ import { useLocation } from 'react-router';
 import type { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
 import { Breadcrumb } from 'antd';
 import { match, P } from 'ts-pattern';
+import classes from './ContentBreadcrumbs.module.scss';
 
 const BASE_BREADCRUMBS: ItemType[] = [
 	{
@@ -60,11 +61,11 @@ const getBreadcrumbsFromRoute = (path: string): ItemType[] => {
 	return [...BASE_BREADCRUMBS, ...routeBreadcrumbs];
 };
 
-export const ProjectBreadcrumbs = () => {
+export const ContentBreadcrumbs = () => {
 	const location = useLocation();
 	const items = getBreadcrumbsFromRoute(location.pathname);
 	return (
-		<div>
+		<div className={classes.contentBreadcrumbs}>
 			<Breadcrumb items={items} />
 		</div>
 	);
