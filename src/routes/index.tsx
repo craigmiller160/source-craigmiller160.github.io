@@ -31,24 +31,28 @@ const Projects = namedLazy(() => import('../app/content/projects'), 'Projects');
 
 export const projectRoutes: RouteObject[] = [
 	{
-		path: '/projects/expense-tracker',
+		path: 'expense-tracker',
 		element: <LazySuspenseWrapper component={ExpenseTracker} />
 	},
 	{
-		path: '/projects/market-tracker',
+		path: 'market-tracker',
 		element: <LazySuspenseWrapper component={MarketTracker} />
 	},
 	{
-		path: '/projects/tolkien-ai',
+		path: 'tolkien-ai',
 		element: <LazySuspenseWrapper component={TolkienAi} />
 	},
 	{
-		path: '/projects/craig-build',
+		path: 'craig-build',
 		element: <LazySuspenseWrapper component={CraigBuild} />
 	},
 	{
-		path: '/projects/oauth2-server',
+		path: 'oauth2-server',
 		element: <LazySuspenseWrapper component={OAuth2Server} />
+	},
+	{
+		path: '',
+		element: <LazySuspenseWrapper component={Projects} />
 	}
 ];
 
@@ -63,9 +67,8 @@ export const routes: RouteObject[] = [
 	},
 	{
 		path: '/projects',
-		element: <LazySuspenseWrapper component={Projects} />
+		children: projectRoutes
 	},
-	...projectRoutes,
 	{
 		path: '*',
 		element: <Navigate to="/about-me" />
