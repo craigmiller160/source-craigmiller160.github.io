@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@craigmiller160/js-config": "file:.yalc/@craigmiller160/js-config",
+    "@craigmiller160/js-config": "^1.1.0-beta",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
