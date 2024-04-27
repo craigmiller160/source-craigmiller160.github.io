@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "scss": "typed-scss-modules 'src/**/*.module.scss'",
     "download-resume": "tsx ./src/resume-downloader",
     "postinstall": "c-init browser",
     "forceBuild": "bash ./scripts/build-and-deploy.sh",
@@ -20,7 +19,6 @@
     "@types/react-dom": "^18.2.25",
     "cross-env": "^7.0.3",
     "tsx": "^4.7.2",
-    "typed-scss-modules": "^8.0.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-bundle-visualizer": "^1.1.0",
