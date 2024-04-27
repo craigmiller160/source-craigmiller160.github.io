@@ -95,6 +95,7 @@ type ResumeParsingContext = Readonly<{
 	section: ResumeSection;
 	experienceIndex: number;
 	currentSkill: Skill;
+	hasMovedPastAddress: boolean;
 }>;
 
 const parseResume = (resumeText: string): Resume => {
@@ -103,7 +104,8 @@ const parseResume = (resumeText: string): Resume => {
 		resume: BASE_RESUME,
 		section: 'intro',
 		experienceIndex: 0,
-		currentSkill: 'languages'
+		currentSkill: 'languages',
+		hasMovedPastAddress: false
 	};
 
 	return (
@@ -284,13 +286,20 @@ const parseIntroLine = (
 		});
 	}
 
-	if (
+	const noWhitespaceLineAfterName =
 		!STARTS_WITH_WHITESPACE_REGEX.test(line) &&
-		context.resume.name &&
-		!context.resume.contact.email
-	) {
+		!!context.resume.name &&
+		!context.resume.contact.email;
+
+	if (noWhitespaceLineAfterName && context.hasMovedPastAddress) {
 		return produce(context, (draft) => {
 			draft.resume.contact.email = line.trim();
+		});
+	}
+
+	if (noWhitespaceLineAfterName) {
+		return produce(context, (draft) => {
+			draft.hasMovedPastAddress = true;
 		});
 	}
 
