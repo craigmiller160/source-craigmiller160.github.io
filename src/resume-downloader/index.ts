@@ -90,12 +90,16 @@ type ResumeSection =
 	| 'certifications'
 	| 'education'
 	| 'honors';
+type ResumeParsingIntroContext = Readonly<{
+	hasMovedPastAddress: boolean;
+	hasMovedPastLinks: boolean;
+}>;
 type ResumeParsingContext = Readonly<{
 	resume: Resume;
 	section: ResumeSection;
 	experienceIndex: number;
 	currentSkill: Skill;
-	hasMovedPastAddress: boolean;
+	intro: ResumeParsingIntroContext;
 }>;
 
 const parseResume = (resumeText: string): Resume => {
@@ -105,7 +109,10 @@ const parseResume = (resumeText: string): Resume => {
 		section: 'intro',
 		experienceIndex: 0,
 		currentSkill: 'languages',
-		hasMovedPastAddress: false
+		intro: {
+			hasMovedPastAddress: false,
+			hasMovedPastLinks: false
+		}
 	};
 
 	return (
@@ -291,7 +298,7 @@ const parseIntroLine = (
 		!!context.resume.name &&
 		!context.resume.contact.email;
 
-	if (noWhitespaceLineAfterName && context.hasMovedPastAddress) {
+	if (noWhitespaceLineAfterName && context.intro.hasMovedPastAddress) {
 		return produce(context, (draft) => {
 			draft.resume.contact.email = line.trim();
 		});
@@ -299,18 +306,24 @@ const parseIntroLine = (
 
 	if (noWhitespaceLineAfterName) {
 		return produce(context, (draft) => {
-			draft.hasMovedPastAddress = true;
+			draft.intro.hasMovedPastAddress = true;
 		});
 	}
 
-	if (
+	const noWhitespaceAfterEmail =
 		!STARTS_WITH_WHITESPACE_REGEX.test(line) &&
-		context.resume.contact.email &&
-		!line.startsWith('Riverview') &&
-		!context.resume.intro.title
-	) {
+		!!context.resume.contact.email &&
+		!context.resume.intro.title;
+
+	if (noWhitespaceAfterEmail && context.intro.hasMovedPastLinks) {
 		return produce(context, (draft) => {
 			draft.resume.intro.title = line.trim();
+		});
+	}
+
+	if (noWhitespaceAfterEmail) {
+		return produce(context, (draft) => {
+			draft.intro.hasMovedPastLinks = true;
 		});
 	}
 
