@@ -1,0 +1,16 @@
+{
+  "workingDirectoryPath": "/Users/craigmiller/Development/Projects/source-craigmiller160.github.io",
+  "projectType": "module",
+  "eslintPlugins": {
+    "react": true,
+    "vitest": true,
+    "jestDom": false,
+    "cypress": false,
+    "testingLibraryReact": false,
+    "tanstackQuery": false
+  },
+  "directories": {
+    "test": false,
+    "cypress": false
+  }
+}
