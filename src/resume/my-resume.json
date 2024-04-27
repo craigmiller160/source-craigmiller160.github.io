@@ -1,7 +1,7 @@
 {
   "name": "Craig Miller",
   "contact": {
-    "email": "craigmiller.software.engineer@gmail.com"
+    "email": "Riverview, FL"
   },
   "education": [
     {
@@ -15,47 +15,65 @@
   "experience": [
     {
       "achievements": [
-        "Architected and implemented a new Point of Care solution, seamlessly integrating the company’s services into a common Electronic Medical Records (EMR) provider, and further boosting the company’s competitive advantage.",
+        "Designed and implemented a new Point of Care solution, seamlessly integrating the company’s services into a common Electronic Medical Records (EMR) provider, which led to 10% of our clients increasing their business with us.",
         "Led a major platform modernization effort to migrate the entire application suite from Pivotal CloudFoundry to the Kubernetes-based Red Hat OpenShift.",
-        "Made several enhancements to the enterprise CI/CD platform to improve flexibility, thus automating more workflows and reducing the amount of time developers have to spend on regular tasks.",
+        "Made several enhancements to the enterprise CI/CD platform to improve flexibility, automating tedious tasks and eliminating more than one whole day’s worth of work for every member of the team.",
         "Improved application stability and reduced the prevalence of bugs by spearheading the adoption of TypeScript in frontend applications.",
-        "Boosted the speed and predictability of releases by pioneering the use of a micro-frontend architecture at the company, allowing for more narrowly focused releases of frontend applications.",
-        "Significantly accelerated page load times, improving the user experience, by overhauling the frontend build system to reduce application size by 50%.",
-        "Eliminated the use of an expensive and unreliable platform by developing an in-house ETL solution to handle communication between external vendors and mainframe programs.",
         "Grew the skillset of the broader team by running multiple sessions of an in-house React course so that traditionally backend developers could learn to contribute to the full stack.",
-        "Reduced production bugs and workflow chaos by streamlining the software release process through documenting and standardizing the process, properly allocating resources each sprint for release tasks, and getting the business to commit to respecting the release schedule.",
-        "Boosted the company’s appeal to potential candidates by being a mentor for the corporate summer internship program, with several intern direct reports ultimately becoming full time employees of the company.",
+        "Reduced production bugs and workflow chaos by streamlining the software release process through documenting and standardizing the process, properly allocating resources each sprint for release tasks, and getting the business to commit to respecting the release schedule. This resulted in all releases being predictably scheduled and almost never getting delayed.",
         "Improved predictability to business partners by increasing sprint completion rate from ~40% to ~75% by boosting communication of capacity constraints from developer team."
       ],
-      "company": "Cigna ",
-      "dates": "2018-Present",
+      "company": "Cigna",
+      "dates": "",
+      "positions": [
+        {
+          "title": "Senior Software Engineer ",
+          "dates": "2020-Present"
+        }
+      ]
+    },
+    {
+      "achievements": [
+        "Eliminated the use of an expensive and unreliable platform by developing an in-house ETL solution to handle communication between external vendors and mainframe programs.",
+        "Boosted the speed and predictability of releases by pioneering the use of a micro-frontend architecture at the company, allowing for more narrowly focused releases of frontend applications.",
+        "Significantly accelerated page load times, improving the user experience, by overhauling the frontend build system to reduce application size by 50%.",
+        "Boosted the company’s appeal to potential candidates by being a mentor for the corporate summer internship program, with several intern direct reports ultimately becoming full time employees of the company."
+      ],
+      "company": "Cigna",
+      "dates": "",
       "positions": [
         {
           "title": "Software Engineer ",
-          "dates": "2018-2021"
-        },
+          "dates": "2018-2020"
+        }
+      ]
+    },
+    {
+      "achievements": [
+        "Ensured the competitiveness of a legacy medical forms company in the digital space by designing and implementing an all-in-one electronic form integration solution, complete with security protections and a customer-facing web UI.",
+        "Boosted company’s competitive advantage by designing system to allow clients to easily configure mappings of inbound legacy data feeds to modern REST API calls.",
+        "Vastly improved the efficiency of an information provider in the insurance industry by creating an integration to automatically pull regulatory data down from multiple APIs and combine it all in their database."
+      ],
+      "company": "PilotFish Technology",
+      "dates": "",
+      "positions": [
         {
-          "title": "Senior Software Engineer ",
-          "dates": "2021-Present"
+          "title": "Solutions Architect ",
+          "dates": "2016-2018"
         }
       ]
     },
     {
       "achievements": [
         "Revolutionized software upgrade experience by designing an automated regression testing system to pre-emptively identify and report changes in behavior when moving to a newer version of the software.",
-        "Ensured the competitiveness of a legacy medical forms company in the digital space by designing and implementing an all-in-one electronic form integration solution, complete with security protections and a customer-facing web UI.",
-        "Boosted company’s competitive advantage by designing system to allow clients to easily configure mappings of inbound legacy data feeds to modern REST API calls."
+        "Drastically improved the responsiveness of the user experience by overhauling the UI code to improve threading usage and remove inefficient processes."
       ],
-      "company": "PilotFish Technology ",
-      "dates": "2015-2018",
+      "company": "PilotFish Technology",
+      "dates": "",
       "positions": [
         {
           "title": "Java Developer ",
           "dates": "2015-2016"
-        },
-        {
-          "title": "Solutions Architect ",
-          "dates": "2016-2018"
         }
       ]
     }
@@ -68,7 +86,7 @@
   ],
   "intro": {
     "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
-    "title": "Staff/Principal/Senior Full Stack Engineer"
+    "title": "craigmiller.software.engineer@gmail.com"
   },
   "skills": {
     "agileExperience": [
