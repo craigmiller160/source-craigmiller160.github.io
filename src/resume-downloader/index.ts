@@ -234,14 +234,12 @@ const parseExperienceLine = (
 		const newExperienceIndex = currentExperienceHasAchievements
 			? context.experienceIndex + 1
 			: context.experienceIndex;
-		const groups = ITEM_AND_DATES_REGEX.exec(line.trim())?.groups;
-		const experienceCompanyLine = itemAndDatesSchema.parse(groups);
 		return produce(context, (draft) => {
 			draft.experienceIndex = newExperienceIndex;
 			draft.resume.experience[newExperienceIndex] = {
 				achievements: [],
-				company: experienceCompanyLine.item,
-				dates: experienceCompanyLine.dates,
+				company: line.trim(),
+				dates: '',
 				positions: []
 			};
 		});
