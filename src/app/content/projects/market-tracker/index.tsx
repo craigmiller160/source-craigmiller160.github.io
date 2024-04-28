@@ -35,7 +35,7 @@ export const MarketTracker = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+		{import.meta.env.VITE_ENABLE_MARKET_TRACKER !== 'true' && (
 			<Card>
 				<div className={classNames(classes.row, classes.header)}>
 					<Typography.Title level={5}>
@@ -44,7 +44,7 @@ export const MarketTracker = () => (
 				</div>
 			</Card>
 		)}
-		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
+		{import.meta.env.VITE_ENABLE_MARKET_TRACKER === 'true' && (
 			<>
 				<Card>
 					<ul>

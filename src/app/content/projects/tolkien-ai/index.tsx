@@ -35,12 +35,17 @@ export const TolkienAi = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		<Card>
-			<div className={classNames(classes.row, classes.header)}>
-				<Typography.Title level={5}>
-					More Details Coming Soon...
-				</Typography.Title>
-			</div>
-		</Card>
+		{import.meta.env.VITE_ENABLE_TOLKIEN_AI !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
+		{import.meta.env.VITE_ENABLE_TOLKIEN_AI === 'true' && (
+			<div />
+		)}
 	</div>
 );

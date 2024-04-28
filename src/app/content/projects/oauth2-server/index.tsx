@@ -32,12 +32,17 @@ export const Oauth2Server = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		<Card>
-			<div className={classNames(classes.row, classes.header)}>
-				<Typography.Title level={5}>
-					More Details Coming Soon...
-				</Typography.Title>
-			</div>
-		</Card>
+		{import.meta.env.VITE_ENABLE_OAUTH2_SERVER !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
+		{import.meta.env.VITE_ENABLE_OAUTH2_SERVER === 'true' && (
+			<div />
+		)}
 	</div>
 );

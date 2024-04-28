@@ -33,7 +33,7 @@ export const CraigBuild = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+		{import.meta.env.VITE_ENABLE_CRAIG_BUILD !== 'true' && (
 			<Card>
 				<div className={classNames(classes.row, classes.header)}>
 					<Typography.Title level={5}>
@@ -42,7 +42,7 @@ export const CraigBuild = () => (
 				</div>
 			</Card>
 		)}
-		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
+		{import.meta.env.VITE_ENABLE_CRAIG_BUILD === 'true' && (
 			<>
 				<Card>
 					<ul>
