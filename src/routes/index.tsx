@@ -51,7 +51,7 @@ export const projectRoutes: RouteObject[] = [
 		element: <LazySuspenseWrapper component={OAuth2Server} />
 	},
 	{
-		path: '',
+		index: true,
 		element: <LazySuspenseWrapper component={Projects} />
 	}
 ];
