@@ -65,9 +65,33 @@ export const routes: RouteObject[] = [
 		path: '/resume',
 		element: <LazySuspenseWrapper component={ResumePage} />
 	},
+	// {
+	// 	path: '/projects',
+	// 	children: projectRoutes
+	// },
 	{
 		path: '/projects',
-		children: projectRoutes
+		element: <LazySuspenseWrapper component={Projects} />
+	},
+	{
+		path: '/projects/expense-tracker',
+		element: <LazySuspenseWrapper component={ExpenseTracker} />
+	},
+	{
+		path: '/projects/market-tracker',
+		element: <LazySuspenseWrapper component={MarketTracker} />
+	},
+	{
+		path: '/projects/tolkien-ai',
+		element: <LazySuspenseWrapper component={TolkienAi} />
+	},
+	{
+		path: '/projects/craig-build',
+		element: <LazySuspenseWrapper component={CraigBuild} />
+	},
+	{
+		path: '/projects/oauth2-server',
+		element: <LazySuspenseWrapper component={OAuth2Server} />
 	},
 	{
 		path: '*',
