@@ -5,6 +5,7 @@
   "scripts": {
     "download-resume": "tsx ./src/resume-downloader",
     "postinstall": "c-init browser",
+    "prod-start": "c-build-app && (cd ./build && static-server)",
     "forceBuild": "bash ./scripts/build-and-deploy.sh",
     "build": "c-validate && npm run forceBuild",
     "analyze": "vite-bundle-visualizer"
@@ -37,6 +38,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
+    "static-server": "^2.2.1",
     "ts-pattern": "^5.1.1",
     "use-immer": "^0.9.0",
     "zod": "^3.22.4"
