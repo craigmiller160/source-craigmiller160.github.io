@@ -67,7 +67,7 @@ export const routes: RouteObject[] = [
 	},
 	{
 		path: '/projects',
-		children: projectRoutes
+		element: <LazySuspenseWrapper component={Projects} />
 	},
 	{
 		path: '*',
