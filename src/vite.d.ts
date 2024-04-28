@@ -6,5 +6,9 @@ interface ImportMeta {
 		PROD: boolean;
 		SSR: boolean;
 		VITE_ENABLE_EXPENSE_TRACKER: string;
+		VITE_ENABLE_MARKET_TRACKER: string;
+		VITE_ENABLE_TOLKIEN_AI: string;
+		VITE_ENABLE_CRAIG_BUILD: string;
+		VITE_ENABLE_OAUTH2_SERVER: string;
 	};
 }
