@@ -30,6 +30,15 @@ export const ExpenseTracker = () => (
 				</Typography.Text>
 			</div>
 		</Card>
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
 		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
 			<>
 				<Card>
@@ -56,15 +65,6 @@ export const ExpenseTracker = () => (
 					</ul>
 				</Card>
 			</>
-		)}
-		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
-			<Card>
-				<div className={classNames(classes.row, classes.header)}>
-					<Typography.Title level={5}>
-						More Details Coming Soon...
-					</Typography.Title>
-				</div>
-			</Card>
 		)}
 	</div>
 );

@@ -35,12 +35,33 @@ export const MarketTracker = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		<Card>
-			<div className={classNames(classes.row, classes.header)}>
-				<Typography.Title level={5}>
-					More Details Coming Soon...
-				</Typography.Title>
-			</div>
-		</Card>
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
+			<>
+				<Card>
+					<ul>
+						<li>Intro</li>
+						<li>Diagram</li>
+						<li>
+							Features
+							<ul>
+								<li>Integration with Tradier & CoinGecko</li>
+								<li>Search & History</li>
+								<li>Watchlists</li>
+								<li>Personal Investments From Google Sheets</li>
+							</ul>
+						</li>
+					</ul>
+				</Card>
+			</>
+		)}
 	</div>
 );
