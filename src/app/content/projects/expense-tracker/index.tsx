@@ -86,7 +86,7 @@ export const ExpenseTracker = () => (
 							)}
 						>
 							<List
-								style={{ width: '50%' }}
+								className={classes.linkList}
 								dataSource={linkItems}
 								renderItem={(item) => (
 									<List.Item>
