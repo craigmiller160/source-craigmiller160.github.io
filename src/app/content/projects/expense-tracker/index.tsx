@@ -51,7 +51,9 @@ export const ExpenseTracker = () => (
 							Architecture Diagram
 						</Typography.Title>
 					</div>
-					<Image src={diagram} />
+					<div className={classNames(classes.row, classes.header)}>
+						<Image src={diagram} />
+					</div>
 				</Card>
 				<Card>
 					<div className={classNames(classes.row, classes.header)}>
