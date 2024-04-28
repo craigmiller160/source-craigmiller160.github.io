@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Card, Image, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
+import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
 
 export const ExpenseTracker = () => (
 	<div className={classes.expenseTracker}>
@@ -58,7 +59,34 @@ export const ExpenseTracker = () => (
 					</div>
 					<div className={classNames(classes.row, classes.section)}>
 						<Image src={loginPage} />
-						<Typography.Text>Hello World</Typography.Text>
+						<Typography.Text>
+							Like all of my applications, this one uses my
+							Keycloak OIDC SSO authentication flow. A single sign
+							on to access an account that is used across all of
+							my applications, and controls what the user can
+							access. Expense Tracker is multi-tenant, meaning the
+							data is segregated by user id.
+						</Typography.Text>
+					</div>
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.header)}>
+						<Typography.Title level={5}>
+							Record Import
+						</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<Image src={expenseTrackerImportPage} />
+						<Typography.Text>
+							Due to restrictions on API access to various bank
+							vendors, the import process is manual. Transaction
+							data must be downloaded in CSV format and then
+							provided to the app via this form. The financial
+							institution that the data comes from needs to be
+							selected so that the application knows how to parse
+							it. Currently it only supports institutions I
+							personally use, as I am the sole user.
+						</Typography.Text>
 					</div>
 				</Card>
 				<Card>
