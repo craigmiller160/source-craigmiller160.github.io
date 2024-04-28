@@ -4,6 +4,8 @@ import { Card, Image, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
 import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
+import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
+import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
 
 export const ExpenseTracker = () => (
 	<div className={classes.expenseTracker}>
@@ -84,9 +86,64 @@ export const ExpenseTracker = () => (
 							provided to the app via this form. The financial
 							institution that the data comes from needs to be
 							selected so that the application knows how to parse
-							it. Currently it only supports institutions I
-							personally use, as I am the sole user.
+							it.
 						</Typography.Text>
+					</div>
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.header)}>
+						<Typography.Title level={5}>
+							Define Categories
+						</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<Image src={expenseTrackerCategoriesPage} />
+						<Typography.Text>
+							The user defines the categories they want to
+							organize the transactions into. Each user can define
+							their own set of categories. The colors are
+							auto-selected based on a formula using the hash code
+							of the category name.
+						</Typography.Text>
+					</div>
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.header)}>
+						<Typography.Title level={5}>
+							Define Rules
+						</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<Image src={expenseTrackerRulesPage} />
+						<div className={classes.col}>
+							<Typography.Text>
+								Categorization can be done either manually or
+								automatically, depending on what the user wants.
+								Auto-categorization is driven by a rules engine
+								configured explicitly by the user. Criteria
+								including the date range, amount range, and most
+								importantly, a regular expression, is used to
+								determine which category is applied. If multiple
+								rules match, the first (ie, lowest ordinal) rule
+								is applied.
+							</Typography.Text>
+							<Typography.Text>
+								All automated categorization decisions still
+								require a manual review. A transaction that is
+								categorized automatically is left in an
+								&quot;unconfirmed&quot; state, and the user is
+								alerted about the need to review and confirm it.
+							</Typography.Text>
+							<Typography.Text>
+								The heavy use of regular expressions definitely
+								targets this tool at a more technical audience,
+								which is fine given that only my fiance and I
+								use it. The goal is ultimately to replace this
+								rules engine with AI integration, using a RAG
+								(Retrieval Augmented Generation) design to guide
+								the AI in making decisions.
+							</Typography.Text>
+						</div>
 					</div>
 				</Card>
 				<Card>
