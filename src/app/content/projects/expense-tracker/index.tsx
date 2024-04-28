@@ -1,11 +1,31 @@
 import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
-import { Button, Card, Image, Typography } from 'antd';
+import { Card, Image, List, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
 import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
 import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
 import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
+
+type LinkItem = Readonly<{
+	label: string;
+	url: string;
+}>;
+
+const linkItems: LinkItem[] = [
+	{
+		label: 'Application',
+		url: 'https://expense-tracker.craigmiller160.us'
+	},
+	{
+		label: 'Expense Tracker API (Backend)',
+		url: 'https://github.com/craigmiller160/expense-tracker-api'
+	},
+	{
+		label: 'Expense Tracker UI (Frontend)',
+		url: 'https://github.com/craigmiller160/expense-tracker-ui'
+	}
+];
 
 export const ExpenseTracker = () => (
 	<div className={classes.expenseTracker}>
@@ -65,36 +85,15 @@ export const ExpenseTracker = () => (
 								classes.colCenter
 							)}
 						>
-							<Button
-								className={classes.button}
-								target="_blank"
-								href="https://expense-tracker.craigmiller160.us"
-								rel="noreferrer"
-							>
-								<Typography.Text>
-									Expense Tracker Application
-								</Typography.Text>
-							</Button>
-							<Button
-								className={classes.button}
-								target="_blank"
-								href="https://github.com/craigmiller160/expense-tracker-api"
-								rel="noreferrer"
-							>
-								<Typography.Text>
-									Expense Tracker API (Backend)
-								</Typography.Text>
-							</Button>
-							<Button
-								className={classes.button}
-								target="_blank"
-								href="https://github.com/craigmiller160/expense-tracker-ui"
-								rel="noreferrer"
-							>
-								<Typography.Text>
-									Expense Tracker UI (Frontend)
-								</Typography.Text>
-							</Button>
+							<List
+								style={{ width: '50%' }}
+								dataSource={linkItems}
+								renderItem={(item) => (
+									<List.Item>
+										<List.Item.Meta title={item.label} />
+									</List.Item>
+								)}
+							/>
 						</div>
 					</div>
 				</Card>
