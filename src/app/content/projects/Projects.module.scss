@@ -36,12 +36,6 @@
       @media (min-width: $antd-breakpoint-xxl) {
         width: 50%;
       }
-
-      .list-item {
-        &:hover {
-          background-color: $color-050;
-        }
-      }
     }
   }
 }

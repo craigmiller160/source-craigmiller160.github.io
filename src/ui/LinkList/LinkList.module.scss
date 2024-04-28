@@ -1,0 +1,9 @@
+@import "../../styles/theme";
+
+.link-list {
+  .list-item {
+    &:hover {
+      background-color: $color-050;
+    }
+  }
+}
