@@ -31,6 +31,10 @@ const Projects = namedLazy(() => import('../app/content/projects'), 'Projects');
 
 export const projectRoutes: RouteObject[] = [
 	{
+		index: true,
+		element: <LazySuspenseWrapper component={Projects} />
+	},
+	{
 		path: 'expense-tracker',
 		element: <LazySuspenseWrapper component={ExpenseTracker} />
 	},
@@ -49,10 +53,6 @@ export const projectRoutes: RouteObject[] = [
 	{
 		path: 'oauth2-server',
 		element: <LazySuspenseWrapper component={OAuth2Server} />
-	},
-	{
-		index: true,
-		element: <LazySuspenseWrapper component={Projects} />
 	}
 ];
 
@@ -66,8 +66,8 @@ export const routes: RouteObject[] = [
 		element: <LazySuspenseWrapper component={ResumePage} />
 	},
 	{
-		path: '/projects',
-		element: <LazySuspenseWrapper component={Projects} />
+		path: '/projects/',
+		children: projectRoutes
 	},
 	{
 		path: '*',

@@ -1,4 +1,4 @@
-import { useRoutes } from 'react-router';
+import { useRoutes } from 'react-router-dom';
 import { routes } from '../../routes';
 import classes from './Content.module.scss';
 import { Layout } from 'antd';
