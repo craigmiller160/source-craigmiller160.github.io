@@ -33,12 +33,31 @@ export const CraigBuild = () => (
 				</Typography.Text>
 			</div>
 		</Card>
-		<Card>
-			<div className={classNames(classes.row, classes.header)}>
-				<Typography.Title level={5}>
-					More Details Coming Soon...
-				</Typography.Title>
-			</div>
-		</Card>
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
+			<Card>
+				<div className={classNames(classes.row, classes.header)}>
+					<Typography.Title level={5}>
+						More Details Coming Soon...
+					</Typography.Title>
+				</div>
+			</Card>
+		)}
+		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
+			<>
+				<Card>
+					<ul>
+						<li>Introduction</li>
+						<li>Diagram</li>
+						<li>
+							Features
+							<ul>
+								<li>Full build, test, & validation system</li>
+								<li>Describe all phases</li>
+							</ul>
+						</li>
+					</ul>
+				</Card>
+			</>
+		)}
 	</div>
 );
