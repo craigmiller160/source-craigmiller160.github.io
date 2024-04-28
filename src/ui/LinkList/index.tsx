@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import classes from './LinkList.module.scss';
 import { castDraft } from 'immer';
 
-type Item = Readonly<{
+export type LinkListItem = Readonly<{
 	label: string;
 	link: string;
 	icon?: ReactNode;
@@ -14,7 +14,7 @@ type Item = Readonly<{
 type Props = Readonly<{
 	listClassName?: string;
 	listItemClassName?: string;
-	items: ReadonlyArray<Item>;
+	items: ReadonlyArray<LinkListItem>;
 }>;
 
 const useExtendedNavigate = (): ((p: string) => void) => {

@@ -1,45 +1,56 @@
 import classes from './Projects.module.scss';
-import { List, Typography } from 'antd';
+import { Typography } from 'antd';
 import classNames from 'classnames';
-import { useNavigate } from 'react-router';
-import { projectItems } from './projectItems';
+import {
+	ClusterOutlined,
+	DollarOutlined,
+	LockOutlined,
+	OpenAIOutlined,
+	ProfileOutlined,
+	StockOutlined
+} from '@ant-design/icons';
+import { LinkList, type LinkListItem } from '../../../ui/LinkList';
 
-const useExtendedNavigate = (): ((p: string) => void) => {
-	const navigate = useNavigate();
-	return (path) => {
-		if (/^https/.test(path)) {
-			window.open(path, '_blank');
-			return;
-		}
-		navigate(path);
-	};
-};
+export const projectItems: ReadonlyArray<LinkListItem> = [
+	{
+		label: 'Portfolio Source Code',
+		icon: <ProfileOutlined />,
+		link: 'https://github.com/craigmiller160/source-craigmiller160.portfolio'
+	},
+	{
+		label: 'Expense Tracker',
+		icon: <DollarOutlined />,
+		link: '/projects/expense-tracker'
+	},
+	{
+		label: 'Market Tracker',
+		icon: <StockOutlined />,
+		link: '/projects/market-tracker'
+	},
+	{
+		label: 'Tolkien AI',
+		icon: <OpenAIOutlined />,
+		link: '/projects/tolkien-ai'
+	},
+	{
+		label: 'Project Build System',
+		icon: <ClusterOutlined />,
+		link: '/projects/craig-build'
+	},
+	{
+		label: 'OAuth2 Server (Retired)',
+		icon: <LockOutlined />,
+		link: '/projects/oauth2-server'
+	}
+];
 
-export const Projects = () => {
-	const navigate = useExtendedNavigate();
-
-	return (
-		<div className={classes.projects}>
-			<div className={classNames(classes.row, classes.title)}>
-				<Typography.Title level={3}>Personal Projects</Typography.Title>
-			</div>
-			<div className={classes.listWrapper}>
-				<List
-					className={classes.list}
-					dataSource={projectItems}
-					renderItem={(item) => (
-						<List.Item
-							className={classes.listItem}
-							onClick={() => navigate(item.path)}
-						>
-							<List.Item.Meta
-								avatar={item.icon}
-								title={item.label}
-							/>
-						</List.Item>
-					)}
-				/>
-			</div>
+export const Projects = () => (
+	<div className={classes.projects}>
+		<div className={classNames(classes.row, classes.title)}>
+			<Typography.Title level={3}>Personal Projects</Typography.Title>
 		</div>
-	);
-};
+		<div className={classes.listWrapper}>
+			<LinkList listClassName={classes.list} items={projectItems} />
+		</div>
+	</div>
+);
