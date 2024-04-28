@@ -42,7 +42,20 @@ export const Oauth2Server = () => (
 			</Card>
 		)}
 		{import.meta.env.VITE_ENABLE_OAUTH2_SERVER === 'true' && (
-			<div />
+			<Card>
+				<ul>
+					<li>Introduction</li>
+					<li>Diagram</li>
+					<li>
+						Features
+						<ul>
+							<li>Password Flow</li>
+							<li>Auth Code Flow</li>
+							<li>User Access Management UI</li>
+						</ul>
+					</li>
+				</ul>
+			</Card>
 		)}
 	</div>
 );

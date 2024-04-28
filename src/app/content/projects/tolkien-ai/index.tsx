@@ -45,7 +45,20 @@ export const TolkienAi = () => (
 			</Card>
 		)}
 		{import.meta.env.VITE_ENABLE_TOLKIEN_AI === 'true' && (
-			<div />
+			<Card>
+				<ul>
+					<li>Introduction</li>
+					<li>Diagram</li>
+					<li>
+						Features
+						<ul>
+							<li>Parsed & Vectorized Silmarillion</li>
+							<li>Query using vectors & ChatGPT</li>
+							<li>Robust audit logging to study how to optimize queries</li>
+						</ul>
+					</li>
+				</ul>
+			</Card>
 		)}
 	</div>
 );
