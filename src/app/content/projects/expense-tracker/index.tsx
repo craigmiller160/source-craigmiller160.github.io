@@ -1,6 +1,6 @@
 import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
-import { Card, Image, Typography } from 'antd';
+import { Button, Card, Image, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
 import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
@@ -59,8 +59,14 @@ export const ExpenseTracker = () => (
 								you can access it.
 							</Typography.Text>
 						</div>
-						<div className={classNames(classes.col, classes.colCenter)}>
-							<a
+						<div
+							className={classNames(
+								classes.col,
+								classes.colCenter
+							)}
+						>
+							<Button
+								className={classes.button}
 								target="_blank"
 								href="https://expense-tracker.craigmiller160.us"
 								rel="noreferrer"
@@ -68,8 +74,9 @@ export const ExpenseTracker = () => (
 								<Typography.Text>
 									Expense Tracker Application
 								</Typography.Text>
-							</a>
-							<a
+							</Button>
+							<Button
+								className={classes.button}
 								target="_blank"
 								href="https://github.com/craigmiller160/expense-tracker-api"
 								rel="noreferrer"
@@ -77,8 +84,9 @@ export const ExpenseTracker = () => (
 								<Typography.Text>
 									Expense Tracker API (Backend)
 								</Typography.Text>
-							</a>
-							<a
+							</Button>
+							<Button
+								className={classes.button}
 								target="_blank"
 								href="https://github.com/craigmiller160/expense-tracker-ui"
 								rel="noreferrer"
@@ -86,7 +94,7 @@ export const ExpenseTracker = () => (
 								<Typography.Text>
 									Expense Tracker UI (Frontend)
 								</Typography.Text>
-							</a>
+							</Button>
 						</div>
 					</div>
 				</Card>

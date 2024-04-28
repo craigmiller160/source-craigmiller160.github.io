@@ -15,6 +15,10 @@
     align-items: center;
   }
 
+  .button {
+    flex: 1;
+  }
+
   .section {
     >* {
       @media(min-width: $antd-breakpoint-lg) {

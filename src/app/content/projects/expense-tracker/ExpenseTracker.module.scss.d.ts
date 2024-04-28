@@ -1,3 +1,4 @@
+export declare const button: string;
 export declare const col: string;
 export declare const colCenter: string;
 export declare const expenseTracker: string;
