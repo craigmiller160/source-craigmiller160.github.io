@@ -2,6 +2,7 @@ import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
 import { Card, Image, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
+import loginPage from '../../../../images/login-page.png';
 
 export const ExpenseTracker = () => (
 	<div className={classes.expenseTracker}>
@@ -48,6 +49,17 @@ export const ExpenseTracker = () => (
 						</Typography.Title>
 					</div>
 					<Image src={diagram} />
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.header)}>
+						<Typography.Title level={5}>
+							Authentication
+						</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<Image src={loginPage} />
+						<Typography.Text>Hello World</Typography.Text>
+					</div>
 				</Card>
 				<Card>
 					<ul>
