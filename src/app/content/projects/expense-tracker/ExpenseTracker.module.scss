@@ -7,8 +7,12 @@
   display: flex;
   flex-direction: column;
 
-  .header {
+  .row-center {
     justify-content: center;
+  }
+
+  .col-center {
+    align-items: center;
   }
 
   .section {

@@ -4,13 +4,13 @@ import classNames from 'classnames';
 
 export const MarketTracker = () => (
 	<div className={classes.marketTracker}>
-		<div className={classNames(classes.row, classes.header)}>
+		<div className={classNames(classes.row, classes.rowCenter)}>
 			<Typography.Title level={3}>
 				Market Tracker Project
 			</Typography.Title>
 		</div>
 		<Card className={classes.col}>
-			<div className={classNames(classes.row, classes.header)}>
+			<div className={classNames(classes.row, classes.rowCenter)}>
 				<Typography.Title level={5}>Introduction</Typography.Title>
 			</div>
 			<div className={classes.col}>
@@ -37,7 +37,7 @@ export const MarketTracker = () => (
 		</Card>
 		{import.meta.env.VITE_ENABLE_MARKET_TRACKER !== 'true' && (
 			<Card>
-				<div className={classNames(classes.row, classes.header)}>
+				<div className={classNames(classes.row, classes.rowCenter)}>
 					<Typography.Title level={5}>
 						More Details Coming Soon...
 					</Typography.Title>

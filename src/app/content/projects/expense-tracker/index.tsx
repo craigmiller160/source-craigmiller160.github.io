@@ -9,13 +9,13 @@ import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.pn
 
 export const ExpenseTracker = () => (
 	<div className={classes.expenseTracker}>
-		<div className={classNames(classes.row, classes.header)}>
+		<div className={classNames(classes.row, classes.rowCenter)}>
 			<Typography.Title level={3}>
 				Expense Tracker Project
 			</Typography.Title>
 		</div>
 		<Card className={classes.col}>
-			<div className={classNames(classes.row, classes.header)}>
+			<div className={classNames(classes.row, classes.rowCenter)}>
 				<Typography.Title level={5}>Introduction</Typography.Title>
 			</div>
 			<div className={classes.col}>
@@ -36,7 +36,7 @@ export const ExpenseTracker = () => (
 		</Card>
 		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER !== 'true' && (
 			<Card>
-				<div className={classNames(classes.row, classes.header)}>
+				<div className={classNames(classes.row, classes.rowCenter)}>
 					<Typography.Title level={5}>
 						More Details Coming Soon...
 					</Typography.Title>
@@ -46,17 +46,62 @@ export const ExpenseTracker = () => (
 		{import.meta.env.VITE_ENABLE_EXPENSE_TRACKER === 'true' && (
 			<>
 				<Card>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
+						<Typography.Title level={5}>Links</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<div className={classes.col}>
+							<Typography.Text>
+								The following are links to the application and
+								relevant git repositories. Please note that the
+								application itself requires valid
+								authentication, which must be provided before
+								you can access it.
+							</Typography.Text>
+						</div>
+						<div className={classNames(classes.col, classes.colCenter)}>
+							<a
+								target="_blank"
+								href="https://expense-tracker.craigmiller160.us"
+								rel="noreferrer"
+							>
+								<Typography.Text>
+									Expense Tracker Application
+								</Typography.Text>
+							</a>
+							<a
+								target="_blank"
+								href="https://github.com/craigmiller160/expense-tracker-api"
+								rel="noreferrer"
+							>
+								<Typography.Text>
+									Expense Tracker API (Backend)
+								</Typography.Text>
+							</a>
+							<a
+								target="_blank"
+								href="https://github.com/craigmiller160/expense-tracker-ui"
+								rel="noreferrer"
+							>
+								<Typography.Text>
+									Expense Tracker UI (Frontend)
+								</Typography.Text>
+							</a>
+						</div>
+					</div>
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Typography.Title level={5}>
 							Architecture Diagram
 						</Typography.Title>
 					</div>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Image src={diagram} />
 					</div>
 				</Card>
 				<Card>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Typography.Title level={5}>
 							Authentication
 						</Typography.Title>
@@ -74,7 +119,7 @@ export const ExpenseTracker = () => (
 					</div>
 				</Card>
 				<Card>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Typography.Title level={5}>
 							Record Import
 						</Typography.Title>
@@ -93,7 +138,7 @@ export const ExpenseTracker = () => (
 					</div>
 				</Card>
 				<Card>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Typography.Title level={5}>
 							Define Categories
 						</Typography.Title>
@@ -110,7 +155,7 @@ export const ExpenseTracker = () => (
 					</div>
 				</Card>
 				<Card>
-					<div className={classNames(classes.row, classes.header)}>
+					<div className={classNames(classes.row, classes.rowCenter)}>
 						<Typography.Title level={5}>
 							Define Rules
 						</Typography.Title>

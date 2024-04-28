@@ -4,13 +4,13 @@ import classNames from 'classnames';
 
 export const CraigBuild = () => (
 	<div className={classes.craigBuild}>
-		<div className={classNames(classes.row, classes.header)}>
+		<div className={classNames(classes.row, classes.rowCenter)}>
 			<Typography.Title level={3}>
 				Project Build System (aka &apos;craig-build&apos;)
 			</Typography.Title>
 		</div>
 		<Card className={classes.col}>
-			<div className={classNames(classes.row, classes.header)}>
+			<div className={classNames(classes.row, classes.rowCenter)}>
 				<Typography.Title level={5}>Introduction</Typography.Title>
 			</div>
 			<div className={classes.col}>
@@ -35,7 +35,7 @@ export const CraigBuild = () => (
 		</Card>
 		{import.meta.env.VITE_ENABLE_CRAIG_BUILD !== 'true' && (
 			<Card>
-				<div className={classNames(classes.row, classes.header)}>
+				<div className={classNames(classes.row, classes.rowCenter)}>
 					<Typography.Title level={5}>
 						More Details Coming Soon...
 					</Typography.Title>

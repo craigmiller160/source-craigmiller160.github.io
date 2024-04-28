@@ -4,11 +4,11 @@ import { Card, Typography } from 'antd';
 
 export const TolkienAi = () => (
 	<div className={classes.tolkienAi}>
-		<div className={classNames(classes.row, classes.header)}>
+		<div className={classNames(classes.row, classes.rowCenter)}>
 			<Typography.Title level={3}>Tolkien AI Project</Typography.Title>
 		</div>
 		<Card className={classes.col}>
-			<div className={classNames(classes.row, classes.header)}>
+			<div className={classNames(classes.row, classes.rowCenter)}>
 				<Typography.Title level={5}>Introduction</Typography.Title>
 			</div>
 			<div className={classes.col}>
@@ -37,7 +37,7 @@ export const TolkienAi = () => (
 		</Card>
 		{import.meta.env.VITE_ENABLE_TOLKIEN_AI !== 'true' && (
 			<Card>
-				<div className={classNames(classes.row, classes.header)}>
+				<div className={classNames(classes.row, classes.rowCenter)}>
 					<Typography.Title level={5}>
 						More Details Coming Soon...
 					</Typography.Title>
