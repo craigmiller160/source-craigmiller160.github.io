@@ -6,6 +6,7 @@ import loginPage from '../../../../images/login-page.png';
 import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
 import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
 import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
+import expenseTrackerTransactionsPage from '../../../../images/expense_tracker_transactions.png';
 import { LinkList, type LinkListItem } from '../../../../ui/LinkList';
 
 const linkItems: ReadonlyArray<LinkListItem> = [
@@ -192,19 +193,71 @@ export const ExpenseTracker = () => (
 					</div>
 				</Card>
 				<Card>
-					<ul>
-						<li>Intro</li>
-						<li>Diagram</li>
-						<li>
-							Features
-							<ul>
-								<li>Import Data</li>
-								<li>Rules engine</li>
-								<li>Search, filter, and categorize</li>
-								<li>Reports</li>
-							</ul>
-						</li>
-					</ul>
+					<div className={classNames(classes.row, classes.rowCenter)}>
+						<Typography.Title level={5}>
+							Transaction Management
+						</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<div className={classes.col}>
+							<Image src={expenseTrackerTransactionsPage} />
+						</div>
+						<div className={classes.col}>
+							<Typography.Text>
+								The transaction management screen is where most
+								of the real action in the application takes
+								place. In addition to a paginated list of all
+								transactions on record, a robust set of filters
+								allow for narrowing down the list by a variety
+								of criteria. Any transaction on record can be
+								viewed and modified in this screen.
+							</Typography.Text>
+							<Typography.Text>
+								Below the filters is an important alert panel
+								pointing out what transactions need attention.
+								These are transactions that have not yet
+								received manual review and approval by the user.
+								There are several reasons for a transaction
+								requiring manual intervention. Possible refunds
+								need to be reconciled with the original expense.
+								Possible duplicates are flagged to protect
+								against manual import mistakes, and can either
+								be deleted or marked as &quot;not
+								duplicate&quot; depending on the situation. Of
+								course, anything that has not been assigned a
+								category yet is flagged as uncategorized.
+								Lastly, every transaction that is imported must
+								be manually confirmed by the user. This is to
+								allow for reviewing the automatic categorization
+								that they go through, rather than just accepting
+								them as accurate. These are the Unconfirmed
+								transactions flagged in that panel.
+							</Typography.Text>
+							<Typography.Text>
+								Lastly, the list of transactions themselves
+								contains not just information but a number of
+								helpful actions that can be performed. While the
+								Details panel for each transaction gives the
+								near total ability to edit the transaction, the
+								most common operations - categorization and
+								confirmation - are available right in the table
+								for rapid application of the features.
+							</Typography.Text>
+						</div>
+					</div>
+				</Card>
+				<Card>
+					<div className={classNames(classes.row, classes.rowCenter)}>
+						<Typography.Title level={5}>Reports</Typography.Title>
+					</div>
+					<div className={classNames(classes.row, classes.section)}>
+						<div className={classes.col}>
+							<Image src={null} />
+						</div>
+						<div className={classes.col}>
+							<Typography.Text>Hello World</Typography.Text>
+						</div>
+					</div>
 				</Card>
 			</>
 		)}
