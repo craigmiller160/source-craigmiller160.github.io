@@ -7,6 +7,7 @@ import expenseTrackerImportPage from '../../../../images/expense_tracker_import.
 import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
 import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
 import expenseTrackerTransactionsPage from '../../../../images/expense_tracker_transactions.png';
+import expenseTrackerReportsPage from '../../../../images/expense_tracker_reports.png';
 import { LinkList, type LinkListItem } from '../../../../ui/LinkList';
 
 const linkItems: ReadonlyArray<LinkListItem> = [
@@ -252,10 +253,17 @@ export const ExpenseTracker = () => (
 					</div>
 					<div className={classNames(classes.row, classes.section)}>
 						<div className={classes.col}>
-							<Image src={null} />
+							<Image src={expenseTrackerReportsPage} />
 						</div>
 						<div className={classes.col}>
-							<Typography.Text>Hello World</Typography.Text>
+							<Typography.Text>
+								The last major feature is the reports. This
+								breaks down spending by month and category. It
+								shows how much was spent,what percentage of
+								total spending it was, how that spending
+								differed from the previous month, and even a
+								nice helpful pie chart to go along with it.
+							</Typography.Text>
 						</div>
 					</div>
 				</Card>
