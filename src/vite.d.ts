@@ -5,7 +5,6 @@ interface ImportMeta {
 		MODE: string;
 		PROD: boolean;
 		SSR: boolean;
-		VITE_ENABLE_EXPENSE_TRACKER: string;
 		VITE_ENABLE_MARKET_TRACKER: string;
 		VITE_ENABLE_TOLKIEN_AI: string;
 		VITE_ENABLE_CRAIG_BUILD: string;
