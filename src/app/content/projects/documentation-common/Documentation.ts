@@ -15,11 +15,13 @@ export type LinksAndTextDocumentation = Readonly<{
 
 export type ImageOnlyDocumentation = Readonly<{
 	type: 'image-only';
+	title: string;
 	image: string;
 }>;
 
 export type ImageAndTextDocumentation = Readonly<{
 	type: 'image-and-text';
+	title: string;
 	image: string;
 	text: ReadonlyArray<string>;
 }>;

@@ -10,4 +10,30 @@
   .row-center {
     justify-content: center;
   }
+
+  .col-center {
+    align-items: center;
+  }
+
+  .links {
+    @media(min-width: $antd-breakpoint-lg) {
+      width: 50%;
+    }
+
+    @media (max-width: $antd-breakpoint-lg - 1) {
+      width: 100%;
+    }
+  }
+
+  .section {
+    >* {
+      @media(min-width: $antd-breakpoint-lg) {
+        width: 48%;
+      }
+
+      @media (max-width: $antd-breakpoint-lg - 1) {
+        width: 100%;
+      }
+    }
+  }
 }
