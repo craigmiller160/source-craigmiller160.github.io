@@ -2,6 +2,8 @@
 
 .link-list {
   .list-item {
+    cursor: pointer;
+
     &:hover {
       background-color: $color-050;
     }
