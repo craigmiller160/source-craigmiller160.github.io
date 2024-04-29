@@ -66,7 +66,7 @@ export const LinksAndTextDocumentationCard = (
 	</Card>
 );
 
-export const ImageOnlyDocumentation = (
+export const ImageOnlyDocumentationCard = (
 	props: Props<ImageOnlyDocumentation>
 ) => (
 	<Card className={classes.col}>
