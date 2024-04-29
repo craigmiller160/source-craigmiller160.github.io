@@ -1,9 +1,11 @@
 import type {
 	Documentation,
+	ImageAndTextDocumentation,
+	ImageOnlyDocumentation,
 	LinksAndTextDocumentation,
 	TextOnlyDocumentation
 } from './Documentation';
-import { Card, Typography } from 'antd';
+import { Card, Image, Typography } from 'antd';
 import classes from './Documentation.module.scss';
 import classNames from 'classnames';
 import { LinkList } from '../../../../ui/LinkList';
@@ -56,6 +58,33 @@ export const LinksAndTextDocumentationCard = (
 					listClassName={classes.links}
 					items={props.documentation.links}
 				/>
+			</div>
+			<div className={classes.col}>
+				<CardText text={props.documentation.text} />
+			</div>
+		</div>
+	</Card>
+);
+
+export const ImageOnlyDocumentation = (
+	props: Props<ImageOnlyDocumentation>
+) => (
+	<Card className={classes.col}>
+		<CardTitle title={props.documentation.title} />
+		<div className={classNames(classes.row, classes.rowCenter)}>
+			<Image src={props.documentation.image} />
+		</div>
+	</Card>
+);
+
+export const ImageAndTextDocumentationCard = (
+	props: Props<ImageAndTextDocumentation>
+) => (
+	<Card className={classes.col}>
+		<CardTitle title={props.documentation.title} />
+		<div className={classNames(classes.row, classes.section)}>
+			<div className={classes.col}>
+				<Image src={props.documentation.image} />
 			</div>
 			<div className={classes.col}>
 				<CardText text={props.documentation.text} />
