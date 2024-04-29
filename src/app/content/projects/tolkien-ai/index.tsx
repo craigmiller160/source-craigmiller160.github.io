@@ -54,7 +54,10 @@ export const TolkienAi = () => (
 						<ul>
 							<li>Parsed & Vectorized Silmarillion</li>
 							<li>Query using vectors & ChatGPT</li>
-							<li>Robust audit logging to study how to optimize queries</li>
+							<li>
+								Robust audit logging to study how to optimize
+								queries
+							</li>
 						</ul>
 					</li>
 				</ul>
