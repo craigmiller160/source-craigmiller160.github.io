@@ -1,0 +1,13 @@
+@import "../../../../styles/responsive";
+@import "../../../../styles/theme";
+
+.documentation-page {
+  @include responsive-content-width;
+
+  display: flex;
+  flex-direction: column;
+
+  .row-center {
+    justify-content: center;
+  }
+}
