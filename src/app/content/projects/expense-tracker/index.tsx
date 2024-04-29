@@ -57,6 +57,9 @@ export const ExpenseTracker = () => (
 				<Typography.Title level={5}>Links</Typography.Title>
 			</div>
 			<div className={classNames(classes.row, classes.section)}>
+				<div className={classNames(classes.col, classes.colCenter)}>
+					<LinkList listClassName={classes.links} items={linkItems} />
+				</div>
 				<div className={classes.col}>
 					<Typography.Text>
 						The following are links to the application and relevant
@@ -64,9 +67,6 @@ export const ExpenseTracker = () => (
 						itself requires valid authentication, which must be
 						provided before you can access it.
 					</Typography.Text>
-				</div>
-				<div className={classNames(classes.col, classes.colCenter)}>
-					<LinkList listClassName={classes.links} items={linkItems} />
 				</div>
 			</div>
 		</Card>
