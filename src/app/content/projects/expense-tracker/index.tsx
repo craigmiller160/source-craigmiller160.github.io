@@ -82,7 +82,7 @@ export const ExpenseTracker = () => (
 							)}
 						>
 							<LinkList
-								className={classes.linkList}
+								listClassName={classes.links}
 								items={linkItems}
 							/>
 						</div>
