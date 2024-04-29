@@ -31,3 +31,5 @@ export type Documentation =
 	| LinksAndTextDocumentation
 	| ImageAndTextDocumentation
 	| ImageOnlyDocumentation;
+
+export type DocumentationType = Documentation['type'];
