@@ -1,5 +1,5 @@
 import type { Documentation } from './Documentation';
-import classes from './DocumentationPage.module.scss'
+import classes from './Documentation.module.scss'
 import classNames from 'classnames';
 import { Typography } from 'antd';
 
