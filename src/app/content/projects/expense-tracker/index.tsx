@@ -1,29 +1,25 @@
 import classes from './ExpenseTracker.module.scss';
 import classNames from 'classnames';
-import { Card, Image, List, Typography } from 'antd';
+import { Card, Image, Typography } from 'antd';
 import diagram from '../../../../images/expense-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
 import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
 import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
 import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
+import { LinkList, type LinkListItem } from '../../../../ui/LinkList';
 
-type LinkItem = Readonly<{
-	label: string;
-	url: string;
-}>;
-
-const linkItems: LinkItem[] = [
+const linkItems: ReadonlyArray<LinkListItem> = [
 	{
 		label: 'Application',
-		url: 'https://expense-tracker.craigmiller160.us'
+		link: 'https://expense-tracker.craigmiller160.us'
 	},
 	{
 		label: 'Expense Tracker API (Backend)',
-		url: 'https://github.com/craigmiller160/expense-tracker-api'
+		link: 'https://github.com/craigmiller160/expense-tracker-api'
 	},
 	{
 		label: 'Expense Tracker UI (Frontend)',
-		url: 'https://github.com/craigmiller160/expense-tracker-ui'
+		link: 'https://github.com/craigmiller160/expense-tracker-ui'
 	}
 ];
 
@@ -85,14 +81,9 @@ export const ExpenseTracker = () => (
 								classes.colCenter
 							)}
 						>
-							<List
+							<LinkList
 								className={classes.linkList}
-								dataSource={linkItems}
-								renderItem={(item) => (
-									<List.Item>
-										<List.Item.Meta title={item.label} />
-									</List.Item>
-								)}
+								items={linkItems}
 							/>
 						</div>
 					</div>
