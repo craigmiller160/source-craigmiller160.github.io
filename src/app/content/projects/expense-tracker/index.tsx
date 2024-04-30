@@ -46,7 +46,7 @@ export const ExpenseTracker = () => (
 					spending habits in the way that I, personally, choose to.
 				</Typography.Text>
 				<Typography.Text>
-					While the application is exclusively used by myself, it
+					While the application is exclusively used by myself and my fiance, it
 					fully supports secure multi-tenancy. Each individual user
 					who logs is siloed with only access to their own data.
 				</Typography.Text>
