@@ -75,5 +75,15 @@ export const docs: ReadonlyArray<Documentation> = [
 			'All automated categorization decisions still require a manual review. A transaction that is categorized automatically is left in an "unconfirmed" state, and the user is alerted about the need to review and confirm it.',
 			'The heavy use of regular expressions definitely targets this tool at a more technical audience, which is fine given that only my fiance and I use it. The goal is ultimately to replace this rules engine with AI integration, using a RAG (Retrieval Augmented Generation) design to guide the AI in making decisions.'
 		]
+	},
+	{
+		type: 'image-and-text',
+		title: 'Manage Transactions',
+		image: expenseTrackerTransactionsPage,
+		text: [
+			'The transaction management screen is where most of the real action in the application takes place. In addition to a paginated list of all transactions on record, a robust set of filters allow for narrowing down the list by a variety of criteria. Any transaction on record can be viewed and modified in this screen.',
+			'Below the filters is an important alert panel pointing out what transactions need attention. These are transactions that have not yet received manual review and approval by the user. There are several reasons for a transaction requiring manual intervention. Possible refunds need to be reconciled with the original expense. Possible duplicates are flagged to protect against manual import mistakes, and can either be deleted or marked as "not duplicate" depending on the situation. Of course, anything that has not been assigned a category yet is flagged as uncategorized. Lastly, every transaction that is imported must be manually confirmed by the user. This is to allow for reviewing the automatic categorization that they go through, rather than just accepting them as accurate. These are the Unconfirmed transactions flagged in that panel.',
+			'As for the list of transactions themselves, it contains not just information but a number of helpful actions that can be performed. While the Details panel for each transaction gives the near total ability to edit the transaction, the most common operations - categorization and confirmation - are available right in the table for rapid application of the features.'
+		]
 	}
 ];
