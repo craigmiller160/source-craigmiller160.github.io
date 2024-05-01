@@ -71,7 +71,9 @@ export const docs: ReadonlyArray<Documentation> = [
 		title: 'Define Rules',
 		image: expenseTrackerRulesPage,
 		text: [
-			'Categorization can be done either manually or automatically, depending on what the user wants. Auto-categorization is driven by a rules engine configured explicitly by the user. Criteria including the date range, amount range, and most importantly, a regular expression, is used to determine which category is applied. If multiple rules match, the first (ie, lowest ordinal) rule is applied.'
+			'Categorization can be done either manually or automatically, depending on what the user wants. Auto-categorization is driven by a rules engine configured explicitly by the user. Criteria including the date range, amount range, and most importantly, a regular expression, is used to determine which category is applied. If multiple rules match, the first (ie, lowest ordinal) rule is applied.',
+			'All automated categorization decisions still require a manual review. A transaction that is categorized automatically is left in an "unconfirmed" state, and the user is alerted about the need to review and confirm it.',
+			'The heavy use of regular expressions definitely targets this tool at a more technical audience, which is fine given that only my fiance and I use it. The goal is ultimately to replace this rules engine with AI integration, using a RAG (Retrieval Augmented Generation) design to guide the AI in making decisions.'
 		]
 	}
 ];
