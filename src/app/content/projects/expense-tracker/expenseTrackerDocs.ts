@@ -7,7 +7,7 @@ import expenseTrackerTransactionsPage from '../../../../images/expense_tracker_t
 import expenseTrackerReportsPage from '../../../../images/expense_tracker_reports.png';
 import type { Documentation } from '../documentation-common/Documentation';
 
-export const docs: ReadonlyArray<Documentation> = [
+export const expenseTrackerDocs: ReadonlyArray<Documentation> = [
 	{
 		type: 'text-only',
 		title: 'Introduction',
