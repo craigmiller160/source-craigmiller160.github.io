@@ -85,5 +85,13 @@ export const docs: ReadonlyArray<Documentation> = [
 			'Below the filters is an important alert panel pointing out what transactions need attention. These are transactions that have not yet received manual review and approval by the user. There are several reasons for a transaction requiring manual intervention. Possible refunds need to be reconciled with the original expense. Possible duplicates are flagged to protect against manual import mistakes, and can either be deleted or marked as "not duplicate" depending on the situation. Of course, anything that has not been assigned a category yet is flagged as uncategorized. Lastly, every transaction that is imported must be manually confirmed by the user. This is to allow for reviewing the automatic categorization that they go through, rather than just accepting them as accurate. These are the Unconfirmed transactions flagged in that panel.',
 			'As for the list of transactions themselves, it contains not just information but a number of helpful actions that can be performed. While the Details panel for each transaction gives the near total ability to edit the transaction, the most common operations - categorization and confirmation - are available right in the table for rapid application of the features.'
 		]
+	},
+	{
+		type: 'image-and-text',
+		title: 'Reports',
+		image: expenseTrackerReportsPage,
+		text: [
+			'The last major feature is the reports. This breaks down spending by month and category. It shows how much was spent,what percentage of total spending it was, how that spending differed from the previous month, and even a nice helpful pie chart to go along with it.'
+		]
 	}
 ];
