@@ -2,6 +2,7 @@ import type { Documentation } from '../documentation-common/Documentation';
 import marketTrackerRecognition from '../../../../images/marketTrackerRecognition.png';
 import marketTrackerSearch from '../../../../images/marketTrackerSearch.png';
 import marketTrackerWatchlists from '../../../../images/marketTrackerWatchlists.png';
+import marketTrackerPortfolios from '../../../../images/marketTrackerPortfolios.png';
 import diagram from '../../../../images/market-tracker.drawio.png';
 import loginPage from '../../../../images/login-page.png';
 
@@ -81,7 +82,7 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
 		type: 'image-and-text',
 		title: 'Personal Investment Data Integration',
-		image: 'TBD',
+		image: marketTrackerPortfolios,
 		text: []
 	}
 ];
