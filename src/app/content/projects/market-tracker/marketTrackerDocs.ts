@@ -1,7 +1,9 @@
 import type { Documentation } from '../documentation-common/Documentation';
 import marketTrackerRecognition from '../../../../images/marketTrackerRecognition.png';
 import marketTrackerSearch from '../../../../images/marketTrackerSearch.png';
+import marketTrackerWatchlists from '../../../../images/marketTrackerWatchlists.png';
 import diagram from '../../../../images/market-tracker.drawio.png';
+import loginPage from '../../../../images/login-page.png';
 
 export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
@@ -16,6 +18,14 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		type: 'image-only',
 		title: 'Architecture Diagram',
 		image: diagram
+	},
+	{
+		type: 'image-and-text',
+		title: 'Authentication',
+		image: loginPage,
+		text: [
+			'Like all of my applications, this one uses my Keycloak OIDC SSO authentication flow. A single sign on to access an account that is used across all of my applications, and controls what the user can access. Market Tracker is multi-tenant, meaning the data is segregated by user id.'
+		]
 	},
 	{
 		type: 'links-and-text',
@@ -62,8 +72,11 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
 		type: 'image-and-text',
 		title: 'Watchlists',
-		image: 'TBD',
-		text: []
+		image: marketTrackerWatchlists,
+		text: [
+			"All watchlists created by the user are listed with a simple accordion format. Each watchlist can be expanded to show the investments being tracked within them. All of this is fully configurable by the user, and thanks to the application's multi-tenancy individual users each have their own, independent set of watchlists.",
+			'The only exception is Cryptocurrency. This is a watchlist that just tracks the current price of Bitcoin and Ethereum. A more robust user-manageable Cryptocurrency search has not been built into the application, given that for me Cryptocurrency is more a curiosity than a priority. Therefore this watchlist is hard-coded into the application and is static and unchanging.'
+		]
 	},
 	{
 		type: 'image-and-text',
