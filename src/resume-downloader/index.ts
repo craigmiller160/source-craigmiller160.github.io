@@ -69,6 +69,7 @@ const drive = google.drive({
 });
 
 const downloadResume = async () => {
+	// https://developers.google.com/drive/api/guides/ref-export-formats
 	const response = await drive.files.export({
 		fileId: FILE_ID,
 		mimeType: 'text/plain'
