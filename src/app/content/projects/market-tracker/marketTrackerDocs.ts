@@ -83,6 +83,10 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		type: 'image-and-text',
 		title: 'Personal Investment Data Integration',
 		image: marketTrackerPortfolios,
-		text: []
+		text: [
+			'One of the most sophisticated parts of this application is the integration of my own personal data. For obvious reasons, something this specific is restricted to individual users.',
+			'I keep very meticulous records of my investments in Google Spreadsheets, and every single investment transaction I perform is recorded there. At 3-hour intervals, those spreadsheets are polled by the backend and all relevant data is retrieved, parsed, and written to the database. This is then linked with the actual Tradier data to present a real-time view of my investment portfolio.',
+			"This feature definitely needs some additional love and attention. Building out aggregate views and integrating my 401k (which only has mutual funds that don't have data on Tradier) is still on my TODO list."
+		]
 	}
 ];
