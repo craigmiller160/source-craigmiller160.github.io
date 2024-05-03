@@ -1,5 +1,6 @@
 import type { Documentation } from '../documentation-common/Documentation';
 import marketTrackerRecognition from '../../../../images/marketTrackerRecognition.png';
+import marketTrackerSearch from '../../../../images/marketTrackerSearch.png';
 import diagram from '../../../../images/market-tracker.drawio.png';
 
 export const marketTrackerDocs: ReadonlyArray<Documentation> = [
@@ -47,6 +48,15 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		image: marketTrackerRecognition,
 		text: [
 			'The application depends on data provided by the free APIs of Tradier and CoinGecko. Every feature of this application depends on the data from them, and a recognition page exists to grant credit for what they provide.'
+		]
+	},
+	{
+		type: 'image-and-text',
+		title: 'Investment Search',
+		image: marketTrackerSearch,
+		text: [
+			'The application supports looking up any stock or ETF by its symbol. Once the results are found, data can be displayed for a variety of different ranges of time. This allows for viewing the recent history of the investment.',
+			'Lastly, the investment can be added to a watchlist. A new watchlist can be created here, or it can be added to an existing watchlist. This allows for tracking the investment on an ongoing basis without having to return to the search screen.'
 		]
 	}
 ];
