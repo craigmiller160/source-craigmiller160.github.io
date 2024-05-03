@@ -1,5 +1,6 @@
 import type { Documentation } from '../documentation-common/Documentation';
 import marketTrackerRecognition from '../../../../images/marketTrackerRecognition.png';
+import diagram from '../../../../images/market-tracker.drawio.png';
 
 export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
@@ -13,7 +14,7 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
 		type: 'image-only',
 		title: 'Architecture Diagram',
-		image: 'TBD'
+		image: diagram
 	},
 	{
 		type: 'links-and-text',
