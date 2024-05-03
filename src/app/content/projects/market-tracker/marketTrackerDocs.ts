@@ -16,6 +16,31 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		image: 'TBD'
 	},
 	{
+		type: 'links-and-text',
+		title: 'Links',
+		links: [
+			{
+				label: 'Application',
+				link: 'https://market-tracker.craigmiller160.us'
+			},
+			{
+				label: 'Market Tracker API (Backend for Tradier/CoinGecko and Watchlists)',
+				link: 'https://github.com/craigmiller160/market-tracker-api'
+			},
+			{
+				label: 'Market Tracker Portfolio Service (Backend for Integrating With Personal Portfolio Data)',
+				link: 'https://github.com/craigmiller160/market-tracker-potfolio-service'
+			},
+			{
+				label: 'Market Tracker UI (Frontend)',
+				link: 'https://github.com/craigmiller160/market-tracker-ui'
+			}
+		],
+		text: [
+			'The following are links to the application and relevant git repositories. Please note that the application itself requires valid authentication, which must be provided before you can access it.'
+		]
+	},
+	{
 		type: 'image-and-text',
 		title: 'Data Sources',
 		image: marketTrackerRecognition,
