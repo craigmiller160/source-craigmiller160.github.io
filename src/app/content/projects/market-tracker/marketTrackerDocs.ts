@@ -46,6 +46,16 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		]
 	},
 	{
+		type: 'text-only',
+		title: 'Tech Stack Choices',
+		text: [
+			"This is one of my only multi-service and multi-database projects, so I wanted to highlight the design decision that went into it. If you look at the diagram above, you'll notice that there are two micro-services, market-tracker-api and market-tracker-portfolio-service. The former uses MongoDB, and the latter uses Postgres. There is a pretty simple reason behind this: one of the goals of these projects is to learn new things, and I wanted to try out some different technologies.",
+			'When I first started the application, I wrote market-tracker-api, which is a TypeScript application using ExpressJS. Given the natural workflows between a Node application and MongoDB, and the fact that I had no plans for relational data in the application, I felt this was the perfect opportunity to build out some more functionality with MongoDB rather than my beloved Postgres.',
+			'Overall, I found myself still preferring Kotlin and Spring Boot over the TypeScript/ExpressJS tech stack. Therefore, nearly two years later when I came back to this project to add the portfolio functionality, I decided to add a new backend micro-service to exclusively handle that feature, and put it in my more traditional tech stack. In addition, my plan for the portfolio data was to normalize it in a relational style, therefore Postgres was the better choice than Mongo for the database.',
+			'That is how this project evolves to what it is today.'
+		]
+	},
+	{
 		type: 'image-and-text',
 		title: 'Authentication',
 		image: loginPage,
