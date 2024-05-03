@@ -16,11 +16,11 @@
   }
 
   .links {
-    @media(min-width: $antd-breakpoint-lg) {
-      width: 50%;
+    @media(min-width: $antd-breakpoint-xl) {
+      width: 70%;
     }
 
-    @media (max-width: $antd-breakpoint-lg - 1) {
+    @media (max-width: $antd-breakpoint-xl - 1) {
       width: 100%;
     }
   }

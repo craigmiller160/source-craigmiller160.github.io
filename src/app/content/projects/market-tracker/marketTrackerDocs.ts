@@ -21,14 +21,6 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		image: diagram
 	},
 	{
-		type: 'image-and-text',
-		title: 'Authentication',
-		image: loginPage,
-		text: [
-			'Like all of my applications, this one uses my Keycloak OIDC SSO authentication flow. A single sign on to access an account that is used across all of my applications, and controls what the user can access. Market Tracker is multi-tenant, meaning the data is segregated by user id.'
-		]
-	},
-	{
 		type: 'links-and-text',
 		title: 'Links',
 		links: [
@@ -51,6 +43,14 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 		],
 		text: [
 			'The following are links to the application and relevant git repositories. Please note that the application itself requires valid authentication, which must be provided before you can access it.'
+		]
+	},
+	{
+		type: 'image-and-text',
+		title: 'Authentication',
+		image: loginPage,
+		text: [
+			'Like all of my applications, this one uses my Keycloak OIDC SSO authentication flow. A single sign on to access an account that is used across all of my applications, and controls what the user can access. Market Tracker is multi-tenant, meaning the data is segregated by user id.'
 		]
 	},
 	{
