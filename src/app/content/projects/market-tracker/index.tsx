@@ -1,67 +1,9 @@
-import classes from './MarketTracker.module.scss';
-import { Card, Typography } from 'antd';
-import classNames from 'classnames';
+import { DocumentationPage } from '../documentation-common/DocumentationPage';
+import { marketTrackerDocs } from './marketTrackerDocs';
 
 export const MarketTracker = () => (
-	<div className={classes.marketTracker}>
-		<div className={classNames(classes.row, classes.rowCenter)}>
-			<Typography.Title level={3}>
-				Market Tracker Project
-			</Typography.Title>
-		</div>
-		<Card className={classes.col}>
-			<div className={classNames(classes.row, classes.rowCenter)}>
-				<Typography.Title level={5}>Introduction</Typography.Title>
-			</div>
-			<div className={classes.col}>
-				<Typography.Text>
-					I am a longtime, loyal customer of Fidelity as my investment
-					bank. I find they offer all the services I need, and when I
-					have an issue their customer service is exceptional.
-					However, their technology offerings are definitely sub-par.
-					To better observe market movements, both with my own
-					investments and others that I just want to watch, I wrote
-					this application.
-				</Typography.Text>
-				<Typography.Text>
-					This app leverages free APIs to pull real-time market data
-					to drive its functionality. It allows for both defining
-					investment watchlists, while also having deep integration
-					with my own investment record keeping. Through Google Drive
-					connectivity, every time I update the spreadsheets I use to
-					track my investments, the data is reflected in this
-					application, displaying how market movements are reflecting
-					my actual investment holdings.
-				</Typography.Text>
-			</div>
-		</Card>
-		{import.meta.env.VITE_ENABLE_MARKET_TRACKER !== 'true' && (
-			<Card>
-				<div className={classNames(classes.row, classes.rowCenter)}>
-					<Typography.Title level={5}>
-						More Details Coming Soon...
-					</Typography.Title>
-				</div>
-			</Card>
-		)}
-		{import.meta.env.VITE_ENABLE_MARKET_TRACKER === 'true' && (
-			<>
-				<Card>
-					<ul>
-						<li>Intro</li>
-						<li>Diagram</li>
-						<li>
-							Features
-							<ul>
-								<li>Integration with Tradier & CoinGecko</li>
-								<li>Search & History</li>
-								<li>Watchlists</li>
-								<li>Personal Investments From Google Sheets</li>
-							</ul>
-						</li>
-					</ul>
-				</Card>
-			</>
-		)}
-	</div>
+	<DocumentationPage
+		title="Market Tracker Project"
+		documentation={marketTrackerDocs}
+	/>
 );
