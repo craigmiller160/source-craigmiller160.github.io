@@ -58,5 +58,17 @@ export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 			'The application supports looking up any stock or ETF by its symbol. Once the results are found, data can be displayed for a variety of different ranges of time. This allows for viewing the recent history of the investment.',
 			'Lastly, the investment can be added to a watchlist. A new watchlist can be created here, or it can be added to an existing watchlist. This allows for tracking the investment on an ongoing basis without having to return to the search screen.'
 		]
+	},
+	{
+		type: 'image-and-text',
+		title: 'Watchlists',
+		image: 'TBD',
+		text: []
+	},
+	{
+		type: 'image-and-text',
+		title: 'Personal Investment Data Integration',
+		image: 'TBD',
+		text: []
 	}
 ];
