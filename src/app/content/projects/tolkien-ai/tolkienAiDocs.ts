@@ -20,6 +20,14 @@ export const placeholderDocs: ReadonlyArray<Documentation> = [
 	}
 ];
 
+/*
+ * - Intro
+ * - Diagram
+ * - Parsed & Vectorized Silmarillion
+ * - Query using vectors & ChatGPT
+ * - Robust audit loogging
+ */
+
 export const fullDocs: ReadonlyArray<Documentation> = [
 	...commonDocs,
 	{
