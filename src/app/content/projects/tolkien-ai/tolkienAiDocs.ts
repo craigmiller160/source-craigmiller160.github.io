@@ -31,6 +31,23 @@ export const placeholderDocs: ReadonlyArray<Documentation> = [
 export const fullDocs: ReadonlyArray<Documentation> = [
 	...commonDocs,
 	{
+		type: 'links-and-text',
+		title: 'Links',
+		text: [
+			'The following are links to the swagger, since this project is API-only at the moment, and relevant git repositories. Please note that the API itself requires valid authentication, which must be provided before you can access it.'
+		],
+		links: [
+			{
+				label: 'Swagger',
+				link: 'https://tolkien-ai.craigmiller160.us/swagger-ui/index.html'
+			},
+			{
+				label: 'Tolkien AI Server (Backend)',
+				link: 'https://github.com/craigmiller160/tolkien-ai-server'
+			}
+		]
+	},
+	{
 		type: 'image-only',
 		title: 'Architecture Diagram',
 		image: 'TBD'
