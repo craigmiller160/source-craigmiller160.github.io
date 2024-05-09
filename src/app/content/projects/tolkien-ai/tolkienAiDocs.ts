@@ -10,3 +10,21 @@ const commonDocs: ReadonlyArray<Documentation> = [
 		]
 	}
 ];
+
+export const placeholderDocs: ReadonlyArray<Documentation> = [
+	...commonDocs,
+	{
+		type: 'text-only',
+		title: 'More Details Coming Soon...',
+		text: []
+	}
+];
+
+export const fullDocs: ReadonlyArray<Documentation> = [
+	...commonDocs,
+	{
+		type: 'image-only',
+		title: 'Architecture Diagram',
+		image: 'TBD'
+	}
+];
