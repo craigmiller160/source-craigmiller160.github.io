@@ -15,65 +15,65 @@
   "experience": [
     {
       "achievements": [
-        "Designed and implemented a new Point of Care solution, seamlessly integrating the company’s services into a common Electronic Medical Records (EMR) provider, which led to 10% of our clients increasing their business with us.",
-        "Led a major platform modernization effort to migrate the entire application suite from Pivotal CloudFoundry to the Kubernetes-based Red Hat OpenShift.",
-        "Made several enhancements to the enterprise CI/CD platform to improve flexibility, automating tedious tasks and eliminating more than one whole day’s worth of work for every member of the team.",
-        "Improved application stability and reduced the prevalence of bugs by spearheading the adoption of TypeScript in frontend applications.",
-        "Grew the skillset of the broader team by running multiple sessions of an in-house React course so that traditionally backend developers could learn to contribute to the full stack.",
-        "Reduced production bugs and workflow chaos by streamlining the software release process through documenting and standardizing the process, properly allocating resources each sprint for release tasks, and getting the business to commit to respecting the release schedule. This resulted in all releases being predictably scheduled and almost never getting delayed.",
-        "Improved predictability to business partners by increasing sprint completion rate from ~40% to ~75% by boosting communication of capacity constraints from developer team."
+        "Spearheaded the design and implementation of a new Point of Care solution that leverages an API integration with major EMR providers, increasing client business by 10%.",
+        "Led the transition of application suites from Pivotal CloudFoundry to Kubernetes-based Red Hat OpenShift, enhancing system scalability and maintainability.",
+        "Enhanced enterprise CI/CD processes, resulting in a reduction of labor by over 8 hours per team member through automation and process improvement.",
+        "Championed the introduction of TypeScript, significantly reducing bugs and stabilizing front-end applications.",
+        "Developed and conducted an internal React training program, broadening the skill set of backend developers to encompass full stack capabilities.",
+        "Standardized and streamlined software release processes, boosting release schedule adherence and reducing delays, thereby improving business predictability.",
+        "Developed data synchronization pipelines utilizing Kafka to enable seamless operation between modern and mainframe applications, ensuring interoperability and accessibility of results across platforms."
       ],
       "company": "Cigna",
       "dates": "",
       "positions": [
         {
           "title": "Senior Software Engineer ",
-          "dates": "2020-Present"
+          "dates": "March 2020 - Present"
         }
       ]
     },
     {
       "achievements": [
-        "Eliminated the use of an expensive and unreliable platform by developing an in-house ETL solution to handle communication between external vendors and mainframe programs.",
-        "Boosted the speed and predictability of releases by pioneering the use of a micro-frontend architecture at the company, allowing for more narrowly focused releases of frontend applications.",
-        "Significantly accelerated page load times, improving the user experience, by overhauling the frontend build system to reduce application size by 50%.",
-        "Boosted the company’s appeal to potential candidates by being a mentor for the corporate summer internship program, with several intern direct reports ultimately becoming full time employees of the company."
+        "Developed an in-house ETL solution that eliminated reliance on costly, unreliable external platforms, optimizing data integration with mainframes.",
+        "Initiated and led the adoption of a micro-frontend architecture, which enhanced the modularity and speed of frontend application deployments.",
+        "Overhauled the frontend build system to reduce application size by 50%, markedly improving load times and user experience.",
+        "Actively mentored interns, significantly contributing to talent acquisition as many interns transitioned to full-time roles."
       ],
       "company": "Cigna",
       "dates": "",
       "positions": [
         {
           "title": "Software Engineer ",
-          "dates": "2018-2020"
+          "dates": "Dec 2018 - March 2020"
         }
       ]
     },
     {
       "achievements": [
-        "Ensured the competitiveness of a legacy medical forms company in the digital space by designing and implementing an all-in-one electronic form integration solution, complete with security protections and a customer-facing web UI.",
-        "Boosted company’s competitive advantage by designing system to allow clients to easily configure mappings of inbound legacy data feeds to modern REST API calls.",
-        "Vastly improved the efficiency of an information provider in the insurance industry by creating an integration to automatically pull regulatory data down from multiple APIs and combine it all in their database."
+        "Designed and implemented a cutting-edge electronic form integration solution for a legacy medical forms company, modernizing their operations and securing customer data.",
+        "Created a flexible system for clients to map legacy data feeds to modern REST API calls, enhancing client service capabilities and competitive position.",
+        "Engineered a solution for integrating regulatory data from multiple APIs into a single database, greatly improving the operational efficiency of a client in the insurance sector."
       ],
       "company": "PilotFish Technology",
       "dates": "",
       "positions": [
         {
           "title": "Solutions Architect ",
-          "dates": "2016-2018"
+          "dates": "Dec 2016 - Dec 2018"
         }
       ]
     },
     {
       "achievements": [
-        "Revolutionized software upgrade experience by designing an automated regression testing system to pre-emptively identify and report changes in behavior when moving to a newer version of the software.",
-        "Drastically improved the responsiveness of the user experience by overhauling the UI code to improve threading usage and remove inefficient processes."
+        "Created an automated regression testing system that preemptively identified software upgrades' impacts, ensuring smooth transitions.",
+        "Revamped UI code to optimize threading and process efficiency, resulting in superior responsiveness and user engagement."
       ],
       "company": "PilotFish Technology",
       "dates": "",
       "positions": [
         {
           "title": "Java Developer ",
-          "dates": "2015-2016"
+          "dates": "Dec 2015 - Dec 2016"
         }
       ]
     }
@@ -85,8 +85,8 @@
     }
   ],
   "intro": {
-    "body": "Craig is a Senior Software Engineer with nine years of experience that includes designing and building complex enterprise applications, leading development teams, and managing client and business relationships. He has extensive experience in full stack development, and is currently seeking an opportunity for further career growth.",
-    "title": "Staff/Principal/Senior Full Stack Engineer"
+    "body": "With over a decade of software engineering expertise, I excel in designing, developing, and deploying transformative enterprise solutions. I am a strategic leader with a proven track record in enhancing operational efficiency, mentoring top-tier development teams, and driving significant business growth through technological innovation.",
+    "title": "Principal/Staff/Senior Full Stack Engineer"
   },
   "skills": {
     "agileExperience": [

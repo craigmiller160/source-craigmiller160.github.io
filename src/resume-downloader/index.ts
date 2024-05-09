@@ -11,7 +11,7 @@ const KEYFILE_PATH = path.join(
 	'market-tracker-service-account.json'
 );
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
-const FILE_ID = '1KNIsz3VBRhLTX9wLp8NhaeVzc1z4VMIQMDzvTK2MuNA';
+const FILE_ID = '1sCkcJyAG48F6mRu_gTGp2oEJLFU4NqrMI0w8tLYOiQU';
 const OUTPUT_DIR = path.join(import.meta.dirname, '..', 'resume');
 const RAW_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.txt');
 const PARSED_OUTPUT_FILE = path.join(OUTPUT_DIR, 'my-resume.json');
@@ -412,4 +412,4 @@ const parseHonorsLine = (
 	});
 };
 
-void downloadResume();
+downloadResume().catch((ex) => console.error(ex));
