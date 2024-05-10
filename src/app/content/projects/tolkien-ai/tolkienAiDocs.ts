@@ -1,4 +1,5 @@
 import type { Documentation } from '../documentation-common/Documentation';
+import diagram from '../../../../images/tolkien-ai.drawio.png';
 
 const commonDocs: ReadonlyArray<Documentation> = [
 	{
@@ -50,6 +51,6 @@ export const fullDocs: ReadonlyArray<Documentation> = [
 	{
 		type: 'image-only',
 		title: 'Architecture Diagram',
-		image: 'TBD'
+		image: diagram
 	}
 ];
