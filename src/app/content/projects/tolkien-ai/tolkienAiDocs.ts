@@ -1,5 +1,6 @@
 import type { Documentation } from '../documentation-common/Documentation';
 import diagram from '../../../../images/projects/tolkien-ai/tolkien-ai.drawio.png';
+import chatResponse from '../../../../images/projects/tolkien-ai/response.png';
 
 const commonDocs: ReadonlyArray<Documentation> = [
 	{
@@ -52,5 +53,11 @@ export const fullDocs: ReadonlyArray<Documentation> = [
 		type: 'image-only',
 		title: 'Architecture Diagram',
 		image: diagram
+	},
+	{
+		type: 'image-and-text',
+		title: 'Excellent Study of AI Interaction',
+		image: chatResponse,
+		text: []
 	}
 ];
