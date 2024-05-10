@@ -1,10 +1,10 @@
-import diagram from '../../../../images/expense-tracker.drawio.png';
-import loginPage from '../../../../images/login-page.png';
-import expenseTrackerImportPage from '../../../../images/expense_tracker_import.png';
-import expenseTrackerCategoriesPage from '../../../../images/expense_tracker_categories.png';
-import expenseTrackerRulesPage from '../../../../images/expense_tracker_rules.png';
-import expenseTrackerTransactionsPage from '../../../../images/expense_tracker_transactions.png';
-import expenseTrackerReportsPage from '../../../../images/expense_tracker_reports.png';
+import diagram from '../../../../images/projects/expense-tracker/expense-tracker.drawio.png';
+import loginPage from '../../../../images/projects/login-page.png';
+import expenseTrackerImportPage from '../../../../images/projects/expense-tracker/expense_tracker_import.png';
+import expenseTrackerCategoriesPage from '../../../../images/projects/expense-tracker/expense_tracker_categories.png';
+import expenseTrackerRulesPage from '../../../../images/projects/expense-tracker/expense_tracker_rules.png';
+import expenseTrackerTransactionsPage from '../../../../images/projects/expense-tracker/expense_tracker_transactions.png';
+import expenseTrackerReportsPage from '../../../../images/projects/expense-tracker/expense_tracker_reports.png';
 import type { Documentation } from '../documentation-common/Documentation';
 
 export const expenseTrackerDocs: ReadonlyArray<Documentation> = [

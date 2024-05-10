@@ -1,5 +1,5 @@
 import type { Documentation } from '../documentation-common/Documentation';
-import diagram from '../../../../images/tolkien-ai.drawio.png';
+import diagram from '../../../../images/projects/tolkien-ai/tolkien-ai.drawio.png';
 
 const commonDocs: ReadonlyArray<Documentation> = [
 	{

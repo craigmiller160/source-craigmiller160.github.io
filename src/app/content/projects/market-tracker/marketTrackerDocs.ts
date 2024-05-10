@@ -1,10 +1,10 @@
 import type { Documentation } from '../documentation-common/Documentation';
-import marketTrackerRecognition from '../../../../images/marketTrackerRecognition.png';
-import marketTrackerSearch from '../../../../images/marketTrackerSearch.png';
-import marketTrackerWatchlists from '../../../../images/marketTrackerWatchlists.png';
-import marketTrackerPortfolios from '../../../../images/marketTrackerPortfolios.png';
-import diagram from '../../../../images/market-tracker.drawio.png';
-import loginPage from '../../../../images/login-page.png';
+import marketTrackerRecognition from '../../../../images/projects/market-tracker/marketTrackerRecognition.png';
+import marketTrackerSearch from '../../../../images/projects/market-tracker/marketTrackerSearch.png';
+import marketTrackerWatchlists from '../../../../images/projects/market-tracker/marketTrackerWatchlists.png';
+import marketTrackerPortfolios from '../../../../images/projects/market-tracker/marketTrackerPortfolios.png';
+import diagram from '../../../../images/projects/market-tracker/market-tracker.drawio.png';
+import loginPage from '../../../../images/projects/login-page.png';
 
 export const marketTrackerDocs: ReadonlyArray<Documentation> = [
 	{
