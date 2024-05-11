@@ -58,6 +58,10 @@ export const fullDocs: ReadonlyArray<Documentation> = [
 		type: 'image-and-text',
 		title: 'Excellent Study of AI Interaction',
 		image: chatResponse,
-		text: []
+		text: [
+			'The goal of this project is to learn more about how to optimize AI integration into an application. It is a playground for experimenting with different models, segment parsing granularity, data set sizes, prompt structure, and more.',
+			'With all of that in mind, every time a query is submitted to the AI, a detailed response is generated that provides extensive information on the behavior of the query. This allows for understanding all aspects of the operation.',
+			'To further support an analysis of the AI behavior, every chat is stored in a searchable audit log. This makes it easy for different permutations to be tested and then compared after the fact to try and determine the optimal configuration.'
+		]
 	}
 ];
