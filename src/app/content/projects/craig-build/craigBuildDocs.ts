@@ -20,4 +20,27 @@ export const placeholderDocs: ReadonlyArray<Documentation> = [
 	}
 ];
 
+/*
+ * Craig Build Phases
+
+- Gather Pre-Run Info
+	- Build Tool Info
+	- Command Info
+	- Project Type
+	- Project Info
+- Pre-Run Validation
+	- Project Version
+	- Dependency Versions
+	- Git Tag Version
+- Build & Publish
+	- Run all project validations (linting, tests, etc)
+	- Build artifact
+	- Prepare pre-release version
+	- Publish to Sonatype Nexus
+- Git Tag
+- Build & Publish Docker
+- Deploy to Kubernetes
+- Run Terraform
+ */
+
 export const fullDocs: ReadonlyArray<Documentation> = [...commonDocs];
