@@ -8,13 +8,13 @@ import { HashRouter } from 'react-router-dom';
 import { Footer } from './footer';
 
 export const App = () => (
-  <ConfigProvider theme={theme}>
-    <HashRouter>
-      <Layout>
-        <Navbar />
-        <Content />
-        <Footer />
-      </Layout>
-    </HashRouter>
-  </ConfigProvider>
+    <ConfigProvider theme={theme}>
+        <HashRouter>
+            <Layout>
+                <Navbar />
+                <Content />
+                <Footer />
+            </Layout>
+        </HashRouter>
+    </ConfigProvider>
 );
