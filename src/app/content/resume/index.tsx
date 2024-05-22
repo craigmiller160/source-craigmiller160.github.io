@@ -10,12 +10,12 @@ import { Other } from './Other';
 const resume = resumeSchema.parse(myResume);
 
 export const ResumePage = () => (
-	<div className={classes.resume}>
-		<Card>
-			<Introduction resume={resume} />
-			<Experience resume={resume} />
-			<Skills resume={resume} />
-			<Other resume={resume} />
-		</Card>
-	</div>
+  <div className={classes.resume}>
+    <Card>
+      <Introduction resume={resume} />
+      <Experience resume={resume} />
+      <Skills resume={resume} />
+      <Other resume={resume} />
+    </Card>
+  </div>
 );
